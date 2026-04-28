@@ -1,27 +1,58 @@
 import React from 'react';
 
-const Footer = ({ currentPage, setCurrentPage }) => {
+const Footer = ({ currentPage, setCurrentPage, language }) => {
+  const t = {
+    en: {
+      pitch: "The AI-first education platform empowering the next generation of Ethiopian students. Pure intelligence. Local context. Global success.",
+      legal: "Legal",
+      privacy: "Privacy Policy",
+      terms: "Terms of Service",
+      support: "Support",
+      contact: "Contact Support",
+      help: "Help Center",
+      community: "Community",
+      copyright: `© ${new Date().getFullYear()} ETHIO UNIQUE ACADEMY. BUILT WITH INTELLIGENCE IN ETHIOPIA.`,
+      verified: "Verified Secure",
+      privacyFirst: "Privacy First"
+    },
+    am: {
+      pitch: "ቀጣዩን የኢትዮጵያ ተማሪዎች ትውልድ የሚያበረታታ የኢትዮጵያ የመጀመሪያው AI-powered ትምህርት ፕላትፎርም።",
+      legal: "ሕጋዊ",
+      privacy: "የግላዊነት ፖሊሲ",
+      terms: "የአገልግሎት ውሎች",
+      support: "ድጋፍ",
+      contact: "ያግኙን",
+      help: "የእርዳታ ማዕከል",
+      community: "ማህበረሰብ",
+      copyright: `© ${new Date().getFullYear()} ኢትዮ ዩኒክ አካዳሚ። በኢትዮጵያ ውስጥ በጥበብ የተገነባ።`,
+      verified: "ደህንነቱ የተረጋገጠ",
+      privacyFirst: "ለግላዊነት ቅድሚያ"
+    }
+  };
+
+  const currentT = t[language] || t.en;
+
   return (
     <footer className="footer-new">
       <div className="container footer-grid-new">
         <div className="footer-brand-col">
-          <p className="footer-brand-pitch">The AI-first education platform empowering the next generation of Ethiopian students. Pure intelligence. Local context. Global success.</p>
+          <p className="footer-brand-pitch">{currentT.pitch}</p>
         </div>
 
         <div className="footer-links-col">
-          <h5 className="footer-col-title">Legal</h5>
-          <a href="#/privacy" className="footer-link-item">Privacy Policy</a>
-          <a href="#/terms" className="footer-link-item">Terms of Service</a>
+          <h5 className="footer-col-title">{currentT.legal}</h5>
+          <a href="#/privacy" className="footer-link-item">{currentT.privacy}</a>
+          <a href="#/terms" className="footer-link-item">{currentT.terms}</a>
         </div>
 
         <div className="footer-links-col">
-          <h5 className="footer-col-title">Support</h5>
-          <a href="#contact" className="footer-link-item" onClick={(e) => { e.preventDefault(); if (currentPage !== 'home') setCurrentPage('home'); setTimeout(() => { const el = document.getElementById('contact'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }, 100); }}>Contact Support</a>
-          <a href="#faq" className="footer-link-item" onClick={(e) => { e.preventDefault(); if (currentPage !== 'home') setCurrentPage('home'); setTimeout(() => { const el = document.getElementById('faq'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }, 100); }}>Help Center</a>
+          <h5 className="footer-col-title">{currentT.support}</h5>
+          <a href="#contact" className="footer-link-item" onClick={(e) => { e.preventDefault(); if (currentPage !== 'home') setCurrentPage('home'); setTimeout(() => { const el = document.getElementById('contact'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }, 100); }}>{currentT.contact}</a>
+          <a href="#faq" className="footer-link-item" onClick={(e) => { e.preventDefault(); if (currentPage !== 'home') setCurrentPage('home'); setTimeout(() => { const el = document.getElementById('faq'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }, 100); }}>{currentT.help}</a>
         </div>
 
         <div className="footer-links-col">
-          <h5 className="footer-col-title">Community</h5>
+          <h5 className="footer-col-title">{currentT.community}</h5>
           <a href="https://t.me/" target="_blank" rel="noreferrer" className="footer-link-item" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
               <circle cx="12" cy="12" r="12" fill="#229ED9" />
@@ -40,10 +71,10 @@ const Footer = ({ currentPage, setCurrentPage }) => {
       </div>
 
       <div className="container footer-bottom-new">
-        <p className="footer-copyright">© {new Date().getFullYear()} ETHIO UNIQUE ACADEMY. BUILT WITH INTELLIGENCE IN ETHIOPIA.</p>
+        <p className="footer-copyright">{currentT.copyright}</p>
         <div className="footer-badges">
-          <span>Verified Secure</span>
-          <span>Privacy First</span>
+          <span>{currentT.verified}</span>
+          <span>{currentT.privacyFirst}</span>
         </div>
       </div>
     </footer>
