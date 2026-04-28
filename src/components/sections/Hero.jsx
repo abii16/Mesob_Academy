@@ -40,7 +40,7 @@ const Hero = ({ triggerToast }) => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="hero-subtitle-new"
         >
-          Join Ethiopia's #1 EdTech platform for grades 9-12 and freshman. Practice with adaptive testing, secure offline resources, and 24/7 hyper-personalized AI tutoring.
+ #1 EdTech platform for grades 9-12 and freshman. Practice with adaptive testing, secure offline resources, and 24/7 hyper-personalized AI tutoring.
         </motion.p>
         
         <motion.div 
