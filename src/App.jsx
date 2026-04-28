@@ -48,21 +48,21 @@ const App = () => {
 
       if (!activeRoute || ['features', 'how-it-works', 'pricing', 'reviews', 'faq', 'contact'].includes(activeRoute)) {
         setCurrentPage('home');
-        document.title = language === 'en' ? "Ethio Unique Academy | AI-Powered Educational SaaS" : "ኢትዮ ዩኒክ አካዳሚ | በAI የተደገፈ የትምህርት ፕላትፎርም";
+        document.title = "Ethio Unique Academy | AI-Powered Educational SaaS";
         if (metaDesc) metaDesc.setAttribute('content', language === 'en' ? '#1 EdTech in Ethiopia for Grades 9-12. Master the curriculum and ace your exams with AI tutoring, exam drills, and secure offline video resources.' : 'ለ9-12ኛ ክፍል በኢትዮጵያ #1 የትምህርት ቴክኖሎጂ። ፈተናዎችዎን በAI ቱቶር፣ በፈተና ልምምዶች እና ደህንነቱ በተጠበቀ ከመስመር ውጭ የቪዲዮ ግብአቶች ያጠናክሩ።');
       } else if (activeRoute === 'privacy') {
         setCurrentPage('privacy');
-        document.title = language === 'en' ? "Privacy Policy | Ethio Unique Academy" : "የግላዊነት ፖሊሲ | ኢትዮ ዩኒክ አካዳሚ";
+        document.title = "Privacy Policy | Ethio Unique Academy";
         if (metaDesc) metaDesc.setAttribute('content', language === 'en' ? 'Read our privacy policy to understand how we secure your academic data.' : 'የትምህርት መረጃዎን እንዴት እንደምንጠብቅ ለማወቅ የእኛን የግላዊነት ፖሊሲ ያንብቡ።');
         window.scrollTo(0, 0);
       } else if (activeRoute === 'terms') {
         setCurrentPage('terms');
-        document.title = language === 'en' ? "Terms of Service | Ethio Unique Academy" : "የአገልግሎት ውሎች | ኢትዮ ዩኒክ አካዳሚ";
+        document.title = "Terms of Service | Ethio Unique Academy";
         if (metaDesc) metaDesc.setAttribute('content', language === 'en' ? 'Review our terms of service governing usage of the Ethio Unique platform.' : 'የኢትዮ ዩኒክ ፕላትፎርም አጠቃቀምን የሚገዙ የአገልግሎት ውሎቻችንን ይገምግሙ።');
         window.scrollTo(0, 0);
       } else {
         setCurrentPage('404');
-        document.title = language === 'en' ? "404 Not Found | Ethio Unique Academy" : "404 ገጹ አልተገኘም | ኢትዮ ዩኒክ አካዳሚ";
+        document.title = "404 Not Found | Ethio Unique Academy";
         if (metaDesc) metaDesc.setAttribute('content', language === 'en' ? 'The requested page could not be found on Ethio Unique Academy.' : 'የተጠየቀው ገጽ በኢትዮ ዩኒክ አካዳሚ ላይ አልተገኘም።');
         window.scrollTo(0, 0);
       }

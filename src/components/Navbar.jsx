@@ -39,7 +39,7 @@ const Navbar = ({ setCurrentPage, language, setLanguage }) => {
       faq: "ጥያቄዎች",
       contact: "ያግኙን",
       login: "ይግቡ",
-      brand: "ኢትዮ ዩኒክ አካዳሚ"
+      brand: "Ethio Unique Academy"
     }
   };
 
