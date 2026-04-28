@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import '../../styles/BottomCTA.css';
+import '../../styles/sections/BottomCTA.css';
 
 const BottomCTA = ({ triggerToast, language }) => {
   const t = {

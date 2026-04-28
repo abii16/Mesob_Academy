@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
-import '../../styles/Pricing.css';
+import '../../styles/sections/Pricing.css';
 
 const Pricing = ({ triggerToast, language }) => {
   const t = {

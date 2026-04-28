@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/Footer.css';
+import '../../styles/layout/Footer.css';
 
 const Footer = ({ currentPage, setCurrentPage, language }) => {
   const t = {

@@ -1,6 +1,6 @@
 import React from 'react';
 import TestimonialCard from '../common/TestimonialCard';
-import '../../styles/Reviews.css';
+import '../../styles/sections/Reviews.css';
 
 const Reviews = ({ language }) => {
   const t = {

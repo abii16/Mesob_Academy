@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/NotFoundPage.css';
+import '../styles/pages/NotFoundPage.css';
 
 const NotFoundPage = () => (
   <div className="legal-page-container not-found-container">

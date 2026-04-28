@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/Contact.css';
+import '../../styles/sections/Contact.css';
 
 const Contact = ({ triggerToast, language }) => {
   const t = {

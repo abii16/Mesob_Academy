@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
-import '../../styles/Navbar.css';
+import '../../styles/layout/Navbar.css';
 
 const Navbar = ({ setCurrentPage, language, setLanguage }) => {
   const [scrolled, setScrolled] = useState(false);

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/TermsOfService.css';
+import '../styles/pages/TermsOfService.css';
 
 const TermsOfService = () => (
   <div className="legal-page-container terms-container">
