@@ -13,8 +13,8 @@ const HowItWorks = () => {
         
         <div className="steps-grid">
           {[
-            { icon: Smartphone, title: '1. Download App', desc: 'Available on Android and iOS. Set up your profile in seconds.' },
-            { icon: Star, title: '2. Select Your Grade', desc: 'Choose Grade 9-10 or 11-12 to unlock specialized curriculum content.' },
+            { icon: Smartphone, title: '1. Download App', desc: 'Available on Android. Set up your profile in seconds.' },
+            { icon: Star, title: '2. Select Your Grade and Stream', desc: 'Choose Grade 9-10 or 11-12 or 9-12  to unlock specialized curriculum content.' },
             { icon: Rocket, title: '3. Start Dominating', desc: 'Practice daily, ask AI for help, and watch your scores skyrocket.' }
           ].map((step, i) => (
             <motion.div 
