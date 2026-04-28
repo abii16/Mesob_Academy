@@ -27,6 +27,7 @@ const Navbar = ({ setCurrentPage, language, setLanguage }) => {
       pricing: "Pricing",
       reviews: "Reviews",
       faq: "FAQ",
+      contact: "Contact",
       login: "LOGIN",
       brand: "Ethio Unique Academy"
     },
@@ -36,6 +37,7 @@ const Navbar = ({ setCurrentPage, language, setLanguage }) => {
       pricing: "ዋጋዎች",
       reviews: "አስተያየቶች",
       faq: "ጥያቄዎች",
+      contact: "ያግኙን",
       login: "ይግቡ",
       brand: "ኢትዮ ዩኒክ አካዳሚ"
     }
@@ -57,6 +59,7 @@ const Navbar = ({ setCurrentPage, language, setLanguage }) => {
           <a href="#pricing" className="nav-link" onClick={(e) => { e.preventDefault(); navigateToSection('pricing'); }}>{currentT.pricing}</a>
           <a href="#reviews" className="nav-link" onClick={(e) => { e.preventDefault(); navigateToSection('reviews'); }}>{currentT.reviews}</a>
           <a href="#faq" className="nav-link" onClick={(e) => { e.preventDefault(); navigateToSection('faq'); }}>{currentT.faq}</a>
+          <a href="#contact" className="nav-link" onClick={(e) => { e.preventDefault(); navigateToSection('contact'); }}>{currentT.contact}</a>
           
           <button 
             onClick={() => setLanguage(language === 'en' ? 'am' : 'en')} 
@@ -94,6 +97,7 @@ const Navbar = ({ setCurrentPage, language, setLanguage }) => {
               <a href="#pricing" className="mobile-link" onClick={() => { setIsOpen(false); navigateToSection('pricing'); }}>{currentT.pricing}</a>
               <a href="#reviews" className="mobile-link" onClick={() => { setIsOpen(false); navigateToSection('reviews'); }}>{currentT.reviews}</a>
               <a href="#faq" className="mobile-link" onClick={() => { setIsOpen(false); navigateToSection('faq'); }}>{currentT.faq}</a>
+              <a href="#contact" className="mobile-link" onClick={() => { setIsOpen(false); navigateToSection('contact'); }}>{currentT.contact}</a>
               <div className="mobile-actions" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '1rem' }}>
                 <button 
                   className="nav-login-btn" 
