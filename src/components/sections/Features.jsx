@@ -3,41 +3,78 @@ import { motion } from 'framer-motion';
 import { Brain, Download, Zap, Clock, Calendar, Trophy } from 'lucide-react';
 import FeatureCard from '../FeatureCard';
 
-const Features = () => {
+const Features = ({ language }) => {
+  const t = {
+    en: {
+      subtitle: "PREMIUM FEATURES",
+      title: "Built for Academic Success",
+      aiTutorTitle: "AI Tutor",
+      aiTutorDesc: "24/7 personalized assistance for Physics, Chemistry, and Math. Get step-by-step explanations for complex problems instantly.",
+      offlineVaultTitle: "Offline Vault",
+      offlineVaultDesc: "No internet? No problem. Download entire subjects and video lessons to study anywhere, anytime securely.",
+      quizArenaTitle: "Quiz Arena",
+      quizArenaDesc: "Battle against time or peers in timed quizzes designed for optimal Ethiopian national exam pacing.",
+      pomodoroTitle: "Pomodoro Timer",
+      pomodoroDesc: "Train your brain for peak focus. Optimize study intervals using custom work-and-break checkpoints.",
+      studyPlannerTitle: "Study Planner",
+      studyPlannerDesc: "Build high-performance academic roadmaps tracking complete subject modules deterministically.",
+      leaderboardTitle: "National Leaderboard",
+      leaderboardDesc: "Compete with the brightest minds across Ethiopia. Earn badges, prestige, and climb to the absolute top."
+    },
+    am: {
+      subtitle: "ልዩ ባህሪያት",
+      title: "ለአካዳሚክ ስኬት የተገነባ",
+      aiTutorTitle: "የAI መምህር",
+      aiTutorDesc: "ለፊዚክስ፣ ኬሚስትሪ እና ሂሳብ የ24/7 ግላዊ ድጋፍ። ለተወሳሰቡ ጥያቄዎች ደረጃ በደረጃ ማብራሪያዎችን ወዲያውኑ ያግኙ።",
+      offlineVaultTitle: "ከመስመር ውጭ ማስቀመጫ",
+      offlineVaultDesc: "ኢንተርኔት የለም? ምንም ችግር የለም። የትም ቦታ ሆነው ለመማር ሙሉ ትምህርቶችን እና የቪዲዮ ትምህርቶችን ያውርዱ።",
+      quizArenaTitle: "የፈተና ሜዳ",
+      quizArenaDesc: "ለኢትዮጵያ ብሔራዊ ፈተና ፍጥነት በተዘጋጁ ፈተናዎች ከሰዓት ወይም ከጓደኞችዎ ጋር ይወዳደሩ።",
+      pomodoroTitle: "የጥናት ጊዜ ቆጣሪ",
+      pomodoroDesc: "ለከፍተኛ ትኩረት አእምሮዎን ያሰልጥኑ። ልዩ የጥናት እና የእረፍት ጊዜያትን በመጠቀም የጥናት ጊዜዎን ያመቻቹ።",
+      studyPlannerTitle: "የጥናት እቅድ አውጪ",
+      studyPlannerDesc: "ሙሉ የትምህርት ሞጁሎችን በመከታተል ከፍተኛ ጥራት ያላቸውን የጥናት እቅዶችን ይገንቡ።",
+      leaderboardTitle: "ብሔራዊ የመሪዎች ሰሌዳ",
+      leaderboardDesc: "በመላው ኢትዮጵያ ካሉ ጎበዝ ተማሪዎች ጋር ይወዳደሩ። ባጆችን፣ ክብርን ያግኙ እና ወደ ከፍተኛው ደረጃ ይውጡ።"
+    }
+  };
+
+  const currentT = t[language] || t.en;
+
   return (
     <section id="features" className="features-new">
       <div className="container">
         <div className="section-header">
-          <span className="section-subtitle-new">PREMIUM FEATURES</span>
-          <h2 className="section-title-new">Built for Academic Success</h2>
+          <span className="section-subtitle-new">{currentT.subtitle}</span>
+          <h2 className="section-title-new">{currentT.title}</h2>
         </div>
         
         <div className="features-grid-new">
           <FeatureCard 
             icon={Brain}
-            title="AI Tutor"
-            desc="24/7 personalized assistance for Physics, Chemistry, and Math. Get step-by-step explanations for complex problems instantly."
+            title={currentT.aiTutorTitle}
+            desc={currentT.aiTutorDesc}
             hasBg={true}
           />
           <FeatureCard 
             icon={Download}
-            title="Offline Vault"
-            desc="No internet? No problem. Download entire subjects and video lessons to study anywhere, anytime securely."
+            title={currentT.offlineVaultTitle}
+            desc={currentT.offlineVaultDesc}
           />
           <FeatureCard 
             icon={Zap}
-            title="Quiz Arena"
-            desc="Battle against time or peers in timed quizzes designed for optimal Ethiopian national exam pacing."
+            title={currentT.quizArenaTitle}
+            desc={currentT.quizArenaDesc}
           />
           <FeatureCard 
             icon={Clock}
-            title="Pomodoro Timer"
-            desc="Train your brain for peak focus. Optimize study intervals using custom work-and-break checkpoints."
+            title={currentT.pomodoroTitle}
+            desc={currentT.pomodoroDesc}
           />
           <FeatureCard 
             icon={Calendar}
-            title="Study Planner"
-            desc="Build high-performance academic roadmaps tracking complete subject modules deterministically."
+            title={currentT.studyPlannerTitle}
+            desc={currentT.studyPlannerDesc}
           />
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -48,8 +85,8 @@ const Features = () => {
             <div className="feature-icon-wrapper">
               <Trophy size={24} />
             </div>
-            <h3 className="feature-card-title-new">National Leaderboard</h3>
-            <p className="feature-card-desc-new">Compete with the brightest minds across Ethiopia. Earn badges, prestige, and climb to the absolute top.</p>
+            <h3 className="feature-card-title-new">{currentT.leaderboardTitle}</h3>
+            <p className="feature-card-desc-new">{currentT.leaderboardDesc}</p>
             
             <div className="leaderboard-snippet">
               <div className="leaderboard-row header-row">
