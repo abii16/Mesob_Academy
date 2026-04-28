@@ -2,7 +2,22 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, Play } from 'lucide-react';
 
-const Hero = ({ triggerToast }) => {
+const Hero = ({ triggerToast, language }) => {
+  const t = {
+    en: {
+      socialProof: "Trusted by 50,000+ Students & 10+ Dedicated Teachers Working With Us",
+      title: <>Master the Curriculum.<br />Ace Your Exams.</>,
+      subtitle: "#1 EdTech platform in Ethiopia for grades 9-12 and freshman. Practice with adaptive testing, secure offline resources, and 24/7 hyper-personalized AI tutoring."
+    },
+    am: {
+      socialProof: "በ50,000+ ተማሪዎች እና 10+ ቁርጠኛ መምህራን የታመነ",
+      title: <>ስርዓተ ትምህርቱን ይቆጣጠሩ።<br />ፈተናዎን በብቃት ይለፉ።</>,
+      subtitle: "በኢትዮጵያ ለ9-12ኛ ክፍል እና ለዩኒቨርሲቲ መግቢያ #1 የትምህርት ቴክኖሎጂ ፕላትፎርም ነው። በተለዋዋጭ የፈተና ጥያቄዎች፣ አስተማማኝ ከመስመር ውጭ የትምህርት ግብአቶች እና የ24/7 AI ድጋፍ ይለማመዱ።"
+    }
+  };
+
+  const currentT = t[language] || t.en;
+
   return (
     <section className="hero-new">
       <video 
@@ -22,7 +37,7 @@ const Hero = ({ triggerToast }) => {
           className="social-proof-badge"
         >
           <Star size={14} fill="var(--color-primary)" stroke="var(--color-primary)" />
-          <span>Trusted by 50,000+ Students & 10+ Dedicated Teachers Working With Us</span>
+          <span>{currentT.socialProof}</span>
         </motion.div>
 
         <motion.h1 
@@ -31,7 +46,7 @@ const Hero = ({ triggerToast }) => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="hero-title-new"
         >
-          Master the Curriculum.<br />Ace Your Exams.
+          {currentT.title}
         </motion.h1>
         
         <motion.p 
@@ -40,7 +55,7 @@ const Hero = ({ triggerToast }) => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="hero-subtitle-new"
         >
- #1 EdTech platform in Ethiopia for grades 9-12 and freshman. Practice with adaptive testing, secure offline resources, and 24/7 hyper-personalized AI tutoring.
+          {currentT.subtitle}
         </motion.p>
         
         <motion.div 
