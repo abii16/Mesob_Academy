@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../styles/Contact.css';
 
 const Contact = ({ triggerToast, language }) => {
   const t = {
@@ -33,51 +34,50 @@ const Contact = ({ triggerToast, language }) => {
   const currentT = t[language] || t.en;
 
   return (
-    <section id="contact" className="contact-section" style={{ padding: '6rem 1rem', background: 'var(--color-bg)' }}>
-      <div className="container" style={{ maxWidth: '600px' }}>
-        <div className="section-header" style={{ textAlign: 'center', marginBottom: '3rem' }}>
+    <section id="contact" className="contact-section">
+      <div className="container contact-container">
+        <div className="contact-header">
           <span className="section-subtitle-new">{currentT.subtitle}</span>
           <h2 className="section-title-new">{currentT.title}</h2>
-          <p style={{ color: 'rgba(255,255,255,0.7)', marginTop: '1rem' }}>{currentT.desc}</p>
+          <p className="contact-desc">{currentT.desc}</p>
         </div>
 
         <form 
-          className="glass" 
-          style={{ padding: '2.5rem', borderRadius: 'var(--radius-lg)', border: '1px solid rgba(255,255,255,0.1)' }}
+          className="glass contact-form" 
           onSubmit={(e) => {
             e.preventDefault();
             triggerToast(currentT.toastMsg);
             e.target.reset();
           }}
         >
-          <div style={{ marginBottom: '1.5rem' }}>
-            <label style={{ display: 'block', marginBottom: '0.5rem', color: 'rgba(255,255,255,0.9)', fontSize: '0.9rem' }}>{currentT.nameLabel}</label>
+          <div className="form-group">
+            <label className="form-label">{currentT.nameLabel}</label>
             <input 
               type="text" 
               required 
-              style={{ width: '100%', padding: '0.75rem', borderRadius: 'var(--radius-md)', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: 'white', outline: 'none' }} 
+              className="form-input" 
               placeholder={currentT.namePlaceholder}
             />
           </div>
-          <div style={{ marginBottom: '1.5rem' }}>
-            <label style={{ display: 'block', marginBottom: '0.5rem', color: 'rgba(255,255,255,0.9)', fontSize: '0.9rem' }}>{currentT.emailLabel}</label>
+          <div className="form-group">
+            <label className="form-label">{currentT.emailLabel}</label>
             <input 
               type="email" 
               required 
-              style={{ width: '100%', padding: '0.75rem', borderRadius: 'var(--radius-md)', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: 'white', outline: 'none' }} 
+              className="form-input" 
               placeholder={currentT.emailPlaceholder}
             />
           </div>
-          <div style={{ marginBottom: '1.5rem' }}>
-            <label style={{ display: 'block', marginBottom: '0.5rem', color: 'rgba(255,255,255,0.9)', fontSize: '0.9rem' }}>{currentT.helpLabel}</label>
+          <div className="form-group">
+            <label className="form-label">{currentT.helpLabel}</label>
             <textarea 
               rows="4" 
               required 
-              style={{ width: '100%', padding: '0.75rem', borderRadius: 'var(--radius-md)', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: 'white', outline: 'none', resize: 'none' }} 
+              className="form-textarea" 
               placeholder={currentT.helpPlaceholder}
             ></textarea>
           </div>
-          <button type="submit" className="btn btn-primary" style={{ width: '100%',textAlign: 'center', alignItems: 'center', justifyContent: 'center', }}>{currentT.send}</button>
+          <button type="submit" className="btn btn-primary contact-submit-btn">{currentT.send}</button>
         </form>
       </div>
     </section>

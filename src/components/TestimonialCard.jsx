@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, Users } from 'lucide-react';
+import '../styles/Reviews.css';
 
 const TestimonialCard = ({ stars, text, name, role, avatar }) => (
   <motion.div 

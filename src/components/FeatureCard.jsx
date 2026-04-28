@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import '../styles/Features.css';
 
 const FeatureCard = ({ icon: Icon, title, desc, hasBg = false }) => (
   <motion.div 

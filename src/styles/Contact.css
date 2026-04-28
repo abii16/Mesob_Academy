@@ -1,0 +1,64 @@
+/* Contact Section */
+.contact-section {
+  padding: 6rem 1rem;
+  background: #121214;
+}
+
+.contact-container {
+  max-width: 600px;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.contact-desc {
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 1rem;
+}
+
+.contact-form {
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  outline: none;
+}
+
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  outline: none;
+  resize: none;
+}
+
+.contact-submit-btn {
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
