@@ -53,7 +53,7 @@ const Navbar = ({ setCurrentPage, language, setLanguage }) => {
           <span className="brand-name"><a href="/"  style={{ cursor: 'pointer' , color: 'white', textDecoration: 'none' }}>{currentT.brand}</a></span>
         </div>
 
-        <div className="nav-desktop-links" style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
+        <div className="nav-desktop-links">
           <a href="#features" className="nav-link" onClick={(e) => { e.preventDefault(); navigateToSection('features'); }}>{currentT.features}</a>
           <a href="#how-it-works" className="nav-link" onClick={(e) => { e.preventDefault(); navigateToSection('how-it-works'); }}>{currentT.howItWorks}</a>
           <a href="#pricing" className="nav-link" onClick={(e) => { e.preventDefault(); navigateToSection('pricing'); }}>{currentT.pricing}</a>
@@ -99,12 +99,6 @@ const Navbar = ({ setCurrentPage, language, setLanguage }) => {
               <a href="#faq" className="mobile-link" onClick={() => { setIsOpen(false); navigateToSection('faq'); }}>{currentT.faq}</a>
               <a href="#contact" className="mobile-link" onClick={() => { setIsOpen(false); navigateToSection('contact'); }}>{currentT.contact}</a>
               <div className="mobile-actions" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '1rem' }}>
-                <button 
-                  className="nav-login-btn" 
-                  style={{ textAlign: 'center', padding: '0.5rem 1rem', background: 'var(--color-primary)', color: '#000', borderRadius: 'var(--radius-sm)', border: 'none', fontWeight: 'bold' }}
-                >
-                  {currentT.login}
-                </button>
                 <button 
                   onClick={() => { setLanguage(language === 'en' ? 'am' : 'en'); setIsOpen(false); }} 
                   style={{ 
