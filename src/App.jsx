@@ -23,6 +23,7 @@ import Contact from './components/sections/Contact';
 
 const App = () => {
   const [currentPage, setCurrentPage] = useState('home');
+  const [language, setLanguage] = useState('en');
   const [toastMessage, setToastMessage] = useState('');
   const [showToast, setShowToast] = useState(false);
   const toastTimeoutRef = useRef(null);
@@ -47,22 +48,22 @@ const App = () => {
 
       if (!activeRoute || ['features', 'how-it-works', 'pricing', 'reviews', 'faq', 'contact'].includes(activeRoute)) {
         setCurrentPage('home');
-        document.title = "Ethio Unique Academy | AI-Powered Educational SaaS";
-        if (metaDesc) metaDesc.setAttribute('content', '#1 EdTech in Ethiopia for Grades 9-12. Master the curriculum and ace your exams with AI tutoring, exam drills, and secure offline video resources.');
+        document.title = language === 'en' ? "Ethio Unique Academy | AI-Powered Educational SaaS" : "ኢትዮ ዩኒክ አካዳሚ | በAI የተደገፈ የትምህርት ፕላትፎርም";
+        if (metaDesc) metaDesc.setAttribute('content', language === 'en' ? '#1 EdTech in Ethiopia for Grades 9-12. Master the curriculum and ace your exams with AI tutoring, exam drills, and secure offline video resources.' : 'ለ9-12ኛ ክፍል በኢትዮጵያ #1 የትምህርት ቴክኖሎጂ። ፈተናዎችዎን በAI ቱቶር፣ በፈተና ልምምዶች እና ደህንነቱ በተጠበቀ ከመስመር ውጭ የቪዲዮ ግብአቶች ያጠናክሩ።');
       } else if (activeRoute === 'privacy') {
         setCurrentPage('privacy');
-        document.title = "Privacy Policy | Ethio Unique Academy";
-        if (metaDesc) metaDesc.setAttribute('content', 'Read our privacy policy to understand how we secure your academic data.');
+        document.title = language === 'en' ? "Privacy Policy | Ethio Unique Academy" : "የግላዊነት ፖሊሲ | ኢትዮ ዩኒክ አካዳሚ";
+        if (metaDesc) metaDesc.setAttribute('content', language === 'en' ? 'Read our privacy policy to understand how we secure your academic data.' : 'የትምህርት መረጃዎን እንዴት እንደምንጠብቅ ለማወቅ የእኛን የግላዊነት ፖሊሲ ያንብቡ።');
         window.scrollTo(0, 0);
       } else if (activeRoute === 'terms') {
         setCurrentPage('terms');
-        document.title = "Terms of Service | Ethio Unique Academy";
-        if (metaDesc) metaDesc.setAttribute('content', 'Review our terms of service governing usage of the Ethio Unique platform.');
+        document.title = language === 'en' ? "Terms of Service | Ethio Unique Academy" : "የአገልግሎት ውሎች | ኢትዮ ዩኒክ አካዳሚ";
+        if (metaDesc) metaDesc.setAttribute('content', language === 'en' ? 'Review our terms of service governing usage of the Ethio Unique platform.' : 'የኢትዮ ዩኒክ ፕላትፎርም አጠቃቀምን የሚገዙ የአገልግሎት ውሎቻችንን ይገምግሙ።');
         window.scrollTo(0, 0);
       } else {
         setCurrentPage('404');
-        document.title = "404 Not Found | Ethio Unique Academy";
-        if (metaDesc) metaDesc.setAttribute('content', 'The requested page could not be found on Ethio Unique Academy.');
+        document.title = language === 'en' ? "404 Not Found | Ethio Unique Academy" : "404 ገጹ አልተገኘም | ኢትዮ ዩኒክ አካዳሚ";
+        if (metaDesc) metaDesc.setAttribute('content', language === 'en' ? 'The requested page could not be found on Ethio Unique Academy.' : 'የተጠየቀው ገጽ በኢትዮ ዩኒክ አካዳሚ ላይ አልተገኘም።');
         window.scrollTo(0, 0);
       }
     };
@@ -75,22 +76,22 @@ const App = () => {
       window.removeEventListener('hashchange', handleRoute);
       window.removeEventListener('popstate', handleRoute);
     };
-  }, []);
+  }, [language]);
 
   return (
     <div className="app-container">
-      <Navbar setCurrentPage={setCurrentPage} />
+      <Navbar setCurrentPage={setCurrentPage} language={language} setLanguage={setLanguage} />
       
       {currentPage === 'home' && (
         <>
-          <Hero triggerToast={triggerToast} />
-          <Features />
-          <HowItWorks />
-          <Pricing triggerToast={triggerToast} />
-          <Reviews />
-          <FAQ />
-          <BottomCTA triggerToast={triggerToast} />
-          <Contact triggerToast={triggerToast} />
+          <Hero triggerToast={triggerToast} language={language} />
+          <Features language={language} />
+          <HowItWorks language={language} />
+          <Pricing triggerToast={triggerToast} language={language} />
+          <Reviews language={language} />
+          <FAQ language={language} />
+          <BottomCTA triggerToast={triggerToast} language={language} />
+          <Contact triggerToast={triggerToast} language={language} />
         </>
       )}
 
@@ -98,7 +99,7 @@ const App = () => {
       {currentPage === 'terms' && <TermsOfService />}
       {currentPage === '404' && <NotFoundPage />}
 
-      <Footer currentPage={currentPage} setCurrentPage={setCurrentPage} />
+      <Footer currentPage={currentPage} setCurrentPage={setCurrentPage} language={language} />
 
       <AnimatePresence>
         {showToast && (
