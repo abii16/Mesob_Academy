@@ -1,5 +1,5 @@
 import React from 'react';
-import FAQItem from '../FAQItem';
+import FAQItem from '../common/FAQItem';
 import '../../styles/FAQ.css';
 
 const FAQ = ({ language }) => {
