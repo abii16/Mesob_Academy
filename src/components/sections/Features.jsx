@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Brain, Download, Zap, Clock, Calendar, Trophy } from 'lucide-react';
 import FeatureCard from '../FeatureCard';
-import './Features.css';
+import '../../styles/Features.css';
 
 const Features = ({ language }) => {
   const t = {
