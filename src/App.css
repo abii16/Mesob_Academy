@@ -52,10 +52,27 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   transition: var(--transition-smooth);
+  position: relative;
+  padding-bottom: 0.25rem;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: width 0.3s ease;
 }
 
 .nav-link:hover {
   color: #FFFFFF;
+}
+
+.nav-link:hover::after {
+  width: 100%;
 }
 
 .nav-login-btn {
