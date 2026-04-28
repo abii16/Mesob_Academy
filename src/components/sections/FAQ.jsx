@@ -1,5 +1,6 @@
 import React from 'react';
 import FAQItem from '../FAQItem';
+import './FAQ.css';
 
 const FAQ = ({ language }) => {
   const t = {

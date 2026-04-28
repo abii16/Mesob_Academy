@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Smartphone, Star, Rocket } from 'lucide-react';
+import './HowItWorks.css';
 
 const HowItWorks = ({ language }) => {
   const t = {

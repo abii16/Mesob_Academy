@@ -1,0 +1,51 @@
+/* How It Works Section */
+.how-it-works-new {
+  padding: 6rem 0;
+  background: #0b0b0c;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .steps-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-icon-wrapper {
+  width: 4rem;
+  height: 4rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+}
+
+.step-title-new {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.step-desc-new {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  max-width: 250px;
+  line-height: 1.6;
+}

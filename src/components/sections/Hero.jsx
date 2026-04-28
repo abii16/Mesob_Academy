@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, Play } from 'lucide-react';
+import './Hero.css';
 
 const Hero = ({ triggerToast, language }) => {
   const t = {
