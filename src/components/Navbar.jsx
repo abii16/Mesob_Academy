@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
-const Navbar = ({ setCurrentPage }) => {
+const Navbar = ({ setCurrentPage, language, setLanguage }) => {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -20,20 +20,59 @@ const Navbar = ({ setCurrentPage }) => {
     }, 100);
   };
 
+  const t = {
+    en: {
+      features: "Features",
+      howItWorks: "How it Works",
+      pricing: "Pricing",
+      reviews: "Reviews",
+      faq: "FAQ",
+      login: "LOGIN",
+      brand: "Ethio Unique Academy"
+    },
+    am: {
+      features: "ባህሪያት",
+      howItWorks: "እንዴት እንደሚሰራ",
+      pricing: "ዋጋዎች",
+      reviews: "አስተያየቶች",
+      faq: "ጥያቄዎች",
+      login: "ይግቡ",
+      brand: "ኢትዮ ዩኒክ አካዳሚ"
+    }
+  };
+
+  const currentT = t[language] || t.en;
+
   return (
     <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
       <div className="container nav-container">
         <div className="nav-brand" onClick={() => setCurrentPage('home')} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <img src="/favicon.png" alt="Ethio Unique Academy Logo" style={{ height: '40px', width: '40px', objectFit: 'contain' }} />
-          <span className="brand-name"><a href="/"  style={{ cursor: 'pointer' , color: 'white', textDecoration: 'none' }}>Ethio Unique Academy</a></span>
+          <span className="brand-name"><a href="/"  style={{ cursor: 'pointer' , color: 'white', textDecoration: 'none' }}>{currentT.brand}</a></span>
         </div>
 
-        <div className="nav-desktop-links">
-          <a href="#features" className="nav-link" onClick={(e) => { e.preventDefault(); navigateToSection('features'); }}>Features</a>
-          <a href="#how-it-works" className="nav-link" onClick={(e) => { e.preventDefault(); navigateToSection('how-it-works'); }}>How it Works</a>
-          <a href="#pricing" className="nav-link" onClick={(e) => { e.preventDefault(); navigateToSection('pricing'); }}>Pricing</a>
-          <a href="#reviews" className="nav-link" onClick={(e) => { e.preventDefault(); navigateToSection('reviews'); }}>Reviews</a>
-          <a href="#faq" className="nav-link" onClick={(e) => { e.preventDefault(); navigateToSection('faq'); }}>FAQ</a>
+        <div className="nav-desktop-links" style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
+          <a href="#features" className="nav-link" onClick={(e) => { e.preventDefault(); navigateToSection('features'); }}>{currentT.features}</a>
+          <a href="#how-it-works" className="nav-link" onClick={(e) => { e.preventDefault(); navigateToSection('how-it-works'); }}>{currentT.howItWorks}</a>
+          <a href="#pricing" className="nav-link" onClick={(e) => { e.preventDefault(); navigateToSection('pricing'); }}>{currentT.pricing}</a>
+          <a href="#reviews" className="nav-link" onClick={(e) => { e.preventDefault(); navigateToSection('reviews'); }}>{currentT.reviews}</a>
+          <a href="#faq" className="nav-link" onClick={(e) => { e.preventDefault(); navigateToSection('faq'); }}>{currentT.faq}</a>
+          
+          <button 
+            onClick={() => setLanguage(language === 'en' ? 'am' : 'en')} 
+            style={{ 
+              background: 'rgba(255, 255, 255, 0.05)', 
+              border: '1px solid rgba(255, 255, 255, 0.1)', 
+              color: 'var(--color-primary)', 
+              padding: '0.25rem 0.75rem', 
+              borderRadius: 'var(--radius-sm)', 
+              cursor: 'pointer',
+              fontWeight: '600',
+              fontSize: '12px'
+            }}
+          >
+            {language === 'en' ? 'አማ' : 'EN'}
+          </button>
         </div>
 
         <button className="mobile-menu-btn" onClick={() => setIsOpen(!isOpen)}>
@@ -50,13 +89,31 @@ const Navbar = ({ setCurrentPage }) => {
             className="mobile-menu"
           >
             <div className="mobile-menu-content">
-              <a href="#features" className="mobile-link" onClick={() => setIsOpen(false)}>Features</a>
-              <a href="#how-it-works" className="mobile-link" onClick={() => setIsOpen(false)}>How it Works</a>
-              <a href="#pricing" className="mobile-link" onClick={() => setIsOpen(false)}>Pricing</a>
-              <a href="#reviews" className="mobile-link" onClick={() => setIsOpen(false)}>Reviews</a>
-              <a href="#faq" className="mobile-link" onClick={() => setIsOpen(false)}>FAQ</a>
+              <a href="#features" className="mobile-link" onClick={() => { setIsOpen(false); navigateToSection('features'); }}>{currentT.features}</a>
+              <a href="#how-it-works" className="mobile-link" onClick={() => { setIsOpen(false); navigateToSection('how-it-works'); }}>{currentT.howItWorks}</a>
+              <a href="#pricing" className="mobile-link" onClick={() => { setIsOpen(false); navigateToSection('pricing'); }}>{currentT.pricing}</a>
+              <a href="#reviews" className="mobile-link" onClick={() => { setIsOpen(false); navigateToSection('reviews'); }}>{currentT.reviews}</a>
+              <a href="#faq" className="mobile-link" onClick={() => { setIsOpen(false); navigateToSection('faq'); }}>{currentT.faq}</a>
               <div className="mobile-actions" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '1rem' }}>
-                <button className="nav-login-btn" style={{ textAlign: 'left', padding: '0.5rem 0' }}>LOGIN</button>
+                <button 
+                  className="nav-login-btn" 
+                  style={{ textAlign: 'center', padding: '0.5rem 1rem', background: 'var(--color-primary)', color: '#000', borderRadius: 'var(--radius-sm)', border: 'none', fontWeight: 'bold' }}
+                >
+                  {currentT.login}
+                </button>
+                <button 
+                  onClick={() => { setLanguage(language === 'en' ? 'am' : 'en'); setIsOpen(false); }} 
+                  style={{ 
+                    background: 'none', 
+                    border: '1px solid rgba(255, 255, 255, 0.2)', 
+                    color: 'white', 
+                    padding: '0.5rem 1rem', 
+                    borderRadius: 'var(--radius-sm)', 
+                    cursor: 'pointer'
+                  }}
+                >
+                  {language === 'en' ? 'አማርኛ' : 'English'}
+                </button>
               </div>
             </div>
           </motion.div>
