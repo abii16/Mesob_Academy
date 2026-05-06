@@ -4,7 +4,7 @@ import '../../styles/layout/Footer.css';
 const Footer = ({ currentPage, setCurrentPage, language }) => {
   const t = {
     en: {
-      pitch: "The AI-first education platform empowering the next generation of Ethiopian students. Pure intelligence. Local context. Global success.",
+      pitch: "The premium education platform empowering the next generation of Ethiopian students. Pure intelligence. Local context. Global success.",
       legal: "Legal",
       privacy: "Privacy Policy",
       terms: "Terms of Service",
@@ -17,7 +17,7 @@ const Footer = ({ currentPage, setCurrentPage, language }) => {
       privacyFirst: "Privacy First"
     },
     am: {
-      pitch: "ቀጣዩን የኢትዮጵያ ተማሪዎች ትውልድ የሚያበረታታ የኢትዮጵያ የመጀመሪያው AI-powered ትምህርት ፕላትፎርም።",
+      pitch: "ቀጣዩን የኢትዮጵያ ተማሪዎች ትውልድ የሚያበረታታ የኢትዮጵያ ቀዳሚ የትምህርት ፕላትፎርም።",
       legal: "ሕጋዊ",
       privacy: "የግላዊነት ፖሊሲ",
       terms: "የአገልግሎት ውሎች",

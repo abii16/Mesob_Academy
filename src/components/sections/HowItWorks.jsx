@@ -11,7 +11,7 @@ const HowItWorks = ({ language }) => {
       steps: [
         { icon: Smartphone, title: '1. Download App', desc: 'Available on Android. Set up your profile in seconds.' },
         { icon: Star, title: '2. Select Your Grade and Stream', desc: 'Choose Grade 9-10 or 11-12 or 9-12 to unlock specialized curriculum content.' },
-        { icon: Rocket, title: '3. Start Dominating', desc: 'Practice daily, ask AI for help, and watch your scores skyrocket.' }
+        { icon: Rocket, title: '3. Start Dominating', desc: 'Practice daily, participate in the community, and watch your scores skyrocket.' }
       ]
     },
     am: {
@@ -20,7 +20,7 @@ const HowItWorks = ({ language }) => {
       steps: [
         { icon: Smartphone, title: '1. መተግበሪያውን ያውርዱ', desc: 'በአንድሮይድ ላይ ይገኛል። በጥቂት ሰከንዶች ውስጥ መገለጫዎን ያዋቅሩ።' },
         { icon: Star, title: '2. ክፍልዎን እና ዘርፍዎን ይምረጡ', desc: 'የተለየ የትምህርት ይዘትን ለመክፈት ከ9-10፣ 11-12 ወይም 9-12 ይምረጡ።' },
-        { icon: Rocket, title: '3. ውጤትዎን ያሳድጉ', desc: 'በየቀኑ ይለማመዱ፣ AIን ለእርዳታ ይጠይቁ እና ውጤትዎ ሲጨምር ይመልከቱ።' }
+        { icon: Rocket, title: '3. ውጤትዎን ያሳድጉ', desc: 'በየቀኑ ይለማመዱ፣ በማህበረሰቡ ውስጥ ይሳተፉ እና ውጤትዎ ሲጨምር ይመልከቱ።' }
       ]
     }
   };

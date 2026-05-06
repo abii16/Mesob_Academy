@@ -7,7 +7,7 @@ const Reviews = ({ language }) => {
     en: {
       subtitle: "TESTIMONIALS",
       title: "Student Success Stories",
-      r1: "Ethio Unique Academy helped me jump from a 320 to a 540 on my final exams. The AI tutor explained Physics like no one else.",
+      r1: "Ethio Unique Academy helped me jump from a 320 to a 540 on my final exams. The detailed notes and community chat explained Physics like no one else.",
       r1Role: "Grade 12 Student",
       r2: "The Offline storage is a lifesaver in my hometown where data is weak. I can study without any interruptions.",
       r2Role: "Grade 10 Student",
@@ -17,7 +17,7 @@ const Reviews = ({ language }) => {
     am: {
       subtitle: "የተማሪዎች ምስክርነት",
       title: "የተማሪዎች ስኬት ታሪኮች",
-      r1: "Ethio Unique Academy helped me jump from a 320 to a 540 on my final exams. The AI tutor explained Physics like no one else.",
+      r1: "ኢትዮ ዩኒክ አካዳሚ ከመጨረሻ ፈተናዬ ውጤት ከ 320 ወደ 540 እንድወጣ ረድቶኛል። ዝርዝር ማስታወሻዎቹ እና የማህበረሰቡ ውይይት ፊዚክስን በሚገባ ያብራራሉ።",
       r1Role: "Grade 12 Student",
       r2: "The Offline storage is a lifesaver in my hometown where data is weak. I can study without any interruptions.",
       r2Role: "Grade 10 Student",

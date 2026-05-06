@@ -48,8 +48,8 @@ const App = () => {
 
       if (!activeRoute || ['features', 'how-it-works', 'pricing', 'reviews', 'faq', 'contact'].includes(activeRoute)) {
         setCurrentPage('home');
-        document.title = "Ethio Unique Academy | AI-Powered Educational SaaS";
-        if (metaDesc) metaDesc.setAttribute('content', language === 'en' ? '#1 EdTech in Ethiopia for Grades 9-12. Master the curriculum and ace your exams with AI tutoring, exam drills, and secure offline video resources.' : 'ለ9-12ኛ ክፍል በኢትዮጵያ #1 የትምህርት ቴክኖሎጂ። ፈተናዎችዎን በAI ቱቶር፣ በፈተና ልምምዶች እና ደህንነቱ በተጠበቀ ከመስመር ውጭ የቪዲዮ ግብአቶች ያጠናክሩ።');
+        document.title = "Ethio Unique Academy | Premium Educational Platform";
+        if (metaDesc) metaDesc.setAttribute('content', language === 'en' ? '#1 EdTech in Ethiopia for Grades 9-12. Master the curriculum and ace your exams with community support, exam drills, and secure offline video resources.' : 'ለ9-12ኛ ክፍል በኢትዮጵያ #1 የትምህርት ቴክኖሎጂ። ፈተናዎችዎን በተማሪዎች ማህበረሰብ፣ በፈተና ልምምዶች እና ደህንነቱ በተጠበቀ ከመስመር ውጭ የቪዲዮ ግብአቶች ያጠናክሩ።');
       } else if (activeRoute === 'privacy') {
         setCurrentPage('privacy');
         document.title = "Privacy Policy | Ethio Unique Academy";
