@@ -8,12 +8,12 @@ const Hero = ({ triggerToast, language }) => {
     en: {
       socialProof: "Trusted by 50,000+ Students & 10+ Dedicated Teachers Working With Us",
       title: <>Master the Curriculum.<br />Ace Your Exams.</>,
-      subtitle: "#1 EdTech platform in Ethiopia for grades 9-12 and freshman. Practice with adaptive testing, secure offline resources, and 24/7 hyper-personalized AI tutoring."
+      subtitle: "#1 EdTech platform in Ethiopia for grades 9-12 and freshman. Practice with adaptive testing, secure offline resources, and active community support."
     },
     am: {
       socialProof: "በ50,000+ ተማሪዎች እና 10+ መምህራን የታመነ",
       title: <>ስርዓተ ትምህርቱን ይቆጣጠሩ።<br />ፈተናዎን በብቃት ይለፉ።</>,
-      subtitle: "በኢትዮጵያ ለ9-12ኛ ክፍል እና ለዩኒቨርሲቲ መግቢያ #1 የትምህርት ቴክኖሎጂ ፕላትፎርም ነው። በተለዋዋጭ የፈተና ጥያቄዎች፣ አስተማማኝ ከመስመር ውጭ የትምህርት ግብአቶች እና የ24/7 AI ድጋፍ ይለማመዱ።"
+      subtitle: "በኢትዮጵያ ለ9-12ኛ ክፍል እና ለዩኒቨርሲቲ መግቢያ #1 የትምህርት ቴክኖሎጂ ፕላትፎርም ነው። በተለዋዋጭ የፈተና ጥያቄዎች፣ አስተማማኝ ከመስመር ውጭ የትምህርት ግብአቶች እና በማህበረሰብ ድጋፍ ይለማመዱ።"
     }
   };
 

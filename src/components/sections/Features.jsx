@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Brain, Download, Zap, Clock, Calendar, Trophy } from 'lucide-react';
+import { Users, Download, Zap, Clock, Calendar, Trophy } from 'lucide-react';
 import FeatureCard from '../common/FeatureCard';
 import '../../styles/sections/Features.css';
 
@@ -9,8 +9,8 @@ const Features = ({ language }) => {
     en: {
       subtitle: "PREMIUM FEATURES",
       title: "Built for Academic Success",
-      aiTutorTitle: "AI Tutor",
-      aiTutorDesc: "24/7 personalized assistance for Physics, Chemistry, and Math. Get step-by-step explanations for complex problems instantly.",
+      communityTitle: "Community Chat",
+      communityDesc: "Connect with thousands of students across Ethiopia. Share notes, discuss problems, and grow together.",
       offlineVaultTitle: "Offline Vault",
       offlineVaultDesc: "No internet? No problem. Download entire subjects and video lessons to study anywhere, anytime securely.",
       quizArenaTitle: "Quiz Arena",
@@ -25,8 +25,8 @@ const Features = ({ language }) => {
     am: {
       subtitle: "ልዩ ባህሪያት",
       title: "ለአካዳሚክ ስኬት የተገነባ",
-      aiTutorTitle: "የAI መምህር",
-      aiTutorDesc: "ለፊዚክስ፣ ኬሚስትሪ እና ሂሳብ የ24/7 ግላዊ ድጋፍ። ለተወሳሰቡ ጥያቄዎች ደረጃ በደረጃ ማብራሪያዎችን ወዲያውኑ ያግኙ።",
+      communityTitle: "የማህበረሰብ ውይይት",
+      communityDesc: "በመላው ኢትዮጵያ ካሉ በሺዎች የሚቆጠሩ ተማሪዎች ጋር ይገናኙ። ማስታወሻዎችን ያካፍሉ፣ ስለ ጥያቄዎች ይወያዩ እና አብረው ያድጉ።",
       offlineVaultTitle: "ከመስመር ውጭ ማስቀመጫ",
       offlineVaultDesc: "ኢንተርኔት የለም? ምንም ችግር የለም። የትም ቦታ ሆነው ለመማር ሙሉ ትምህርቶችን እና የቪዲዮ ትምህርቶችን ያውርዱ።",
       quizArenaTitle: "የፈተና ሜዳ",
@@ -52,9 +52,9 @@ const Features = ({ language }) => {
         
         <div className="features-grid-new">
           <FeatureCard 
-            icon={Brain}
-            title={currentT.aiTutorTitle}
-            desc={currentT.aiTutorDesc}
+            icon={Users}
+            title={currentT.communityTitle}
+            desc={currentT.communityDesc}
             hasBg={true}
           />
           <FeatureCard 
