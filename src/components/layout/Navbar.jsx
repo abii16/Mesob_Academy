@@ -62,7 +62,12 @@ const Navbar = ({ setCurrentPage, language, setLanguage }) => {
           <img
             src="/favicon.png"
             alt="Mesob Academy Logo"
-            style={{ height: "40px", width: "40px", objectFit: "contain" }}
+            style={{
+              height: "40px",
+              width: "40px",
+              objectFit: "cover",
+              borderRadius: "50%",
+            }}
           />
           <span className="brand-name">
             <a
