@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ethiouniqueacademy.vercel.app/</loc>
-    <lastmod>2026-04-27</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://mesobacademy.vercel.app/</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://ethiouniqueacademy.vercel.app/#features</loc>
-    <lastmod>2026-04-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ethiouniqueacademy.vercel.app/#how-it-works</loc>
-    <lastmod>2026-04-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ethiouniqueacademy.vercel.app/#pricing</loc>
-    <lastmod>2026-04-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ethiouniqueacademy.vercel.app/#reviews</loc>
-    <lastmod>2026-04-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ethiouniqueacademy.vercel.app/#faq</loc>
-    <lastmod>2026-04-27</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://mesobacademy.vercel.app/#features</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://ethiouniqueacademy.vercel.app/#contact</loc>
-    <lastmod>2026-04-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://mesobacademy.vercel.app/#how-it-works</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://mesobacademy.vercel.app/#pricing</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://mesobacademy.vercel.app/#reviews</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://mesobacademy.vercel.app/#faq</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://mesobacademy.vercel.app/#contact</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>

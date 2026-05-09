@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ethiounique.com/sitemap.xml
+Sitemap: https://mesobacademy.vercel.app/sitemap.xml
