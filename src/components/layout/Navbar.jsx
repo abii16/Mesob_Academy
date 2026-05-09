@@ -59,16 +59,28 @@ const Navbar = ({ setCurrentPage, language, setLanguage }) => {
             gap: "0.75rem",
           }}
         >
-          <img
-            src="/favicon.png"
-            alt="Mesob Academy Logo"
+          <div
             style={{
               height: "40px",
               width: "40px",
-              objectFit: "cover",
               borderRadius: "50%",
+              overflow: "hidden",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              background: "transparent",
             }}
-          />
+          >
+            <img
+              src="/favicon.png"
+              alt="Mesob Academy Logo"
+              style={{
+                height: "140%", // Zoomed in to hide background
+                width: "140%",
+                objectFit: "cover",
+              }}
+            />
+          </div>
           <span className="brand-name">
             <a
               href="/"
