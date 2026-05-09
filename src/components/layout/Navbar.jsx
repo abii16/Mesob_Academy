@@ -75,8 +75,8 @@ const Navbar = ({ setCurrentPage, language, setLanguage }) => {
               src="/favicon.png"
               alt="Mesob Academy Logo"
               style={{
-                height: "140%", // Zoomed in to hide background
-                width: "140%",
+                height: "115%", // Adjusted zoom to show text
+                width: "115%",
                 objectFit: "cover",
               }}
             />
