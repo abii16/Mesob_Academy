@@ -1,44 +1,87 @@
 # Mesob Academy
 
-A modern, community-driven learning platform focused on Ethiopian culture, cuisine, and skills. **Mesob Academy** is designed to make learning accessible, engaging, and structured through curated courses, mentorship, and real-world projects.
+**Mesob Academy** is a premium EdTech landing experience for Ethiopian students (Grades 9–12) with bilingual support (English/Amharic), rich UI sections, and a mobile-first call‑to‑action. The site highlights key features like offline learning, community chat, adaptive quizzes, and national-exam prep.
 
-## 🌟 Highlights
+## ✨ Key Features
 
-- **Curated Learning Paths**: Structured tracks from beginner to advanced.
-- **Project-Based Learning**: Build practical projects as you learn.
-- **Community & Mentorship**: Learn with peers and get guidance from mentors.
-- **Culture-Centered Content**: Celebrate and preserve Ethiopian knowledge and traditions.
+- **Bilingual UI (EN/AM)** with instant toggle
+- **Hero video** and animated CTAs
+- **Premium feature highlights** (Offline Vault, Quiz Arena, Study Planner, Leaderboard)
+- **Pricing plans** for Grades 9–12
+- **Testimonials, FAQ, and Contact** sections
+- **Privacy Policy & Terms** pages
+- Built with **React + Vite** and **Framer Motion**
+
+## 🧰 Tech Stack
+
+- **React 19**
+- **Vite 8**
+- **Framer Motion** (animations)
+- **Lucide React** (icons)
+- **ESLint**
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-- A modern web browser
-- Internet connection
+- Node.js 18+ (recommended)
+- npm
 
-### Installation (if applicable)
-
-> If this is a web app or API, add setup steps here. For now, clone the repo:
+### Install & Run
 
 ```bash
 git clone https://github.com/abii16/Mesob_Academy.git
 cd Mesob_Academy
+npm install
+npm run dev
 ```
 
-## 🧭 Project Structure
+Then open the local URL from Vite (usually `http://localhost:5173`).
+
+### Build for Production
+
+```bash
+npm run build
+npm run preview
+```
+
+## 📁 Project Structure
 
 ```
 Mesob_Academy/
-├─ (project files)
+├─ public/
+├─ src/
+│  ├─ components/
+│  │  ├─ common/
+│  │  ├─ layout/
+│  │  └─ sections/
+│  ├─ pages/
+│  ├─ styles/
+│  ├─ App.jsx
+│  └─ main.jsx
+├─ index.html
+├─ package.json
+└─ vite.config.js
 ```
 
-## 📚 Usage
+## 🧭 Main Sections
 
-Describe how to run or use the project here.
+- **Hero** (video + app store badges)
+- **Features** (community, offline, quizzes, planner)
+- **How It Works** (3‑step onboarding)
+- **Pricing** (grade‑based plans)
+- **Reviews** (student testimonials)
+- **FAQ**
+- **Contact** (support form with toast feedback)
+
+## 🛡️ Legal Pages
+
+- `/privacy` — Privacy Policy
+- `/terms` — Terms of Service
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please follow these steps:
+Contributions are welcome!
 
 1. Fork the repository
 2. Create a new branch (`git checkout -b feature/your-feature`)
@@ -46,10 +89,10 @@ Contributions are welcome! Please follow these steps:
 4. Push to the branch (`git push origin feature/your-feature`)
 5. Open a Pull Request
 
-## 🛡️ License
+## 📄 License
 
-Add a license here if applicable (e.g., MIT). If you choose one, update this section.
+No license specified yet. Add a license if you want others to reuse or contribute.
 
 ## 📬 Contact
 
-For questions or collaboration, open an issue in the repository.
+Open an issue in the repository for questions, feedback, or collaboration.
