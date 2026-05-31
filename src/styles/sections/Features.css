@@ -83,6 +83,11 @@
   text-decoration: none;
   font-size: 12px;
   font-weight: 600;
+  
+
+}
+.feature-link:hover{
+  color:#0fae44;
 }
 
 /* Leaderboard snippet inside card */

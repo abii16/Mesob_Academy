@@ -11,7 +11,7 @@ const Features = ({ language }) => {
       title: "Built for Academic Success",
       communityTitle: "Community Chat",
       communityDesc: "Connect with thousands of students across Ethiopia. Share notes, discuss problems, and grow together.",
-      offlineVaultTitle: "Offline Vault",
+      offlineVaultTitle: "Offline Resources",
       offlineVaultDesc: "No internet? No problem. Download entire subjects and video lessons to study anywhere, anytime securely.",
       quizArenaTitle: "Exam Simulator",
       quizArenaDesc: "Practice in a quiet study environment with timed past paper booklets designed for optimal Ethiopian national exam pacing.",
