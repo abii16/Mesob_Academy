@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Image Backups
+*_backup.png
+*_backup.jpg
