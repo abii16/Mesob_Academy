@@ -1,0 +1,95 @@
+/* Comparison Table Styling */
+.comparison-section {
+  padding: 6rem 0;
+  background: var(--color-background);
+}
+
+.comparison-desc {
+  max-width: 600px;
+  margin: 0 auto 3rem auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.comparison-table-wrapper {
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow);
+  margin-top: 1rem;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 700px;
+}
+
+.comparison-table th, 
+.comparison-table td {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--border-color);
+  font-family: var(--font-body);
+}
+
+.comparison-table th {
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.comparison-table td.feature-name {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.highlight-column {
+  background: rgba(46, 204, 113, 0.05) !important;
+  border-left: 1px solid rgba(46, 204, 113, 0.15);
+  border-right: 1px solid rgba(46, 204, 113, 0.15);
+}
+
+th.highlight-column {
+  color: var(--color-primary) !important;
+  font-weight: 800;
+  text-align: center;
+}
+
+.cell-center {
+  text-align: center;
+}
+
+.icon-check {
+  color: var(--color-primary);
+  filter: drop-shadow(0 0 4px rgba(46, 204, 113, 0.3));
+}
+
+.icon-x {
+  color: var(--color-error);
+  opacity: 0.45;
+}
+
+.comparison-table tr:hover td:not(.highlight-column) {
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.comparison-table tr:hover td.highlight-column {
+  background: rgba(46, 204, 113, 0.08) !important;
+}
+
+/* Light theme overrides for better contrast */
+.light-theme .highlight-column {
+  background: rgba(46, 204, 113, 0.03) !important;
+}
+.light-theme .comparison-table tr:hover td.highlight-column {
+  background: rgba(46, 204, 113, 0.06) !important;
+}

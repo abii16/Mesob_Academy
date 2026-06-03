@@ -15,6 +15,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 import Hero from "./components/sections/Hero";
 import Features from "./components/sections/Features";
 import HowItWorks from "./components/sections/HowItWorks";
+import Comparison from "./components/sections/Comparison";
 import Pricing from "./components/sections/Pricing";
 import Reviews from "./components/sections/Reviews";
 import FAQ from "./components/sections/FAQ";
@@ -24,6 +25,7 @@ import Contact from "./components/sections/Contact";
 const App = () => {
   const [currentPage, setCurrentPage] = useState("home");
   const [language, setLanguage] = useState("en");
+  const [isBlurred, setIsBlurred] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
   const [showToast, setShowToast] = useState(false);
   const [theme, setTheme] = useState(() => {
@@ -132,8 +134,58 @@ const App = () => {
     };
   }, [language]);
 
+  useEffect(() => {
+    const preventCopy = (e) => {
+      e.preventDefault();
+    };
+    const preventRightClick = (e) => {
+      e.preventDefault();
+    };
+
+    document.addEventListener("copy", preventCopy);
+    document.addEventListener("cut", preventCopy);
+    document.addEventListener("contextmenu", preventRightClick);
+
+    return () => {
+      document.removeEventListener("copy", preventCopy);
+      document.removeEventListener("cut", preventCopy);
+      document.removeEventListener("contextmenu", preventRightClick);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleBlur = () => setIsBlurred(true);
+    const handleFocus = () => setIsBlurred(false);
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        setIsBlurred(true);
+      } else {
+        setIsBlurred(false);
+      }
+    };
+    const handleKeyDown = (e) => {
+      if (e.key === "PrintScreen" || e.keyCode === 44) {
+        setIsBlurred(true);
+        triggerToast(language === "en" ? "Screenshots are protected on this site." : "በዚህ ጣቢያ ላይ ስክሪንሾት ማድረግ አይፈቀድም።");
+        setTimeout(() => setIsBlurred(false), 2000);
+      }
+    };
+
+    window.addEventListener("blur", handleBlur);
+    window.addEventListener("focus", handleFocus);
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    window.addEventListener("keyup", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("blur", handleBlur);
+      window.removeEventListener("focus", handleFocus);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      window.removeEventListener("keyup", handleKeyDown);
+    };
+  }, [language]);
+
   return (
-    <div className="app-container">
+    <div className={`app-container ${isBlurred ? "app-blurred" : ""}`}>
       <Navbar
         setCurrentPage={setCurrentPage}
         language={language}
@@ -147,6 +199,7 @@ const App = () => {
           <Hero triggerToast={triggerToast} language={language} />
           <Features language={language} />
           <HowItWorks language={language} />
+          <Comparison language={language} />
           <Pricing triggerToast={triggerToast} language={language} />
           <Reviews language={language} />
           <FAQ language={language} />

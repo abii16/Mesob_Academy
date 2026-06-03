@@ -94,11 +94,20 @@
   --card-shadow-hover: 0 30px 60px -10px rgba(0, 0, 0, 0.7);
 }
 
-/* Base Resets */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background-color: var(--color-primary);
+  color: #ffffff;
 }
 
 body {
@@ -108,6 +117,16 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   line-height: 1.6;
+  user-select: none;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+}
+
+.app-blurred {
+  filter: blur(25px) !important;
+  pointer-events: none;
+  transition: filter 0.2s ease;
 }
 
 /* Typography Defaults based on Design System */
@@ -315,7 +334,7 @@ p, .body-md {
   --border-color: rgba(15, 23, 42, 0.1);
   --glass-bg: rgba(46, 204, 113, 0.05);
 
-  --nav-bg-scrolled: rgba(248, 250, 252, 0.85);
+  --nav-bg-scrolled: rgba(248, 250, 252, 0.6);
   --nav-border: rgba(15, 23, 42, 0.08);
   --nav-link-color: rgba(15, 23, 42, 0.7);
   --nav-link-hover: #0f172a;
