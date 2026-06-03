@@ -25,12 +25,12 @@
 .privacy-desc {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-primary);
   margin-bottom: 2rem;
 }
 
 .privacy-subtext {
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-secondary);
   margin-bottom: 1.5rem;
 }

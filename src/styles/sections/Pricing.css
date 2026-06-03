@@ -27,12 +27,14 @@
   flex-direction: column;
   position: relative;
   backdrop-filter: blur(20px);
+  box-shadow: var(--card-shadow);
   transition: var(--transition-smooth);
 }
 
 .pricing-card-new:hover {
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: var(--color-primary);
   transform: translateY(-5px);
+  box-shadow: var(--card-shadow-hover);
 }
 
 .pricing-tag {
@@ -103,6 +105,16 @@
   border-color: var(--color-primary);
 }
 
+@media (min-width: 768px) {
+  .highlight-card {
+    transform: scale(1.05);
+    z-index: 2;
+  }
+  .highlight-card:hover {
+    transform: scale(1.07) translateY(-5px);
+  }
+}
+
 .pricing-btn-new {
   width: 100%;
   justify-content: center;
@@ -111,9 +123,9 @@
 }
 
 .pricing-card-new .btn-secondary {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #FFFFFF;
+  background: var(--color-surface-container);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
 }
 
 .pricing-card-new .btn-secondary:hover {

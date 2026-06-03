@@ -48,12 +48,14 @@
   overflow: hidden;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+  box-shadow: var(--card-shadow);
   transition: var(--transition-smooth);
 }
 
 .feature-card-new:hover {
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: var(--color-primary);
   transform: translateY(-5px);
+  box-shadow: var(--card-shadow-hover);
 }
 
 .feature-card-has-bg {

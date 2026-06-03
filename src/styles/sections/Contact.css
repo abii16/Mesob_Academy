@@ -1,7 +1,7 @@
 /* Contact Section */
 .contact-section {
   padding: 6rem 1rem;
-  background: #121214;
+  background: var(--color-background);
 }
 
 .contact-container {
@@ -14,14 +14,14 @@
 }
 
 .contact-desc {
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--color-on-surface-variant);
   margin-top: 1rem;
 }
 
 .contact-form {
   padding: 2.5rem;
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-color);
 }
 
 .form-group {
@@ -31,7 +31,7 @@
 .form-label {
   display: block;
   margin-bottom: 0.5rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--text-primary);
   font-size: 0.9rem;
 }
 
@@ -39,9 +39,9 @@
   width: 100%;
   padding: 0.75rem;
   border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: white;
+  background: var(--color-surface-dim);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
   outline: none;
 }
 
@@ -49,9 +49,9 @@
   width: 100%;
   padding: 0.75rem;
   border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: white;
+  background: var(--color-surface-dim);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
   outline: none;
   resize: none;
 }

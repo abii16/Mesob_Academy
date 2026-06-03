@@ -124,7 +124,7 @@
 .mobile-link {
   font-family: var(--font-display);
   font-size: 1.75rem;
-  color: #FFFFFF;
+  color: var(--text-primary);
   text-decoration: none;
   letter-spacing: 0.05em;
   transition: var(--transition-smooth);
@@ -140,6 +140,19 @@
   align-items: center;
   gap: 1.5rem;
   width: 100%;
+}
+
+.nav-link-active {
+  color: var(--nav-link-hover) !important;
+}
+
+.nav-link-active::after {
+  width: 100% !important;
+}
+
+.mobile-link-active {
+  color: var(--color-primary) !important;
+  font-weight: 700;
 }
 
 @media (max-width: 768px) {

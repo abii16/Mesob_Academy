@@ -55,7 +55,6 @@ const Features = ({ language }) => {
             icon={Users}
             title={currentT.communityTitle}
             desc={currentT.communityDesc}
-            hasBg={true}
           />
           <FeatureCard
             icon={Download}

@@ -27,7 +27,7 @@ const App = () => {
   const [toastMessage, setToastMessage] = useState("");
   const [showToast, setShowToast] = useState(false);
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem("theme") || "dark";
+    return localStorage.getItem("theme") || "light";
   });
   const toastTimeoutRef = useRef(null);
 

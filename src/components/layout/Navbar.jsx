@@ -6,9 +6,41 @@ import "../../styles/layout/Navbar.css";
 const Navbar = ({ setCurrentPage, language, setLanguage, theme, toggleTheme }) => {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+
+      // Reset if scrolled near the top (hero section)
+      if (window.scrollY < 100) {
+        setActiveSection("");
+        return;
+      }
+
+      // Scroll Spy to highlight current section
+      const sections = ["features", "how-it-works", "pricing", "reviews", "faq", "contact"];
+      const scrollPosition = window.scrollY + 200;
+      let matched = false;
+
+      for (const section of sections) {
+        const el = document.getElementById(section);
+        if (el) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (scrollPosition >= top && scrollPosition < top + height) {
+            setActiveSection(section);
+            matched = true;
+            break;
+          }
+        }
+      }
+
+      if (!matched) {
+        setActiveSection("");
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -66,10 +98,14 @@ const Navbar = ({ setCurrentPage, language, setLanguage, theme, toggleTheme }) =
           />
           <span className="brand-name">
             <a
-              href="/"
+              onClick={(e) => {
+                e.preventDefault();
+                setCurrentPage("home");
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
               style={{
                 cursor: "pointer",
-                color: "white",
+                color: "var(--text-primary)",
                 textDecoration: "none",
               }}
             >
@@ -81,7 +117,7 @@ const Navbar = ({ setCurrentPage, language, setLanguage, theme, toggleTheme }) =
         <div className="nav-desktop-links">
           <a
             href="#features"
-            className="nav-link"
+            className={`nav-link ${activeSection === "features" ? "nav-link-active" : ""}`}
             onClick={(e) => {
               e.preventDefault();
               navigateToSection("features");
@@ -91,7 +127,7 @@ const Navbar = ({ setCurrentPage, language, setLanguage, theme, toggleTheme }) =
           </a>
           <a
             href="#how-it-works"
-            className="nav-link"
+            className={`nav-link ${activeSection === "how-it-works" ? "nav-link-active" : ""}`}
             onClick={(e) => {
               e.preventDefault();
               navigateToSection("how-it-works");
@@ -101,7 +137,7 @@ const Navbar = ({ setCurrentPage, language, setLanguage, theme, toggleTheme }) =
           </a>
           <a
             href="#pricing"
-            className="nav-link"
+            className={`nav-link ${activeSection === "pricing" ? "nav-link-active" : ""}`}
             onClick={(e) => {
               e.preventDefault();
               navigateToSection("pricing");
@@ -111,7 +147,7 @@ const Navbar = ({ setCurrentPage, language, setLanguage, theme, toggleTheme }) =
           </a>
           <a
             href="#reviews"
-            className="nav-link"
+            className={`nav-link ${activeSection === "reviews" ? "nav-link-active" : ""}`}
             onClick={(e) => {
               e.preventDefault();
               navigateToSection("reviews");
@@ -121,7 +157,7 @@ const Navbar = ({ setCurrentPage, language, setLanguage, theme, toggleTheme }) =
           </a>
           <a
             href="#faq"
-            className="nav-link"
+            className={`nav-link ${activeSection === "faq" ? "nav-link-active" : ""}`}
             onClick={(e) => {
               e.preventDefault();
               navigateToSection("faq");
@@ -131,7 +167,7 @@ const Navbar = ({ setCurrentPage, language, setLanguage, theme, toggleTheme }) =
           </a>
           <a
             href="#contact"
-            className="nav-link"
+            className={`nav-link ${activeSection === "contact" ? "nav-link-active" : ""}`}
             onClick={(e) => {
               e.preventDefault();
               navigateToSection("contact");
@@ -191,7 +227,7 @@ const Navbar = ({ setCurrentPage, language, setLanguage, theme, toggleTheme }) =
             <div className="mobile-menu-content">
               <a
                 href="#features"
-                className="mobile-link"
+                className={`mobile-link ${activeSection === "features" ? "mobile-link-active" : ""}`}
                 onClick={() => {
                   setIsOpen(false);
                   navigateToSection("features");
@@ -201,7 +237,7 @@ const Navbar = ({ setCurrentPage, language, setLanguage, theme, toggleTheme }) =
               </a>
               <a
                 href="#how-it-works"
-                className="mobile-link"
+                className={`mobile-link ${activeSection === "how-it-works" ? "mobile-link-active" : ""}`}
                 onClick={() => {
                   setIsOpen(false);
                   navigateToSection("how-it-works");
@@ -211,7 +247,7 @@ const Navbar = ({ setCurrentPage, language, setLanguage, theme, toggleTheme }) =
               </a>
               <a
                 href="#pricing"
-                className="mobile-link"
+                className={`mobile-link ${activeSection === "pricing" ? "mobile-link-active" : ""}`}
                 onClick={() => {
                   setIsOpen(false);
                   navigateToSection("pricing");
@@ -221,7 +257,7 @@ const Navbar = ({ setCurrentPage, language, setLanguage, theme, toggleTheme }) =
               </a>
               <a
                 href="#reviews"
-                className="mobile-link"
+                className={`mobile-link ${activeSection === "reviews" ? "mobile-link-active" : ""}`}
                 onClick={() => {
                   setIsOpen(false);
                   navigateToSection("reviews");
@@ -231,7 +267,7 @@ const Navbar = ({ setCurrentPage, language, setLanguage, theme, toggleTheme }) =
               </a>
               <a
                 href="#faq"
-                className="mobile-link"
+                className={`mobile-link ${activeSection === "faq" ? "mobile-link-active" : ""}`}
                 onClick={() => {
                   setIsOpen(false);
                   navigateToSection("faq");
@@ -241,7 +277,7 @@ const Navbar = ({ setCurrentPage, language, setLanguage, theme, toggleTheme }) =
               </a>
               <a
                 href="#contact"
-                className="mobile-link"
+                className={`mobile-link ${activeSection === "contact" ? "mobile-link-active" : ""}`}
                 onClick={() => {
                   setIsOpen(false);
                   navigateToSection("contact");

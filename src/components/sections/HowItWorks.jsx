@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Smartphone, Star, Rocket } from "lucide-react";
+import { Smartphone, Star, Rocket, ArrowRight, ArrowDown } from "lucide-react";
 import "../../styles/sections/HowItWorks.css";
 
 const HowItWorks = ({ language }) => {
@@ -61,20 +61,28 @@ const HowItWorks = ({ language }) => {
 
         <div className="steps-grid">
           {currentT.steps.map((step, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="step-item"
-            >
-              <div className="step-icon-wrapper">
-                <step.icon size={24} />
-              </div>
-              <h3 className="step-title-new">{step.title}</h3>
-              <p className="step-desc-new">{step.desc}</p>
-            </motion.div>
+            <React.Fragment key={i}>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="step-item"
+              >
+                <div className="step-icon-wrapper">
+                  <step.icon size={24} />
+                </div>
+                <h3 className="step-title-new">{step.title}</h3>
+                <p className="step-desc-new">{step.desc}</p>
+              </motion.div>
+              
+              {i < currentT.steps.length - 1 && (
+                <div className="step-arrow-container">
+                  <ArrowRight className="step-arrow-desktop" size={24} />
+                  <ArrowDown className="step-arrow-mobile" size={24} />
+                </div>
+              )}
+            </React.Fragment>
           ))}
         </div>
       </div>

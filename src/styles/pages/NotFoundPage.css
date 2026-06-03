@@ -25,7 +25,7 @@
 .not-found-desc {
   font-size: 1.25rem;
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-primary);
   margin-bottom: 2rem;
 }
 
