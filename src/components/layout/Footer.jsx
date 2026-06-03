@@ -124,7 +124,12 @@ const Footer = ({ currentPage, setCurrentPage, language }) => {
       </div>
 
       <div className="container footer-bottom-new">
-        <p className="footer-copyright">{currentT.copyright}</p>
+        <div style={{ display: "flex", flexDirection: "column", gap: "0.25rem", alignItems: "flex-start" }}>
+          <p className="footer-copyright" style={{ margin: 0 }}>{currentT.copyright}</p>
+          <p style={{ fontSize: "11px", opacity: 0.7, margin: 0, color: "var(--text-secondary)" }}>
+            Created by <a href="https://t.me/" target="_blank" rel="noreferrer" style={{ color: "var(--color-primary)", textDecoration: "none", fontWeight: "600" }}>Daniel F</a>
+          </p>
+        </div>
         <div className="footer-badges">
           <span>{currentT.verified}</span>
           <span>{currentT.privacyFirst}</span>
