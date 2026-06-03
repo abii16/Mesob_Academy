@@ -1,7 +1,7 @@
 /* Pricing Section */
 .pricing-new {
   padding: 6rem 0;
-  background: #121214;
+  background: var(--color-surface-dim);
 }
 
 .pricing-grid-new {
@@ -19,8 +19,8 @@
 }
 
 .pricing-card-new {
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: var(--pricing-card-bg);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 4rem 3rem;
   display: flex;
@@ -45,6 +45,7 @@
   padding: 0.25rem 0.75rem;
   border-radius: var(--radius-full);
   background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
 }
 
 .premium-tag {
@@ -56,11 +57,12 @@
   font-family: var(--font-display);
   font-size: 2rem;
   margin-bottom: 0.5rem;
+  color: var(--text-primary);
 }
 
 .pricing-subtitle-new {
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-secondary);
   margin-bottom: 2rem;
 }
 
@@ -68,12 +70,13 @@
   font-family: var(--font-display);
   font-size: 3.5rem;
   margin-bottom: 2rem;
+  color: var(--text-primary);
 }
 
 .pricing-price-new .currency {
   font-family: var(--font-body);
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-secondary);
 }
 
 .pricing-features-new {
@@ -87,7 +90,7 @@
   align-items: center;
   gap: 0.75rem;
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-secondary);
   margin-bottom: 1rem;
 }
 

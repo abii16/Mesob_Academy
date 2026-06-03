@@ -71,13 +71,21 @@
 
   /* Legacy & Utility Mapping */
   --bg-color: var(--color-background);
-  --text-primary: #FFFFFF; /* From Brand Description for Foreground */
+  --text-primary: var(--color-on-surface); /* Make primary text responsive to theme colors */
   --text-secondary: var(--color-on-surface-variant);
   --primary-color: var(--color-primary);
   --secondary-color: var(--color-secondary);
   --border-color: rgba(255, 255, 255, 0.15); /* Luminous Border (15% white) */
   --glass-bg: rgba(46, 204, 113, 0.1); /* Liquid Glass Tint (10-40% opacity) */
   --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Theme-specific custom variables */
+  --nav-bg-scrolled: rgba(18, 18, 20, 0.6);
+  --nav-border: rgba(255, 255, 255, 0.08);
+  --nav-link-color: rgba(255, 255, 255, 0.7);
+  --nav-link-hover: #FFFFFF;
+  --pricing-card-bg: linear-gradient(to bottom, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+  --hero-overlay: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(18, 18, 20, 0.9) 100%);
 }
 
 /* Base Resets */
@@ -280,5 +288,32 @@ p, .body-md {
 
 .text-accent-color {
   color: #FFFFFF !important;
+}
+
+/* Light Theme Color Variables Overrides */
+.light-theme {
+  --color-background: #f8fafc;
+  --color-on-background: #0f172a;
+  --color-surface: #ffffff;
+  --color-surface-dim: #f1f5f9;
+  --color-surface-bright: #e2e8f0;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f8fafc;
+  --color-surface-container: #f1f5f9;
+  --color-surface-container-high: #e2e8f0;
+  --color-surface-container-highest: #cbd5e1;
+  --color-on-surface: #0f172a;
+  --color-on-surface-variant: #475569;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --border-color: rgba(15, 23, 42, 0.1);
+  --glass-bg: rgba(46, 204, 113, 0.05);
+
+  --nav-bg-scrolled: rgba(248, 250, 252, 0.85);
+  --nav-border: rgba(15, 23, 42, 0.08);
+  --nav-link-color: rgba(15, 23, 42, 0.7);
+  --nav-link-hover: #0f172a;
+  --pricing-card-bg: linear-gradient(to bottom, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.005));
+  --hero-overlay: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, #f8fafc 100%);
 }
 

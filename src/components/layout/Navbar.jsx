@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import "../../styles/layout/Navbar.css";
 
-const Navbar = ({ setCurrentPage, language, setLanguage }) => {
+const Navbar = ({ setCurrentPage, language, setLanguage, theme, toggleTheme }) => {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -155,6 +155,24 @@ const Navbar = ({ setCurrentPage, language, setLanguage }) => {
           >
             {language === "en" ? "አማ" : "EN"}
           </button>
+
+          <button
+            onClick={toggleTheme}
+            style={{
+              background: "rgba(255, 255, 255, 0.05)",
+              border: "1px solid rgba(255, 255, 255, 0.1)",
+              color: "var(--color-primary)",
+              padding: "0.25rem 0.5rem",
+              borderRadius: "var(--radius-sm)",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+            aria-label="Toggle Theme"
+          >
+            {theme === "dark" ? <Sun size={14} /> : <Moon size={14} />}
+          </button>
         </div>
 
         <button className="mobile-menu-btn" onClick={() => setIsOpen(!isOpen)}>
@@ -247,14 +265,35 @@ const Navbar = ({ setCurrentPage, language, setLanguage }) => {
                   }}
                   style={{
                     background: "none",
-                    border: "1px solid rgba(255, 255, 255, 0.2)",
-                    color: "white",
+                    border: "1px solid var(--border-color)",
+                    color: "var(--text-primary)",
                     padding: "0.5rem 1rem",
                     borderRadius: "var(--radius-sm)",
                     cursor: "pointer",
                   }}
                 >
                   {language === "en" ? "አማርኛ" : "English"}
+                </button>
+                <button
+                  onClick={() => {
+                    toggleTheme();
+                    setIsOpen(false);
+                  }}
+                  style={{
+                    background: "none",
+                    border: "1px solid var(--border-color)",
+                    color: "var(--text-primary)",
+                    padding: "0.5rem 1rem",
+                    borderRadius: "var(--radius-sm)",
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "0.5rem",
+                  }}
+                >
+                  {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+                  {theme === "dark" ? (language === "en" ? "Light Mode" : "የብርሃን ሁነታ") : (language === "en" ? "Dark Mode" : "የጨለማ ሁነታ")}
                 </button>
               </div>
             </div>

@@ -26,6 +26,9 @@ const App = () => {
   const [language, setLanguage] = useState("en");
   const [toastMessage, setToastMessage] = useState("");
   const [showToast, setShowToast] = useState(false);
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("theme") || "dark";
+  });
   const toastTimeoutRef = useRef(null);
 
   const triggerToast = (msg) => {
@@ -36,6 +39,23 @@ const App = () => {
     }
     toastTimeoutRef.current = setTimeout(() => setShowToast(false), 3000);
   };
+
+  const toggleTheme = () => {
+    setTheme((prev) => {
+      const next = prev === "dark" ? "light" : "dark";
+      localStorage.setItem("theme", next);
+      return next;
+    });
+  };
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (theme === "light") {
+      root.classList.add("light-theme");
+    } else {
+      root.classList.remove("light-theme");
+    }
+  }, [theme]);
 
   useEffect(() => {
     const handleRoute = () => {
@@ -118,6 +138,8 @@ const App = () => {
         setCurrentPage={setCurrentPage}
         language={language}
         setLanguage={setLanguage}
+        theme={theme}
+        toggleTheme={toggleTheme}
       />
 
       {currentPage === "home" && (
