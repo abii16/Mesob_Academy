@@ -68,18 +68,18 @@ const Hero = ({ triggerToast, language }) => {
         >
           <div className="store-badges" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
             <img 
-              src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" 
+              src="/app-store-badge.svg" 
               alt="Download on the App Store" 
               style={{ height: '40px', cursor: 'pointer', transition: 'transform 0.2s' }} 
               className="store-badge-img"
-              onClick={() => triggerToast('iOS Version Coming Soon')}
+              onClick={() => triggerToast(language === 'en' ? 'iOS Version Coming Soon' : 'የiOS ስሪት በቅርቡ ይመጣል')}
             />
             <img 
-              src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" 
+              src="/google-play-badge.svg" 
               alt="Get it on Google Play" 
               style={{ height: '40px', cursor: 'pointer', transition: 'transform 0.2s' }} 
               className="store-badge-img"
-              onClick={() => triggerToast('Android Version Coming Soon')}
+              onClick={() => triggerToast(language === 'en' ? 'Android Version Coming Soon' : 'የAndroid ስሪት በቅርቡ ይመጣል')}
             />
           </div>
           <button className="btn btn-secondary" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>

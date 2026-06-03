@@ -42,7 +42,7 @@ const BottomCTA = ({ triggerToast, language }) => {
             }}
           >
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
+              src="/app-store-badge.svg"
               alt="Download on the App Store"
               style={{
                 height: "44px",
@@ -53,7 +53,7 @@ const BottomCTA = ({ triggerToast, language }) => {
               onClick={() => triggerToast(currentT.iosMsg)}
             />
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+              src="/google-play-badge.svg"
               alt="Get it on Google Play"
               style={{
                 height: "44px",

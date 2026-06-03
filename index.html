@@ -30,7 +30,7 @@
             property="og:description"
             content="#1 EdTech in Ethiopia for Grades 9-12. Master the curriculum and ace your exams with community support."
         />
-        <meta property="og:image" content="/favicon.png" />
+        <meta property="og:image" content="/og-image.png" />
         <meta property="og:site_name" content="Mesob Academy" />
 
         <!-- Twitter -->
@@ -47,28 +47,39 @@
             property="twitter:description"
             content="#1 EdTech in Ethiopia for Grades 9-12. Master the curriculum."
         />
-        <meta property="twitter:image" content="/favicon.png" />
+        <meta property="twitter:image" content="/og-image.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    </head>
+        <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+        <link rel="canonical" href="https://mesobacademy.vercel.app/" />
+        <link rel="alternate" hreflang="en" href="https://mesobacademy.vercel.app/" />
+        <link rel="alternate" hreflang="am" href="https://mesobacademy.vercel.app/" />
+        <link rel="alternate" hreflang="x-default" href="https://mesobacademy.vercel.app/" />
 
-    <script type="application/ld+json">
-        [
-            {
-                "@context": "https://schema.org",
-                "@type": "WebSite",
-                "name": "Mesob Academy",
-                "url": "https://mesobacademy.vercel.app/"
-            },
-            {
-                "@context": "https://schema.org",
-                "@type": "Organization",
-                "name": "Mesob Academy",
-                "url": "https://mesobacademy.vercel.app/",
-                "logo": "https://mesobacademy.vercel.app/favicon.png"
-            }
-        ]
-    </script>
+        <!-- Structured Data / JSON-LD -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Mesob Academy",
+            "alternateName": [
+                "Mesob",
+                "Mesob Academy Ethiopia",
+                "EthioUnique"
+            ],
+            "url": "https://mesobacademy.vercel.app/"
+        }
+        </script>
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Mesob Academy",
+            "url": "https://mesobacademy.vercel.app/",
+            "logo": "https://mesobacademy.vercel.app/favicon.png"
+        }
+        </script>
+    </head>
 
     <body>
         <div id="root"></div>
