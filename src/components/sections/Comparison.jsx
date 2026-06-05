@@ -10,7 +10,7 @@ const Comparison = ({ language }) => {
       title: "How We Stack Up",
       desc: "Compare Mesob Academy's advanced offline learning and exam simulation platform with other popular student apps in Ethiopia.",
       featureCol: "Key Features",
-      mesobCol: "Mesob Academy",
+      mesobCol: "Mesob App",
       qelemeCol: "Qeleme App",
       temariCol: "Temari App",
       branaCol: "Brana App",
