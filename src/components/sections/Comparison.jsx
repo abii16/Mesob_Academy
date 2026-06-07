@@ -1,129 +1,82 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Check, X } from "lucide-react";
+import { Check } from "lucide-react";
 import "../../styles/sections/Comparison.css";
 
 const Comparison = ({ language }) => {
   const t = {
     en: {
-      subtitle: "THE ULTIMATE CHOICE",
-      title: "How We Stack Up",
-      desc: "Compare Mesob Academy's advanced offline learning and exam simulation platform with other popular student apps in Ethiopia.",
-      featureCol: "Key Features",
-      mesobCol: "Mesob App",
-      qelemeCol: "Qeleme App",
-      temariCol: "Temari App",
-      branaCol: "Brana App",
+      subtitle: "WHY MESOB ACADEMY",
+      title: "Built Around Real Study Needs",
+      desc: "Mesob Academy is built to help students learn with clarity, consistency, and confidence.",
+      featureCol: "What Students Get",
+      detailCol: "Why It Matters",
       features: [
         {
-          name: "New Curriculum Resources",
-          mesob: true,
-          qeleme: true,
-          temari: true,
-          brana: true,
+          name: "Offline-first learning access",
+          detail:
+            "Students can keep studying even when internet access is limited or unstable.",
         },
         {
-          name: "Offline PDF Notes & Booklets",
-          mesob: true,
-          qeleme: false,
-          temari: true,
-          brana: true,
+          name: "Exam-focused practice experience",
+          detail:
+            "Learning flows are designed to support revision, self-testing, and stronger exam readiness.",
         },
         {
-          name: "Interactive Mock Testing",
-          mesob: true,
-          qeleme: true,
-          temari: false,
-          brana: false,
+          name: "Structured study support",
+          detail:
+            "Built-in planning and focus tools help students stay consistent instead of studying randomly.",
         },
         {
-          name: "Vibrant Peer Discussion Rooms",
-          mesob: true,
-          qeleme: true,
-          temari: false,
-          brana: false,
+          name: "Bilingual, local-first experience",
+          detail:
+            "The platform is designed for Ethiopian students with a clearer, more familiar learning journey.",
         },
         {
-          name: "Study Planner & Pomodoro Timer",
-          mesob: true,
-          qeleme: false,
-          temari: false,
-          brana: false,
+          name: "Community-powered motivation",
+          detail:
+            "Students can feel more supported, connected, and accountable throughout their learning process.",
         },
         {
-          name: "Speed-Pacing Exam Analytics",
-          mesob: true,
-          qeleme: false,
-          temari: false,
-          brana: false,
-        },
-        {
-          name: "One-Time Payment (No Monthly Fees)",
-          mesob: true,
-          qeleme: false,
-          temari: false,
-          brana: false,
+          name: "Modern digital learning foundation",
+          detail:
+            "Mesob Academy is being shaped as a serious long-term product, not just a simple content page.",
         },
       ],
     },
     am: {
-      subtitle: "ትክክለኛው ምርጫ",
-      title: "ከሌሎች ፕላትፎርሞች ጋር ሲነጻጸር",
-      desc: "የMesob Academyን የላቀ ከመስመር ውጭ (offline) መማሪያ እና የፈተና ማስመስያ ፕላትፎርም በኢትዮጵያ ካሉ ሌሎች ታዋቂ መተግበሪያዎች ጋር ያወዳድሩ።",
-      featureCol: "ዋና ዋና ባህሪያት",
-      mesobCol: "Mesob Academy",
-      qelemeCol: "Qeleme App",
-      temariCol: "Temari App",
-      branaCol: "Brana App",
+      subtitle: "ለምን Mesob Academy",
+      title: "ለእውነተኛ የጥናት ፍላጎት የተገነባ",
+      desc: "Mesob Academy ተማሪዎች በግልጽነት፣ በቀጣይነት እና በመተማመን እንዲማሩ እንዲያግዝ ተገንብቷል።",
+      featureCol: "ተማሪዎች የሚያገኙት",
+      detailCol: "ለምን አስፈላጊ ነው",
       features: [
         {
-          name: "ከአዲሱ ሥርዓተ ትምህርት ጋር የተጣጣሙ ግብዓቶች",
-          mesob: true,
-          qeleme: true,
-          temari: true,
-          brana: true,
+          name: "ከመስመር ውጭ የሚሰራ የመማር መዳረሻ",
+          detail: "የኢንተርኔት ግንኙነት ሲያንስ ወይም ሲቋረጥ እንኳን ተማሪዎች መማራቸውን ሊቀጥሉ ይችላሉ።",
         },
         {
-          name: "የጥናት ማስታወሻዎች ከመስመር ውጭ (offline)",
-          mesob: true,
-          qeleme: false,
-          temari: true,
-          brana: true,
+          name: "በፈተና ላይ ያተኮረ የልምምድ ልምድ",
+          detail: "የመማር ሂደቶቹ ለክለሳ፣ ለራስ-ፈተና እና ለተሻለ የፈተና ዝግጅት የተዘጋጁ ናቸው።",
         },
         {
-          name: "አሳታፊ የልምምድ/የሙከራ ፈተናዎች",
-          mesob: true,
-          qeleme: true,
-          temari: false,
-          brana: false,
+          name: "የተዋቀረ የጥናት ድጋፍ",
+          detail:
+            "የተገነቡ የእቅድ እና የትኩረት መሳሪያዎች ተማሪዎች በዘፈቀደ ሳይሆን በቀጣይነት እንዲያጠኑ ይረዳሉ።",
         },
         {
-          name: "የተማሪዎች የጋራ የውይይት መድረክ",
-          mesob: true,
-          qeleme: true,
-          temari: false,
-          brana: false,
+          name: "ሁለት ቋንቋ እና አካባቢን ያማከለ ልምድ",
+          detail: "ፕላትፎርሙ ለኢትዮጵያ ተማሪዎች የበለጠ ግልጽ እና የተለመደ የመማር ጉዞ እንዲሰጥ ተዘጋጅቷል።",
         },
         {
-          name: "የጥናት እቅድ አውጪ እና የትኩረት ሰዓት (Pomodoro)",
-          mesob: true,
-          qeleme: false,
-          temari: false,
-          brana: false,
+          name: "በማህበረሰብ የሚነቃቃ መነሳሳት",
+          detail:
+            "ተማሪዎች በመማር ሂደታቸው ውስጥ የበለጠ ድጋፍ፣ ግንኙነት እና ተጠያቂነት እንዲሰማቸው ያግዛል።",
         },
         {
-          name: "የፍጥነት እና የጊዜ አጠቃቀም ትንታኔ",
-          mesob: true,
-          qeleme: false,
-          temari: false,
-          brana: false,
-        },
-        {
-          name: "የአንድ ጊዜ ክፍያ (ወርሃዊ ክፍያ የሌለው)",
-          mesob: true,
-          qeleme: false,
-          temari: false,
-          brana: false,
+          name: "ዘመናዊ የዲጂታል ትምህርት መሠረት",
+          detail:
+            "Mesob Academy እንደ ቀላል የይዘት ገጽ ሳይሆን እንደ ከባድ የረጅም ጊዜ ምርት እየተገነባ ነው።",
         },
       ],
     },
@@ -150,45 +103,26 @@ const Comparison = ({ language }) => {
           <table className="comparison-table">
             <thead>
               <tr>
-                <th>{currentT.featureCol}</th>
-                <th className="highlight-column">{currentT.mesobCol}</th>
-                <th>{currentT.qelemeCol}</th>
-                <th>{currentT.temariCol}</th>
-                <th>{currentT.branaCol}</th>
+                <th className="highlight-column">{currentT.featureCol}</th>
+                <th>{currentT.detailCol}</th>
               </tr>
             </thead>
             <tbody>
               {currentT.features.map((feature, idx) => (
                 <tr key={idx}>
-                  <td className="feature-name">{feature.name}</td>
-                  <td className="highlight-column cell-center">
-                    {feature.mesob ? (
-                      <Check className="icon-check" size={20} />
-                    ) : (
-                      <X className="icon-x" size={20} />
-                    )}
+                  <td className="feature-name highlight-column">
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "0.75rem",
+                      }}
+                    >
+                      <Check className="icon-check" size={18} />
+                      <span>{feature.name}</span>
+                    </div>
                   </td>
-                  <td className="cell-center">
-                    {feature.qeleme ? (
-                      <Check className="icon-check" size={20} />
-                    ) : (
-                      <X className="icon-x" size={20} />
-                    )}
-                  </td>
-                  <td className="cell-center">
-                    {feature.temari ? (
-                      <Check className="icon-check" size={20} />
-                    ) : (
-                      <X className="icon-x" size={20} />
-                    )}
-                  </td>
-                  <td className="cell-center">
-                    {feature.brana ? (
-                      <Check className="icon-check" size={20} />
-                    ) : (
-                      <X className="icon-x" size={20} />
-                    )}
-                  </td>
+                  <td>{feature.detail}</td>
                 </tr>
               ))}
             </tbody>
