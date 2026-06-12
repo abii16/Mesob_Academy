@@ -83,7 +83,7 @@ const Reviews = ({ language }) => {
     en: {
       subtitle: "TESTIMONIALS",
       title: "Student Success Stories",
-      r1: "Mesob Academy helped me jump from a 320 to a 540 on my final exams. The detailed notes and community chat explained Physics like no one else.",
+      r1: "Mesob Academy helped me jump from a 280 to a 540 on my entrance national exam. The detailed notes and community chat explained Physics like no one else.",
       r1Role: "Grade 12 Student",
       r2: "The Offline storage is a lifesaver in my hometown where data is weak. I can study without any interruptions.",
       r2Role: "Grade 10 Student",
@@ -93,7 +93,7 @@ const Reviews = ({ language }) => {
     am: {
       subtitle: "የተማሪዎች ምስክርነት",
       title: "የተማሪዎች ስኬት ታሪኮች",
-      r1: "ኢትዮ ዩኒክ አካዳሚ ከመጨረሻ ፈተናዬ ውጤት ከ 320 ወደ 540 እንድወጣ ረድቶኛል። ዝርዝር ማስታወሻዎቹ እና የማህበረሰቡ ውይይት ፊዚክስን በሚገባ ያብራራሉ።",
+      r1: "ኢትዮ ዩኒክ አካዳሚ ከብሔራዊ የመግቢያ ፈተናዬ ውጤት ከ 280 ወደ 540 እንድወጣ ረድቶኛል። ዝርዝር ማስታወሻዎቹ እና የማህበረሰቡ ውይይት ፊዚክስን በሚገባ ያብራራሉ።",
       r1Role: "የ12ኛ ክፍል ተማሪ",
       r2: "የከመስመር ውጭ (Offline) ማከማቻው በከተማዬ ውስጥ የኔትወርክ ዳታ ሲዳከም ትልቅ እፎይታ ነው። ያለ ምንም መቆራረጥ ማጥናት እችላለሁ።",
       r2Role: "የ10ኛ ክፍል ተማሪ",
