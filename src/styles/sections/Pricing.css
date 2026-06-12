@@ -103,6 +103,7 @@
 .highlight-card {
   background: rgba(46, 204, 113, 0.1);
   border-color: var(--color-primary);
+  padding: 5.5rem 3rem;
 }
 
 @media (min-width: 768px) {
