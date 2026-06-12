@@ -19,7 +19,7 @@ const Pricing = ({ triggerToast, language }) => {
       focused: "FOCUSED",
       grade910Title: "Grades 9 & 10",
       grade910Subtitle: "Full Access Package",
-      grade910Price: "400",
+      grade910Price: "450",
       grade910Currency: "ETB/Two Year",
       grade910F1: "All Grade 9 & 10 Subjects",
       grade910F2: "Interactive Community Hub",
@@ -69,7 +69,7 @@ const Pricing = ({ triggerToast, language }) => {
       focused: "ልዩ ትኩረት",
       grade910Title: "ከ9 - 10ኛ ክፍል",
       grade910Subtitle: "ሙሉ ጥቅል",
-      grade910Price: "400",
+      grade910Price: "450",
       grade910Currency: "ብር / ለሁለት አመት",
       grade910F1: "ሁሉም የ9 እና 10ኛ ክፍል ትምህርቶች",
       grade910F2: "የተማሪዎች ማህበረሰብ",
@@ -117,7 +117,7 @@ const Pricing = ({ triggerToast, language }) => {
 
   // Pricing Logic
   const calculatedPrice = useMemo(() => {
-    if (gradeBand === '9-10') return 400;
+    if (gradeBand === '9-10') return 450;
     if (gradeBand === '11-12') return 450;
     if (gradeBand === '9-12') return 700;
     return 0;
@@ -196,7 +196,7 @@ const Pricing = ({ triggerToast, language }) => {
                 <h3 className="pricing-title-new">{currentT.grade910Title}</h3>
                 <p className="pricing-subtitle-new">{currentT.grade910Subtitle}</p>
                 <div className="pricing-price-new">
-                  400 <span className="currency">{currentT.grade910Currency}</span>
+                  {currentT.grade910Price} <span className="currency">{currentT.grade910Currency}</span>
                 </div>
                 <ul className="pricing-features-new">
                   <li><CheckCircle2 size={16} /> {currentT.grade910F1}</li>
@@ -221,7 +221,7 @@ const Pricing = ({ triggerToast, language }) => {
                 <h3 className="pricing-title-new">{currentT.fullTitle}</h3>
                 <p className="pricing-subtitle-new">{currentT.fullSubtitle}</p>
                 <div className="pricing-price-new">
-                  700 <span className="currency">{currentT.fullCurrency}</span>
+                  {currentT.fullPrice} <span className="currency">{currentT.fullCurrency}</span>
                 </div>
                 <ul className="pricing-features-new">
                   <li><CheckCircle2 size={16} /> {currentT.fullF1}</li>
@@ -246,7 +246,7 @@ const Pricing = ({ triggerToast, language }) => {
                 <h3 className="pricing-title-new">{currentT.grade1112Title}</h3>
                 <p className="pricing-subtitle-new">{currentT.grade1112Subtitle}</p>
                 <div className="pricing-price-new">
-                  450 <span className="currency">{currentT.grade1112Currency}</span>
+                  {currentT.grade1112Price} <span className="currency">{currentT.grade1112Currency}</span>
                 </div>
                 <ul className="pricing-features-new">
                   <li><CheckCircle2 size={16} /> {currentT.grade1112F1}</li>
