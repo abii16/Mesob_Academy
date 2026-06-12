@@ -1,7 +1,67 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Star, Users } from 'lucide-react';
+import { Users } from 'lucide-react';
 import '../../styles/sections/Reviews.css';
+
+const StarIcon = ({ fill, stroke, strokeWidth = "1.5" }) => (
+  <svg width="16" height="16" viewBox="0 0 24 24" style={{ display: 'block' }}>
+    <path
+      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+      fill={fill}
+      stroke={stroke}
+      strokeWidth={strokeWidth}
+      strokeLinejoin="round"
+      strokeLinecap="round"
+    />
+  </svg>
+);
+
+const RatingStars = ({ rating }) => {
+  const fullStars = Math.floor(rating);
+  const decimal = rating - fullStars;
+  const uniqueId = React.useId().replace(/:/g, ''); // Sanitized React ID
+
+  return (
+    <div className="testimonial-stars" style={{ display: 'flex', gap: '0.25rem', alignItems: 'center' }}>
+      {Array.from({ length: 5 }).map((_, index) => {
+        if (index < fullStars) {
+          return (
+            <StarIcon key={index} fill="#abc9ed" stroke="#abc9ed" />
+          );
+        } else if (index === fullStars && decimal > 0) {
+          const gradId = `star-grad-${uniqueId}-${index}`;
+          return (
+            <span key={index} style={{ display: 'inline-flex', position: 'relative', width: 16, height: 16 }}>
+              <span style={{ position: 'absolute', top: 0, left: 0 }}>
+                <StarIcon fill="rgba(255, 255, 255, 0.05)" stroke="rgba(171, 201, 237, 0.3)" />
+              </span>
+              <svg width="16" height="16" viewBox="0 0 24 24" style={{ position: 'absolute', top: 0, left: 0 }}>
+                <defs>
+                  <linearGradient id={gradId} x1="0" y1="0" x2="1" y2="0">
+                    <stop offset={`${decimal * 100}%`} stopColor="#abc9ed" />
+                    <stop offset={`${decimal * 100}%`} stopColor="transparent" stopOpacity="0" />
+                  </linearGradient>
+                </defs>
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                  fill={`url(#${gradId})`}
+                  stroke="#abc9ed"
+                  strokeWidth="1.5"
+                  strokeLinejoin="round"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </span>
+          );
+        } else {
+          return (
+            <StarIcon key={index} fill="rgba(255, 255, 255, 0.05)" stroke="rgba(171, 201, 237, 0.3)" />
+          );
+        }
+      })}
+    </div>
+  );
+};
 
 const TestimonialCard = ({ stars, text, name, role, avatar }) => (
   <motion.div 
@@ -10,11 +70,7 @@ const TestimonialCard = ({ stars, text, name, role, avatar }) => (
     viewport={{ once: true }}
     className="testimonial-card"
   >
-    <div className="testimonial-stars">
-      {Array.from({ length: stars }).map((_, i) => (
-        <Star key={i} size={16} fill="#abc9ed" stroke="#abc9ed" />
-      ))}
-    </div>
+    <RatingStars rating={stars} />
     <p className="testimonial-text">"{text}"</p>
     <div className="testimonial-user">
       <div className="testimonial-avatar">

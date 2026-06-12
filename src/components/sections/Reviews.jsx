@@ -114,21 +114,21 @@ const Reviews = ({ language }) => {
 
         <div className="testimonials-grid">
           <TestimonialCard
-            stars={5}
+            stars={4.8}
             text={currentT.r1}
             name="Bekeleam G."
             role={currentT.r1Role}
             avatar={<MaleAvatar1 />}
           />
           <TestimonialCard
-            stars={5}
+            stars={4.8}
             text={currentT.r2}
             name="Yared M."
             role={currentT.r2Role}
             avatar={<MaleAvatar2 />}
           />
           <TestimonialCard
-            stars={5}
+            stars={4.8}
             text={currentT.r3}
             name="Rahiel H."
             role={currentT.r3Role}
