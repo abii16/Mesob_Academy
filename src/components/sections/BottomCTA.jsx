@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { BookOpen, Sparkles, Layers } from "lucide-react";
 import "../../styles/sections/BottomCTA.css";
 
 const BottomCTA = ({ triggerToast, language }) => {
