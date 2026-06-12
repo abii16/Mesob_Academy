@@ -18,7 +18,7 @@ const TestimonialCard = ({ stars, text, name, role, avatar }) => (
     <p className="testimonial-text">"{text}"</p>
     <div className="testimonial-user">
       <div className="testimonial-avatar">
-        {avatar ? <img src={avatar} alt={name} /> : <Users size={20} />}
+        {avatar ? (typeof avatar === 'string' ? <img src={avatar} alt={name} /> : avatar) : <Users size={20} />}
       </div>
       <div className="testimonial-info">
         <h4 className="testimonial-name">{name}</h4>
