@@ -101,18 +101,19 @@
 }
 
 .highlight-card {
-  background: rgba(46, 204, 113, 0.1);
-  border-color: var(--color-primary);
-  padding: 5.5rem 3rem;
+  background: rgba(46, 204, 113, 0.12);
+  border: 2px solid var(--color-primary);
+  padding: 6.5rem 3rem;
+  box-shadow: 0 15px 45px rgba(46, 204, 113, 0.15);
 }
 
 @media (min-width: 768px) {
   .highlight-card {
-    transform: scale(1.05);
+    transform: scale(1.1);
     z-index: 2;
   }
   .highlight-card:hover {
-    transform: scale(1.07) translateY(-5px);
+    transform: scale(1.12) translateY(-5px);
   }
 }
 
