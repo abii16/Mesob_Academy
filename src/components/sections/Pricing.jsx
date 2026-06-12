@@ -102,7 +102,7 @@ const Pricing = ({ triggerToast, language }) => {
               className="btn btn-secondary pricing-btn-new" 
               onClick={() => {
                 triggerToast(currentT.toastMsg);
-                const el = document.querySelector('.bottom-cta');
+                const el = document.getElementById('contact');
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
               }}
             >
@@ -133,7 +133,7 @@ const Pricing = ({ triggerToast, language }) => {
               className="btn btn-primary pricing-btn-new" 
               onClick={() => {
                 triggerToast(currentT.toastMsg);
-                const el = document.querySelector('.bottom-cta');
+                const el = document.getElementById('contact');
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
               }}
             >
@@ -164,7 +164,7 @@ const Pricing = ({ triggerToast, language }) => {
               className="btn btn-secondary pricing-btn-new" 
               onClick={() => {
                 triggerToast(currentT.toastMsg);
-                const el = document.querySelector('.bottom-cta');
+                const el = document.getElementById('contact');
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
               }}
             >

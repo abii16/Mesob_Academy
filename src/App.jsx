@@ -19,7 +19,6 @@ import Comparison from "./components/sections/Comparison";
 import Pricing from "./components/sections/Pricing";
 import Reviews from "./components/sections/Reviews";
 import FAQ from "./components/sections/FAQ";
-import BottomCTA from "./components/sections/BottomCTA";
 import Contact from "./components/sections/Contact";
 
 const App = () => {
@@ -203,7 +202,6 @@ const App = () => {
           <Pricing triggerToast={triggerToast} language={language} />
           <Reviews language={language} />
           <FAQ language={language} />
-          <BottomCTA triggerToast={triggerToast} language={language} />
           <Contact triggerToast={triggerToast} language={language} />
         </>
       )}
