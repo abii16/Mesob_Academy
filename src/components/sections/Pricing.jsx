@@ -1,9 +1,20 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { CheckCircle2 } from 'lucide-react';
+import React, { useState, useMemo } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { CheckCircle2, Bot, DownloadCloud, FileSpreadsheet, Check, BookOpen, Sparkles, Layers } from 'lucide-react';
 import '../../styles/sections/Pricing.css';
 
 const Pricing = ({ triggerToast, language }) => {
+  const [activeTab, setActiveTab] = useState('standard'); // 'standard' or 'calculator'
+
+  // Calculator states
+  const [gradeBand, setGradeBand] = useState('9-10'); // '9-10', '11-12', '9-12'
+  const [stream, setStream] = useState('natural'); // 'natural', 'social'
+  const [addons, setAddons] = useState({
+    exams: true,
+    downloads: false,
+    ai: false,
+  });
+
   const t = {
     en: {
       subtitle: "FLEXIBLE PLANS",
@@ -34,7 +45,35 @@ const Pricing = ({ triggerToast, language }) => {
       grade1112F3: "Peer-to-Peer Study Rooms",
       choosePlan: "Choose Plan",
       goPremium: "Go Premium",
-      toastMsg: "Please download our mobile app to subscribe."
+      toastMsg: "Please download our mobile app to subscribe.",
+      
+      // Calculator translation tokens
+      standardTab: "Preset Packages",
+      calculatorTab: "Interactive Plan Builder",
+      calcTitle: "Customize Your Learning Experience",
+      calcSubtitle: "Select options below to estimate your personalized study package.",
+      selectGrade: "1. Select Grade Level",
+      selectStream: "2. Choose Academic Stream",
+      selectAddons: "3. Choose Premium Add-ons",
+      grade910Opt: "Grades 9 & 10",
+      grade1112Opt: "Grades 11 & 12",
+      gradeFullOpt: "Full High School (9-12)",
+      naturalStream: "Natural Science",
+      socialStream: "Social Science",
+      examSimulator: "National Exam Simulator",
+      examSimulatorDesc: "Realistic timed mock exams with detailed explanations.",
+      offlineVault: "Offline Vault Downloads",
+      offlineVaultDesc: "Download video lessons & study guides to study without data.",
+      aiMentor: "EthioTutor AI Mentor",
+      aiMentorDesc: "24/7 AI-powered tutor for instant homework feedback.",
+      customSummary: "Your Plan Summary",
+      customPriceLabel: "Total Investment",
+      customPricePeriod: "ETB / 2 Years",
+      customIncluded: "What's included:",
+      customF1: "Access to Grade {grade} Curriculum",
+      customF2: "Community Study Hub Access",
+      claimPlan: "Claim Custom Plan",
+      streamLabel: "Stream: {stream}"
     },
     am: {
       subtitle: "ተለዋዋጭ ክፍያዎች",
@@ -65,113 +104,386 @@ const Pricing = ({ triggerToast, language }) => {
       grade1112F3: "የጋራ ጥናት ክፍሎች",
       choosePlan: "ጥቅል ይምረጡ",
       goPremium: "ፕሪሚየም ይሁኑ",
-      toastMsg: "እባክዎ ለመመዝገብ የሞባይል መተግበሪያችንን ያውርዱ።"
+      toastMsg: "እባክዎ ለመመዝገብ የሞባይል መተግበሪያችንን ያውርዱ።",
+
+      // Calculator translation tokens
+      standardTab: "መደበኛ ጥቅሎች",
+      calculatorTab: "ክፍያ አስላ",
+      calcTitle: "የጥናትዎን ፍላጎት ያብጁ",
+      calcSubtitle: "ለሁለት ዓመት የደንበኝነት ምዝገባዎ የሚሆን አማራጭ ይምረጡ።",
+      selectGrade: "1. የክፍል ደረጃ ይምረጡ",
+      selectStream: "2. የትምህርት ዘርፍ ይምረጡ",
+      selectAddons: "3. ልዩ ጥቅሞችን ይምረጡ",
+      grade910Opt: "ከ9 - 10ኛ ክፍል",
+      grade1112Opt: "ከ11 - 12ኛ ክፍል",
+      gradeFullOpt: "የሙሉ ሁለተኛ ደረጃ (9-12)",
+      naturalStream: "የተፈጥሮ ሳይንስ",
+      socialStream: "የማህበራዊ ሳይንስ",
+      examSimulator: "የብሔራዊ ፈተና አስመስሎ መስሪያ",
+      examSimulatorDesc: "ተጨባጭ የሆኑ የሙከራ ፈተናዎች ከዝርዝር ማብራሪያ ጋር።",
+      offlineVault: "ከመስመር ውጭ ማስቀመጫ",
+      offlineVaultDesc: "ያለ ሞባይል ዳታ ለማጥናት ቪዲዮዎችን እና ማጠቃለያዎችን ያውርዱ።",
+      aiMentor: "EthioTutor AI ረዳት",
+      aiMentorDesc: "24/7 ፈጣን የቤት ስራ እና የትምህርት ድጋፍ የሚሰጥ AI።",
+      customSummary: "የጥቅሉ ማጠቃለያ",
+      customPriceLabel: "አጠቃላይ ክፍያ",
+      customPricePeriod: "ብር / ለ 2 ዓመት",
+      customIncluded: "የሚከተሉትን ያካትታል፡",
+      customF1: "የክፍል {grade} የትምህርት ይዘቶች",
+      customF2: "የተማሪዎች የጋራ መወያያ መድረክ",
+      claimPlan: "ብጁ ጥቅል ያግኙ",
+      streamLabel: "ዘርፍ፡ {stream}"
     }
   };
 
   const currentT = t[language] || t.en;
+
+  // Pricing Logic
+  const calculatedPrice = useMemo(() => {
+    let price = 0;
+    if (gradeBand === '9-10') price = 300;
+    else if (gradeBand === '11-12') price = 350;
+    else if (gradeBand === '9-12') price = 600;
+
+    if (addons.exams) price += 100;
+    if (addons.downloads) price += 50;
+    if (addons.ai) price += 150;
+
+    return price;
+  }, [gradeBand, addons]);
+
+  const toggleAddon = (key) => {
+    setAddons((prev) => ({
+      ...prev,
+      [key]: !prev[key],
+    }));
+  };
+
+  const formatGradeText = (band) => {
+    if (band === '9-10') return '9 & 10';
+    if (band === '11-12') return '11 & 12';
+    return '9-12';
+  };
 
   return (
     <section id="pricing" className="pricing-new">
       <div className="container">
         <div className="section-header">
           <span className="section-subtitle-new">{currentT.subtitle}</span>
-          <h2 className="section-title-new">{currentT.title}</h2>
+          <h2 className="section-title-new">{activeTab === 'standard' ? currentT.title : currentT.calcTitle}</h2>
+          {activeTab === 'calculator' && (
+            <p className="section-desc-new" style={{ color: 'var(--text-secondary)', marginTop: '0.5rem', maxWidth: '600px', marginLeft: 'auto', marginRight: 'auto' }}>
+              {currentT.calcSubtitle}
+            </p>
+          )}
         </div>
-        
-        <div className="pricing-grid-new">
-          {/* Grade 9-10 */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="pricing-card-new"
-          >
-            <span className="pricing-tag">{currentT.essential}</span>
-            <h3 className="pricing-title-new">{currentT.grade910Title}</h3>
-            <p className="pricing-subtitle-new">{currentT.grade910Subtitle}</p>
-            <div className="pricing-price-new">
-              {currentT.grade910Price} <span className="currency">{currentT.grade910Currency}</span>
-            </div>
-            <ul className="pricing-features-new">
-              <li><CheckCircle2 size={16} /> {currentT.grade910F1}</li>
-              <li><CheckCircle2 size={16} /> {currentT.grade910F2}</li>
-              <li><CheckCircle2 size={16} /> {currentT.grade910F3}</li>
-            </ul>
-            <button 
-              className="btn btn-secondary pricing-btn-new" 
-              onClick={() => {
-                triggerToast(currentT.toastMsg);
-                const el = document.querySelector('.bottom-cta');
-                if (el) el.scrollIntoView({ behavior: 'smooth' });
-              }}
-            >
-              {currentT.choosePlan}
-            </button>
-          </motion.div>
 
-          {/* Full High School */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="pricing-card-new highlight-card"
+        {/* Tab Switcher */}
+        <div className="pricing-tabs">
+          <button 
+            className={`pricing-tab-btn ${activeTab === 'standard' ? 'active' : ''}`}
+            onClick={() => setActiveTab('standard')}
           >
-            <span className="pricing-tag premium-tag">{currentT.recommended}</span>
-            <h3 className="pricing-title-new">{currentT.fullTitle}</h3>
-            <p className="pricing-subtitle-new">{currentT.fullSubtitle}</p>
-            <div className="pricing-price-new">
-              {currentT.fullPrice} <span className="currency">{currentT.fullCurrency}</span>
-            </div>
-            <ul className="pricing-features-new">
-              <li><CheckCircle2 size={16} /> {currentT.fullF1}</li>
-              <li><CheckCircle2 size={16} /> {currentT.fullF2}</li>
-              <li><CheckCircle2 size={16} /> {currentT.fullF3}</li>
-            </ul>
-            <button 
-              className="btn btn-primary pricing-btn-new" 
-              onClick={() => {
-                triggerToast(currentT.toastMsg);
-                const el = document.querySelector('.bottom-cta');
-                if (el) el.scrollIntoView({ behavior: 'smooth' });
-              }}
-            >
-              {currentT.goPremium}
-            </button>
-          </motion.div>
-
-          {/* Grade 11-12 */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="pricing-card-new"
+            {currentT.standardTab}
+          </button>
+          <button 
+            className={`pricing-tab-btn ${activeTab === 'calculator' ? 'active' : ''}`}
+            onClick={() => setActiveTab('calculator')}
           >
-            <span className="pricing-tag">{currentT.focused}</span>
-            <h3 className="pricing-title-new">{currentT.grade1112Title}</h3>
-            <p className="pricing-subtitle-new">{currentT.grade1112Subtitle}</p>
-            <div className="pricing-price-new">
-              {currentT.grade1112Price} <span className="currency">{currentT.grade1112Currency}</span>
-            </div>
-            <ul className="pricing-features-new">
-              <li><CheckCircle2 size={16} /> {currentT.grade1112F1}</li>
-              <li><CheckCircle2 size={16} /> {currentT.grade1112F2}</li>
-              <li><CheckCircle2 size={16} /> {currentT.grade1112F3}</li>
-            </ul>
-            <button 
-              className="btn btn-secondary pricing-btn-new" 
-              onClick={() => {
-                triggerToast(currentT.toastMsg);
-                const el = document.querySelector('.bottom-cta');
-                if (el) el.scrollIntoView({ behavior: 'smooth' });
-              }}
-            >
-              {currentT.choosePlan}
-            </button>
-          </motion.div>
+            {currentT.calculatorTab}
+          </button>
         </div>
+
+        <AnimatePresence mode="wait">
+          {activeTab === 'standard' ? (
+            <motion.div 
+              key="standard"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.25 }}
+              className="pricing-grid-new"
+            >
+              {/* Grade 9-10 */}
+              <div className="pricing-card-new">
+                <span className="pricing-tag">{currentT.essential}</span>
+                <h3 className="pricing-title-new">{currentT.grade910Title}</h3>
+                <p className="pricing-subtitle-new">{currentT.grade910Subtitle}</p>
+                <div className="pricing-price-new">
+                  400 <span className="currency">{currentT.grade910Currency}</span>
+                </div>
+                <ul className="pricing-features-new">
+                  <li><CheckCircle2 size={16} /> {currentT.grade910F1}</li>
+                  <li><CheckCircle2 size={16} /> {currentT.grade910F2}</li>
+                  <li><CheckCircle2 size={16} /> {currentT.grade910F3}</li>
+                </ul>
+                <button 
+                  className="btn btn-secondary pricing-btn-new" 
+                  onClick={() => {
+                    triggerToast(currentT.toastMsg);
+                    const el = document.querySelector('.bottom-cta');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
+                  {currentT.choosePlan}
+                </button>
+              </div>
+
+              {/* Full High School */}
+              <div className="pricing-card-new highlight-card">
+                <span className="pricing-tag premium-tag">{currentT.recommended}</span>
+                <h3 className="pricing-title-new">{currentT.fullTitle}</h3>
+                <p className="pricing-subtitle-new">{currentT.fullSubtitle}</p>
+                <div className="pricing-price-new">
+                  700 <span className="currency">{currentT.fullCurrency}</span>
+                </div>
+                <ul className="pricing-features-new">
+                  <li><CheckCircle2 size={16} /> {currentT.fullF1}</li>
+                  <li><CheckCircle2 size={16} /> {currentT.fullF2}</li>
+                  <li><CheckCircle2 size={16} /> {currentT.fullF3}</li>
+                </ul>
+                <button 
+                  className="btn btn-primary pricing-btn-new" 
+                  onClick={() => {
+                    triggerToast(currentT.toastMsg);
+                    const el = document.querySelector('.bottom-cta');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
+                  {currentT.goPremium}
+                </button>
+              </div>
+
+              {/* Grade 11-12 */}
+              <div className="pricing-card-new">
+                <span className="pricing-tag">{currentT.focused}</span>
+                <h3 className="pricing-title-new">{currentT.grade1112Title}</h3>
+                <p className="pricing-subtitle-new">{currentT.grade1112Subtitle}</p>
+                <div className="pricing-price-new">
+                  400 <span className="currency">{currentT.grade1112Currency}</span>
+                </div>
+                <ul className="pricing-features-new">
+                  <li><CheckCircle2 size={16} /> {currentT.grade1112F1}</li>
+                  <li><CheckCircle2 size={16} /> {currentT.grade1112F2}</li>
+                  <li><CheckCircle2 size={16} /> {currentT.grade1112F3}</li>
+                </ul>
+                <button 
+                  className="btn btn-secondary pricing-btn-new" 
+                  onClick={() => {
+                    triggerToast(currentT.toastMsg);
+                    const el = document.querySelector('.bottom-cta');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
+                  {currentT.choosePlan}
+                </button>
+              </div>
+            </motion.div>
+          ) : (
+            <motion.div 
+              key="calculator"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.25 }}
+              className="pricing-calculator"
+            >
+              {/* Controls Column */}
+              <div className="calc-controls">
+                {/* 1. Grade Select */}
+                <div>
+                  <h4 className="calc-section-title">{currentT.selectGrade}</h4>
+                  <div className="calc-btn-group">
+                    <button 
+                      className={`calc-btn ${gradeBand === '9-10' ? 'active' : ''}`}
+                      onClick={() => setGradeBand('9-10')}
+                    >
+                      {currentT.grade910Opt}
+                    </button>
+                    <button 
+                      className={`calc-btn ${gradeBand === '11-12' ? 'active' : ''}`}
+                      onClick={() => setGradeBand('11-12')}
+                    >
+                      {currentT.grade1112Opt}
+                    </button>
+                    <button 
+                      className={`calc-btn ${gradeBand === '9-12' ? 'active' : ''}`}
+                      onClick={() => setGradeBand('9-12')}
+                    >
+                      {currentT.gradeFullOpt}
+                    </button>
+                  </div>
+                </div>
+
+                {/* 2. Stream Select (Only for Grade 11-12 and Full High School) */}
+                {gradeBand !== '9-10' && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                  >
+                    <h4 className="calc-section-title">{currentT.selectStream}</h4>
+                    <div className="calc-btn-group streams-group">
+                      <button 
+                        className={`calc-btn ${stream === 'natural' ? 'active' : ''}`}
+                        onClick={() => setStream('natural')}
+                      >
+                        {currentT.naturalStream}
+                      </button>
+                      <button 
+                        className={`calc-btn ${stream === 'social' ? 'active' : ''}`}
+                        onClick={() => setStream('social')}
+                      >
+                        {currentT.socialStream}
+                      </button>
+                    </div>
+                  </motion.div>
+                )}
+
+                {/* 3. Add-ons Select */}
+                <div>
+                  <h4 className="calc-section-title">{currentT.selectAddons}</h4>
+                  <div className="addons-grid">
+                    {/* Exam Simulator Add-on */}
+                    <div 
+                      className={`addon-card ${addons.exams ? 'active' : ''}`}
+                      onClick={() => toggleAddon('exams')}
+                    >
+                      <div className="addon-left">
+                        <div className="addon-icon-box">
+                          <FileSpreadsheet size={20} />
+                        </div>
+                        <div className="addon-info">
+                          <span className="addon-name">{currentT.examSimulator}</span>
+                          <span className="addon-desc">{currentT.examSimulatorDesc}</span>
+                        </div>
+                      </div>
+                      <div className="addon-right">
+                        <span className="addon-price">+100 ETB</span>
+                        <div className="addon-checkbox">
+                          <Check size={12} strokeWidth={3} />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Offline Vault Add-on */}
+                    <div 
+                      className={`addon-card ${addons.downloads ? 'active' : ''}`}
+                      onClick={() => toggleAddon('downloads')}
+                    >
+                      <div className="addon-left">
+                        <div className="addon-icon-box">
+                          <DownloadCloud size={20} />
+                        </div>
+                        <div className="addon-info">
+                          <span className="addon-name">{currentT.offlineVault}</span>
+                          <span className="addon-desc">{currentT.offlineVaultDesc}</span>
+                        </div>
+                      </div>
+                      <div className="addon-right">
+                        <span className="addon-price">+50 ETB</span>
+                        <div className="addon-checkbox">
+                          <Check size={12} strokeWidth={3} />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* AI Mentor Add-on */}
+                    <div 
+                      className={`addon-card ${addons.ai ? 'active' : ''}`}
+                      onClick={() => toggleAddon('ai')}
+                    >
+                      <div className="addon-left">
+                        <div className="addon-icon-box">
+                          <Bot size={20} />
+                        </div>
+                        <div className="addon-info">
+                          <span className="addon-name">{currentT.aiMentor}</span>
+                          <span className="addon-desc">{currentT.aiMentorDesc}</span>
+                        </div>
+                      </div>
+                      <div className="addon-right">
+                        <span className="addon-price">+150 ETB</span>
+                        <div className="addon-checkbox">
+                          <Check size={12} strokeWidth={3} />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Summary Column */}
+              <div className="calc-summary">
+                <div className="calc-summary-card">
+                  <h3 className="summary-title">{currentT.customSummary}</h3>
+                  
+                  <div className="summary-price-box">
+                    <span className="price-label">{currentT.customPriceLabel}</span>
+                    <div className="calc-price">
+                      {calculatedPrice}
+                      <span className="period">{currentT.customPricePeriod}</span>
+                    </div>
+                  </div>
+
+                  <div className="summary-details">
+                    <div className="summary-row">
+                      <span>{language === "am" ? "የክፍል ደረጃ" : "Grade Level"}</span>
+                      <span className="summary-row-val">{currentT[`grade${gradeBand === '9-12' ? 'Full' : gradeBand.replace('-', '')}Opt`]}</span>
+                    </div>
+                    {gradeBand !== '9-10' && (
+                      <div className="summary-row">
+                        <span>{language === "am" ? "ዘርፍ" : "Stream"}</span>
+                        <span className="summary-row-val">{stream === 'natural' ? currentT.naturalStream : currentT.socialStream}</span>
+                      </div>
+                    )}
+                  </div>
+
+                  <h4 className="calc-included-title">{currentT.customIncluded}</h4>
+                  <ul className="calc-features-list">
+                    <li>
+                      <CheckCircle2 size={16} /> 
+                      {currentT.customF1.replace('{grade}', formatGradeText(gradeBand))}
+                    </li>
+                    <li>
+                      <CheckCircle2 size={16} /> 
+                      {currentT.customF2}
+                    </li>
+                    {addons.exams && (
+                      <li>
+                        <Sparkles size={16} /> 
+                        {currentT.examSimulator}
+                      </li>
+                    )}
+                    {addons.downloads && (
+                      <li>
+                        <DownloadCloud size={16} /> 
+                        {currentT.offlineVault}
+                      </li>
+                    )}
+                    {addons.ai && (
+                      <li>
+                        <Bot size={16} /> 
+                        {currentT.aiMentor}
+                      </li>
+                    )}
+                  </ul>
+
+                  <button 
+                    className="btn btn-primary pricing-btn-new"
+                    onClick={() => {
+                      triggerToast(currentT.toastMsg);
+                      const el = document.querySelector('.bottom-cta');
+                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                  >
+                    {currentT.claimPlan}
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );
