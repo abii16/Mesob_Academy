@@ -23,6 +23,59 @@ const Hero = ({ triggerToast, language }) => {
   };
 
   const currentT = t[language] || t.en;
+  const bgVideoRef = useRef(null);
+
+  useEffect(() => {
+    const video = bgVideoRef.current;
+    if (!video) return;
+
+    let isHeroVisible = true;
+    let timeoutId = null;
+
+    const startPauseTimeout = () => {
+      if (timeoutId) clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        if (video) video.pause();
+      }, 30000); // 30 seconds limit to preserve battery/CPU
+    };
+
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        video.pause();
+        if (timeoutId) clearTimeout(timeoutId);
+      } else if (isHeroVisible) {
+        video.play().catch(() => {});
+        startPauseTimeout();
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isHeroVisible = entry.isIntersecting;
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+          startPauseTimeout();
+        } else {
+          video.pause();
+          if (timeoutId) clearTimeout(timeoutId);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    const section = document.querySelector(".hero-new");
+    if (section) observer.observe(section);
+
+    startPauseTimeout();
+
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      if (section) observer.unobserve(section);
+      if (timeoutId) clearTimeout(timeoutId);
+    };
+  }, []);
 
   useEffect(() => {
     if (showVideoModal) {
@@ -49,6 +102,7 @@ const Hero = ({ triggerToast, language }) => {
     <>
       <section className="hero-new">
         <video 
+          ref={bgVideoRef}
           autoPlay 
           muted 
           loop 
