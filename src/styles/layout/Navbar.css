@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 1000;
   padding: 1.5rem 0;
   transition: var(--transition-smooth);
 }
@@ -86,7 +86,7 @@
   border: none;
   cursor: pointer;
   padding: 8px;
-  z-index: 101;
+  z-index: 1001;
   transition: var(--transition-smooth);
   border-radius: 50%;
   width: 42px;
@@ -187,7 +187,7 @@
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  z-index: 99;
+  z-index: 998;
 }
 
 /* Mobile Drawer Panel */
@@ -206,7 +206,7 @@
   flex-direction: column;
   justify-content: flex-start;
   overflow-y: auto;
-  z-index: 100;
+  z-index: 999;
   padding: 6rem 2rem 3rem;
   box-shadow: -8px 0 32px rgba(0, 0, 0, 0.25);
 }
