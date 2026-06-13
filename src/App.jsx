@@ -206,8 +206,8 @@ const App = () => {
         </>
       )}
 
-      {currentPage === "privacy" && <PrivacyPolicy />}
-      {currentPage === "terms" && <TermsOfService />}
+      {currentPage === "privacy" && <PrivacyPolicy language={language} />}
+      {currentPage === "terms" && <TermsOfService language={language} />}
       {currentPage === "404" && <NotFoundPage />}
 
       <Footer

@@ -43,12 +43,16 @@ const Footer = ({ currentPage, setCurrentPage, language }) => {
 
         <div className="footer-links-col">
           <h5 className="footer-col-title">{currentT.legal}</h5>
-          <a href="#/privacy" className="footer-link-item">
-            {currentT.privacy}
-          </a>
-          <a href="#/terms" className="footer-link-item">
-            {currentT.terms}
-          </a>
+          {currentPage !== "privacy" && (
+            <a href="#/privacy" className="footer-link-item">
+              {currentT.privacy}
+            </a>
+          )}
+          {currentPage !== "terms" && (
+            <a href="#/terms" className="footer-link-item">
+              {currentT.terms}
+            </a>
+          )}
         </div>
 
         <div className="footer-links-col">

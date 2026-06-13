@@ -1,36 +1,174 @@
-/* Terms of Service Page */
-.terms-container {
-  padding: 8rem 2rem;
-  text-align: center;
-  min-height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+/* Single Column Legal Document Styling (Terms of Service) */
 
-.terms-card {
-  padding: 3rem;
-  max-width: 600px;
-  margin: 0 auto;
-  border: 1px solid var(--color-primary);
-}
-
-.terms-title {
-  font-family: var(--font-display);
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  color: var(--color-primary);
-}
-
-.terms-desc {
-  font-size: 1.1rem;
-  line-height: 1.8;
+.privacy-document-layout {
+  position: relative;
+  min-height: 100vh;
+  padding: 8rem 1.5rem 6rem 1.5rem;
+  background-color: var(--color-background);
   color: var(--text-primary);
+  font-family: var(--font-body);
+}
+
+.privacy-document-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* Header & Back Link */
+.privacy-document-header {
   margin-bottom: 2rem;
 }
 
-.terms-subtext {
-  font-size: 0.95rem;
+.privacy-back-link {
+  display: inline-flex;
+  align-items: center;
   color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: var(--transition-smooth);
+}
+
+.privacy-back-link:hover {
+  color: var(--color-primary);
+}
+
+/* Date & Title block */
+.privacy-document-title-block {
+  margin-bottom: 3.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 2.5rem;
+}
+
+.privacy-date-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.privacy-document-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.1;
   margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+.privacy-document-intro {
+  font-size: 1.15rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+
+/* Document Body Content */
+.privacy-document-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.privacy-doc-section h2 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.light-theme .privacy-doc-section h2 {
+  border-bottom-color: rgba(15, 23, 42, 0.05);
+}
+
+.privacy-doc-section h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.privacy-doc-section p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+}
+
+.privacy-doc-section p:last-child {
+  margin-bottom: 0;
+}
+
+/* Lists styling */
+.privacy-doc-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.privacy-doc-list li {
+  position: relative;
+  padding-left: 1.25rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.privacy-doc-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--color-primary);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.privacy-doc-list li strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Footer Section */
+.privacy-document-footer {
+  margin-top: 5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Responsive Rules */
+@media (max-width: 768px) {
+  .privacy-document-layout {
+    padding: 6rem 1.25rem 4rem 1.25rem;
+  }
+
+  .privacy-document-title-block {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .privacy-document-body {
+    gap: 2.5rem;
+  }
+
+  .privacy-doc-section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .privacy-doc-section h3 {
+    font-size: 1.1rem;
+    margin-top: 1.75rem;
+  }
 }
