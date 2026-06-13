@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Sun, Moon } from "lucide-react";
 import "../../styles/layout/Navbar.css";
 
 const Navbar = ({ setCurrentPage, language, setLanguage, theme, toggleTheme }) => {
@@ -77,6 +78,21 @@ const Navbar = ({ setCurrentPage, language, setLanguage, theme, toggleTheme }) =
   };
 
   const currentT = t[language] || t.en;
+
+  const menuVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.05,
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: 25 },
+    show: { opacity: 1, x: 0, transition: { type: "spring", stiffness: 300, damping: 26 } }
+  };
 
   return (
     <nav className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
@@ -211,131 +227,174 @@ const Navbar = ({ setCurrentPage, language, setLanguage, theme, toggleTheme }) =
           </button>
         </div>
 
-        <button className="mobile-menu-btn" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        <button
+          className={`mobile-menu-btn ${isOpen ? "is-open" : ""}`}
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle menu"
+        >
+          <div className="hamburger-box">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </button>
       </div>
 
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="mobile-menu"
-          >
-            <div className="mobile-menu-content">
-              <a
-                href="#features"
-                className={`mobile-link ${activeSection === "features" ? "mobile-link-active" : ""}`}
-                onClick={() => {
-                  setIsOpen(false);
-                  navigateToSection("features");
-                }}
+      {typeof document !== "undefined" && createPortal(
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              key="overlay"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsOpen(false)}
+              className="mobile-menu-overlay"
+            />
+          )}
+          {isOpen && (
+            <motion.div
+              key="menu"
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "tween", duration: 0.25, ease: "easeOut" }}
+              className="mobile-menu"
+            >
+              <motion.div
+                variants={menuVariants}
+                initial="hidden"
+                animate="show"
+                className="mobile-menu-content"
               >
-                {currentT.features}
-              </a>
-              <a
-                href="#how-it-works"
-                className={`mobile-link ${activeSection === "how-it-works" ? "mobile-link-active" : ""}`}
-                onClick={() => {
-                  setIsOpen(false);
-                  navigateToSection("how-it-works");
-                }}
-              >
-                {currentT.howItWorks}
-              </a>
-              <a
-                href="#pricing"
-                className={`mobile-link ${activeSection === "pricing" ? "mobile-link-active" : ""}`}
-                onClick={() => {
-                  setIsOpen(false);
-                  navigateToSection("pricing");
-                }}
-              >
-                {currentT.pricing}
-              </a>
-              <a
-                href="#reviews"
-                className={`mobile-link ${activeSection === "reviews" ? "mobile-link-active" : ""}`}
-                onClick={() => {
-                  setIsOpen(false);
-                  navigateToSection("reviews");
-                }}
-              >
-                {currentT.reviews}
-              </a>
-              <a
-                href="#faq"
-                className={`mobile-link ${activeSection === "faq" ? "mobile-link-active" : ""}`}
-                onClick={() => {
-                  setIsOpen(false);
-                  navigateToSection("faq");
-                }}
-              >
-                {currentT.faq}
-              </a>
-              <a
-                href="#contact"
-                className={`mobile-link ${activeSection === "contact" ? "mobile-link-active" : ""}`}
-                onClick={() => {
-                  setIsOpen(false);
-                  navigateToSection("contact");
-                }}
-              >
-                {currentT.contact}
-              </a>
-              <div
-                className="mobile-actions"
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "1rem",
-                  marginTop: "1rem",
-                }}
-              >
-                <button
+                <motion.a
+                  variants={itemVariants}
+                  href="#features"
+                  className={`mobile-link ${activeSection === "features" ? "mobile-link-active" : ""}`}
                   onClick={() => {
-                    setLanguage(language === "en" ? "am" : "en");
                     setIsOpen(false);
-                  }}
-                  style={{
-                    background: "none",
-                    border: "1px solid var(--border-color)",
-                    color: "var(--text-primary)",
-                    padding: "0.5rem 1rem",
-                    borderRadius: "var(--radius-sm)",
-                    cursor: "pointer",
+                    navigateToSection("features");
                   }}
                 >
-                  {language === "en" ? "አማርኛ" : "English"}
-                </button>
-                <button
+                  {currentT.features}
+                </motion.a>
+                <motion.a
+                  variants={itemVariants}
+                  href="#how-it-works"
+                  className={`mobile-link ${activeSection === "how-it-works" ? "mobile-link-active" : ""}`}
                   onClick={() => {
-                    toggleTheme();
                     setIsOpen(false);
+                    navigateToSection("how-it-works");
                   }}
+                >
+                  {currentT.howItWorks}
+                </motion.a>
+                <motion.a
+                  variants={itemVariants}
+                  href="#pricing"
+                  className={`mobile-link ${activeSection === "pricing" ? "mobile-link-active" : ""}`}
+                  onClick={() => {
+                    setIsOpen(false);
+                    navigateToSection("pricing");
+                  }}
+                >
+                  {currentT.pricing}
+                </motion.a>
+                <motion.a
+                  variants={itemVariants}
+                  href="#reviews"
+                  className={`mobile-link ${activeSection === "reviews" ? "mobile-link-active" : ""}`}
+                  onClick={() => {
+                    setIsOpen(false);
+                    navigateToSection("reviews");
+                  }}
+                >
+                  {currentT.reviews}
+                </motion.a>
+                <motion.a
+                  variants={itemVariants}
+                  href="#faq"
+                  className={`mobile-link ${activeSection === "faq" ? "mobile-link-active" : ""}`}
+                  onClick={() => {
+                    setIsOpen(false);
+                    navigateToSection("faq");
+                  }}
+                >
+                  {currentT.faq}
+                </motion.a>
+                <motion.a
+                  variants={itemVariants}
+                  href="#contact"
+                  className={`mobile-link ${activeSection === "contact" ? "mobile-link-active" : ""}`}
+                  onClick={() => {
+                    setIsOpen(false);
+                    navigateToSection("contact");
+                  }}
+                >
+                  {currentT.contact}
+                </motion.a>
+                <motion.div
+                  variants={itemVariants}
+                  className="mobile-actions"
                   style={{
-                    background: "none",
-                    border: "1px solid var(--border-color)",
-                    color: "var(--text-primary)",
-                    padding: "0.5rem 1rem",
-                    borderRadius: "var(--radius-sm)",
-                    cursor: "pointer",
                     display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: "0.5rem",
+                    flexDirection: "column",
+                    gap: "1rem",
+                    marginTop: "1.25rem",
+                    width: "100%",
                   }}
                 >
-                  {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
-                  {theme === "dark" ? (language === "en" ? "Light Mode" : "የብርሃን ሁነታ") : (language === "en" ? "Dark Mode" : "የጨለማ ሁነታ")}
-                </button>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+                  <button
+                    onClick={() => {
+                      setLanguage(language === "en" ? "am" : "en");
+                      setIsOpen(false);
+                    }}
+                    style={{
+                      background: "none",
+                      border: "1px solid var(--border-color, rgba(255,255,255,0.15))",
+                      color: "var(--text-primary)",
+                      padding: "0.6rem 1rem",
+                      borderRadius: "var(--radius-sm)",
+                      cursor: "pointer",
+                      width: "100%",
+                      fontSize: "14px",
+                      fontWeight: "600",
+                    }}
+                  >
+                    {language === "en" ? "አማርኛ" : "English"}
+                  </button>
+                  <button
+                    onClick={() => {
+                      toggleTheme();
+                      setIsOpen(false);
+                    }}
+                    style={{
+                      background: "none",
+                      border: "1px solid var(--border-color, rgba(255,255,255,0.15))",
+                      color: "var(--text-primary)",
+                      padding: "0.6rem 1rem",
+                      borderRadius: "var(--radius-sm)",
+                      cursor: "pointer",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: "0.5rem",
+                      width: "100%",
+                      fontSize: "14px",
+                      fontWeight: "600",
+                    }}
+                  >
+                    {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+                    {theme === "dark" ? (language === "en" ? "Light Mode" : "የብርሃን ሁነታ") : (language === "en" ? "Dark Mode" : "የጨለማ ሁነታ")}
+                  </button>
+                </motion.div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </nav>
   );
 };
