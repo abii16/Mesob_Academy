@@ -97,7 +97,11 @@
 }
 
 .mobile-menu-btn:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(21, 128, 61, 0.1);
+}
+
+.mobile-menu-btn:hover .hamburger-box span {
+  background: #15803d;
 }
 
 @media (max-width: 768px) {
@@ -120,7 +124,8 @@
 }
 
 .navbar-scrolled .mobile-menu-btn:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(21, 128, 61, 0.15);
+  border-color: rgba(21, 128, 61, 0.4);
 }
 
 .hamburger-box {
@@ -163,12 +168,12 @@
 
 .mobile-menu-btn.is-open .hamburger-box span:nth-child(2) {
   transform: rotate(45deg);
-  background: var(--color-primary);
+  background: #15803d;
 }
 
 .mobile-menu-btn.is-open .hamburger-box span:nth-child(3) {
   transform: rotate(-45deg);
-  background: var(--color-primary);
+  background: #15803d;
 }
 
 .mobile-menu-btn.is-open .hamburger-box span:nth-child(4) {
