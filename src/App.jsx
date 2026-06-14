@@ -24,7 +24,7 @@ import Contact from "./components/sections/Contact";
 const App = () => {
   const [currentPage, setCurrentPage] = useState("home");
   const [language, setLanguage] = useState("en");
-  const [isBlurred, setIsBlurred] = useState(false);
+
   const [toastMessage, setToastMessage] = useState("");
   const [showToast, setShowToast] = useState(false);
   const [theme, setTheme] = useState(() => {
@@ -133,58 +133,10 @@ const App = () => {
     };
   }, [language]);
 
-  useEffect(() => {
-    const preventCopy = (e) => {
-      e.preventDefault();
-    };
-    const preventRightClick = (e) => {
-      e.preventDefault();
-    };
 
-    document.addEventListener("copy", preventCopy);
-    document.addEventListener("cut", preventCopy);
-    document.addEventListener("contextmenu", preventRightClick);
-
-    return () => {
-      document.removeEventListener("copy", preventCopy);
-      document.removeEventListener("cut", preventCopy);
-      document.removeEventListener("contextmenu", preventRightClick);
-    };
-  }, []);
-
-  useEffect(() => {
-    const handleBlur = () => setIsBlurred(true);
-    const handleFocus = () => setIsBlurred(false);
-    const handleVisibilityChange = () => {
-      if (document.hidden) {
-        setIsBlurred(true);
-      } else {
-        setIsBlurred(false);
-      }
-    };
-    const handleKeyDown = (e) => {
-      if (e.key === "PrintScreen" || e.keyCode === 44) {
-        setIsBlurred(true);
-        triggerToast(language === "en" ? "Screenshots are protected on this site." : "በዚህ ጣቢያ ላይ ስክሪንሾት ማድረግ አይፈቀድም።");
-        setTimeout(() => setIsBlurred(false), 2000);
-      }
-    };
-
-    window.addEventListener("blur", handleBlur);
-    window.addEventListener("focus", handleFocus);
-    document.addEventListener("visibilitychange", handleVisibilityChange);
-    window.addEventListener("keyup", handleKeyDown);
-
-    return () => {
-      window.removeEventListener("blur", handleBlur);
-      window.removeEventListener("focus", handleFocus);
-      document.removeEventListener("visibilitychange", handleVisibilityChange);
-      window.removeEventListener("keyup", handleKeyDown);
-    };
-  }, [language]);
 
   return (
-    <div className={`app-container ${isBlurred ? "app-blurred" : ""}`}>
+    <div className="app-container">
       <Navbar
         setCurrentPage={setCurrentPage}
         language={language}
