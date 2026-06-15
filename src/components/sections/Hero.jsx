@@ -149,13 +149,6 @@ const Hero = ({ triggerToast, language }) => {
           >
             <div className="store-badges" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
               <img 
-                src="/app-store-badge.svg" 
-                alt="Download on the App Store" 
-                style={{ height: '40px', cursor: 'pointer', transition: 'transform 0.2s' }} 
-                className="store-badge-img"
-                onClick={() => triggerToast(language === 'en' ? 'iOS Version Coming Soon' : 'የiOS ስሪት በቅርቡ ይመጣል')}
-              />
-              <img 
                 src="/google-play-badge.svg" 
                 alt="Get it on Google Play" 
                 style={{ height: '40px', cursor: 'pointer', transition: 'transform 0.2s' }} 
