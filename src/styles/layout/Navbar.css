@@ -44,6 +44,7 @@
   text-decoration: none;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  cursor: pointer;
   transition: var(--transition-smooth);
   position: relative;
   padding-bottom: 0.25rem;
@@ -231,6 +232,7 @@
   color: var(--text-primary);
   text-decoration: none;
   letter-spacing: 0.05em;
+  cursor: pointer;
   transition: var(--transition-smooth);
   width: 100%;
   padding: 0.25rem 0;
