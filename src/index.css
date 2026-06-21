@@ -1,52 +1,52 @@
 :root {
-  /* Colors - Velorah Cinematic Style (YAML Tokens) */
-  --color-surface: #121214;
-  --color-surface-dim: #121214;
-  --color-surface-bright: #1c2b21;
-  --color-surface-container-lowest: #0b0b0c;
-  --color-surface-container-low: #18181b;
-  --color-surface-container: #1e1e21;
-  --color-surface-container-high: #27272a;
-  --color-surface-container-highest: #3f3f46;
-  --color-on-surface: #e4e4e7;
-  --color-on-surface-variant: #a1a1aa;
-  --color-inverse-surface: #e4e4e7;
-  --color-inverse-on-surface: #18181b;
-  --color-outline: #71717a;
-  --color-outline-variant: #52525b;
-  --color-surface-tint: #2ECC71;
-  --color-primary: #2ECC71;
-  --color-on-primary: #052e16;
-  --color-primary-container: #14532d;
-  --color-on-primary-container: #86efac;
-  --color-inverse-primary: #15803d;
-  --color-secondary: #a1a1aa;
-  --color-on-secondary: #27272a;
-  --color-secondary-container: #3f3f46;
-  --color-on-secondary-container: #d4d4d8;
-  --color-tertiary: #a3e635;
-  --color-on-tertiary: #1a2e05;
-  --color-tertiary-container: #365314;
-  --color-on-tertiary-container: #d9f99d;
-  --color-error: #ef4444;
+  /* Colors - Mobile App Premium Dark/Glassmorphic Theme */
+  --color-surface: #171614;
+  --color-surface-dim: #0c0b0a;
+  --color-surface-bright: #1f1d1b;
+  --color-surface-container-lowest: #050505;
+  --color-surface-container-low: #0c0b0a;
+  --color-surface-container: #171614;
+  --color-surface-container-high: #1f1d1b;
+  --color-surface-container-highest: #2b2926;
+  --color-on-surface: #fdfdfd;
+  --color-on-surface-variant: rgba(255, 255, 255, 0.6);
+  --color-inverse-surface: #fdfdfd;
+  --color-inverse-on-surface: #0c0b0a;
+  --color-outline: rgba(255, 255, 255, 0.08);
+  --color-outline-variant: rgba(255, 255, 255, 0.03);
+  --color-surface-tint: #34d399;
+  --color-primary: #34d399; /* Cyber Mint */
+  --color-on-primary: #064e3b;
+  --color-primary-container: #064e3b;
+  --color-on-primary-container: #34d399;
+  --color-inverse-primary: #059669;
+  --color-secondary: rgba(255, 255, 255, 0.5);
+  --color-on-secondary: #171614;
+  --color-secondary-container: #1f1d1b;
+  --color-on-secondary-container: #fdfdfd;
+  --color-tertiary: #fbbf24;
+  --color-on-tertiary: #2d2218;
+  --color-tertiary-container: #ecfdf5;
+  --color-on-tertiary-container: #059669;
+  --color-error: #fb7185;
   --color-on-error: #ffffff;
-  --color-error-container: #7f1d1d;
-  --color-on-error-container: #fca5a5;
-  --color-primary-fixed: #bbf7d0;
-  --color-primary-fixed-dim: #86efac;
-  --color-on-primary-fixed: #052e16;
-  --color-on-primary-fixed-variant: #14532d;
-  --color-secondary-fixed: #e2e2e2;
-  --color-secondary-fixed-dim: #c6c6c7;
-  --color-on-secondary-fixed: #1a1c1c;
-  --color-on-secondary-fixed-variant: #454747;
-  --color-tertiary-fixed: #d5e4fa;
-  --color-tertiary-fixed-dim: #b9c8dd;
-  --color-on-tertiary-fixed: #0e1c2c;
-  --color-on-tertiary-fixed-variant: #3a4859;
-  --color-background: #121214;
-  --color-on-background: #e4e4e7;
-  --color-surface-variant: #1c2b21;
+  --color-error-container: #4c0519;
+  --color-on-error-container: #fb7185;
+  --color-primary-fixed: #86efac;
+  --color-primary-fixed-dim: #34d399;
+  --color-on-primary-fixed: #064e3b;
+  --color-on-primary-fixed-variant: #064e3b;
+  --color-secondary-fixed: #faf7f2;
+  --color-secondary-fixed-dim: #faf7f2;
+  --color-on-secondary-fixed: #2d2218;
+  --color-on-secondary-fixed-variant: rgba(45, 34, 24, 0.6);
+  --color-tertiary-fixed: #fcd34d;
+  --color-tertiary-fixed-dim: #fbbf24;
+  --color-on-tertiary-fixed: #2d2218;
+  --color-on-tertiary-fixed-variant: rgba(45, 34, 24, 0.6);
+  --color-background: #0c0b0a;
+  --color-on-background: #fdfdfd;
+  --color-surface-variant: #1f1d1b;
 
   /* Typography */
   --font-display: 'Instrument Serif', serif;
@@ -56,8 +56,8 @@
   --radius-sm: 0.25rem;
   --radius-default: 0.5rem;
   --radius-md: 0.75rem;
-  --radius-lg: 1rem;
-  --radius-xl: 1.5rem;
+  --radius-lg: 1.5rem; /* smoother, larger rounded corners matching the mobile app's 24px (1.5rem) */
+  --radius-xl: 2rem;
   --radius-full: 9999px;
 
   /* Spacing */
@@ -71,27 +71,39 @@
 
   /* Legacy & Utility Mapping */
   --bg-color: var(--color-background);
-  --text-primary: var(--color-on-surface); /* Make primary text responsive to theme colors */
+  --text-primary: var(--color-on-surface);
   --text-secondary: var(--color-on-surface-variant);
   --primary-color: var(--color-primary);
   --secondary-color: var(--color-secondary);
-  --border-color: rgba(255, 255, 255, 0.15); /* Luminous Border (15% white) */
-  --glass-bg: rgba(46, 204, 113, 0.1); /* Liquid Glass Tint (10-40% opacity) */
+  --border-color: rgba(255, 255, 255, 0.08); /* 8% white border from mobile app */
+  --border-soft: rgba(255, 255, 255, 0.03); /* 3% white border from mobile app */
+  --glass-bg: rgba(23, 22, 20, 0.7); /* Mobile app dark glass bg */
+  --glass-border: rgba(255, 255, 255, 0.1); /* Mobile app dark glass border */
   --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 
   /* Theme-specific custom variables */
-  --nav-bg-scrolled: rgba(18, 18, 20, 0.6);
+  --nav-bg-scrolled: rgba(12, 11, 10, 0.75);
   --nav-border: rgba(255, 255, 255, 0.08);
   --nav-link-color: rgba(255, 255, 255, 0.7);
   --nav-link-hover: #FFFFFF;
-  --pricing-card-bg: linear-gradient(to bottom, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
-  --hero-overlay: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(18, 18, 20, 0.9) 100%);
-  --btn-primary-bg: #FFFFFF;
-  --btn-primary-color: #121214;
-  --btn-secondary-bg: var(--glass-bg);
-  --btn-secondary-color: #FFFFFF;
-  --card-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
-  --card-shadow-hover: 0 30px 60px -10px rgba(0, 0, 0, 0.7);
+  --pricing-card-bg: linear-gradient(to bottom, rgba(23, 22, 20, 0.8), rgba(12, 11, 10, 0.9));
+  --card-bg-gradient: linear-gradient(to bottom, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.005));
+  --hero-overlay: linear-gradient(to bottom, rgba(12, 11, 10, 0.2) 0%, #0c0b0a 100%);
+  --btn-primary-bg: #34d399;
+  --btn-primary-color: #064e3b;
+  --btn-secondary-bg: rgba(255, 255, 255, 0.05);
+  --btn-secondary-color: #fdfdfd;
+  --card-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+  --card-shadow-hover: 0 30px 60px -10px rgba(0, 0, 0, 0.9);
+
+  /* Component specific highlights */
+  --highlight-col-bg: rgba(52, 211, 153, 0.05);
+  --highlight-col-bg-hover: rgba(52, 211, 153, 0.08);
+  --highlight-col-border: rgba(52, 211, 153, 0.15);
+  --highlight-card-bg: rgba(52, 211, 153, 0.08);
+  --highlight-card-shadow: 0 15px 50px rgba(52, 211, 153, 0.15);
+  --faq-shadow: 0 4px 20px rgba(52, 211, 153, 0.06);
+  --color-primary-soft: rgba(52, 211, 153, 0.1);
 }
 
 * {
@@ -317,34 +329,51 @@ p, .body-md {
 
 /* Light Theme Color Variables Overrides */
 .light-theme {
-  --color-background: #f8fafc;
-  --color-on-background: #0f172a;
+  --color-background: #f8f3eb; /* Creamier paper feel */
+  --color-on-background: #2d2218;
   --color-surface: #ffffff;
-  --color-surface-dim: #f1f5f9;
-  --color-surface-bright: #e2e8f0;
+  --color-surface-dim: #f0e8db;
+  --color-surface-bright: #faf7f2;
   --color-surface-container-lowest: #ffffff;
-  --color-surface-container-low: #f8fafc;
-  --color-surface-container: #f1f5f9;
-  --color-surface-container-high: #e2e8f0;
-  --color-surface-container-highest: #cbd5e1;
-  --color-on-surface: #0f172a;
-  --color-on-surface-variant: #475569;
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --border-color: rgba(15, 23, 42, 0.1);
-  --glass-bg: rgba(46, 204, 113, 0.05);
+  --color-surface-container-low: #faf7f2;
+  --color-surface-container: #ffffff;
+  --color-surface-container-high: #f0e8db;
+  --color-surface-container-highest: #d9d1c5;
+  --color-on-surface: #2d2218;
+  --color-on-surface-variant: rgba(45, 34, 24, 0.6);
+  --text-primary: #2d2218;
+  --text-secondary: rgba(45, 34, 24, 0.6);
+  --border-color: rgba(95, 69, 46, 0.08);
+  --border-soft: rgba(95, 69, 46, 0.04);
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(95, 69, 46, 0.08);
 
-  --nav-bg-scrolled: rgba(248, 250, 252, 0.6);
-  --nav-border: rgba(15, 23, 42, 0.08);
-  --nav-link-color: rgba(15, 23, 42, 0.7);
-  --nav-link-hover: #0f172a;
-  --pricing-card-bg: linear-gradient(to bottom, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.005));
-  --hero-overlay: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, #f8fafc 100%);
-  --btn-primary-bg: #0f172a;
-  --btn-primary-color: #FFFFFF;
-  --btn-secondary-bg: rgba(15, 23, 42, 0.05);
-  --btn-secondary-color: #0f172a;
-  --card-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.08);
-  --card-shadow-hover: 0 30px 60px -10px rgba(15, 23, 42, 0.15);
+  --nav-bg-scrolled: rgba(248, 243, 235, 0.8);
+  --nav-border: rgba(95, 69, 46, 0.08);
+  --nav-link-color: rgba(45, 34, 24, 0.7);
+  --nav-link-hover: #2d2218;
+  --pricing-card-bg: linear-gradient(to bottom, #ffffff, #faf7f2);
+  --card-bg-gradient: linear-gradient(to bottom, rgba(95, 69, 46, 0.02), rgba(95, 69, 46, 0.005));
+  --hero-overlay: linear-gradient(to bottom, rgba(248, 243, 235, 0.2) 0%, #f8f3eb 100%);
+  --btn-primary-bg: #059669; /* Vibrant Emerald */
+  --btn-primary-color: #ffffff;
+  --btn-secondary-bg: rgba(95, 69, 46, 0.05);
+  --btn-secondary-color: #2d2218;
+  --card-shadow: 0 20px 40px -15px rgba(95, 69, 46, 0.06);
+  --card-shadow-hover: 0 30px 60px -10px rgba(95, 69, 46, 0.12);
+  
+  --color-primary: #059669;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #ecfdf5;
+  --color-on-primary-container: #064e3b;
+
+  /* Component specific highlights */
+  --highlight-col-bg: rgba(5, 150, 105, 0.03);
+  --highlight-col-bg-hover: rgba(5, 150, 105, 0.06);
+  --highlight-col-border: rgba(5, 150, 105, 0.15);
+  --highlight-card-bg: rgba(5, 150, 105, 0.08);
+  --highlight-card-shadow: 0 15px 50px rgba(5, 150, 105, 0.15);
+  --faq-shadow: 0 4px 20px rgba(5, 150, 105, 0.06);
+  --color-primary-soft: rgba(5, 150, 105, 0.1);
 }
 

@@ -17,7 +17,7 @@
 }
 
 .testimonial-card {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--card-bg-gradient);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 2.5rem;

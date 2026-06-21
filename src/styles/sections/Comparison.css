@@ -57,9 +57,9 @@
 }
 
 .highlight-column {
-    background: rgba(46, 204, 113, 0.05) !important;
-    border-left: 1px solid rgba(46, 204, 113, 0.15);
-    border-right: 1px solid rgba(46, 204, 113, 0.15);
+    background: var(--highlight-col-bg) !important;
+    border-left: 1px solid var(--highlight-col-border);
+    border-right: 1px solid var(--highlight-col-border);
 }
 
 th.highlight-column {
@@ -74,7 +74,7 @@ th.highlight-column {
 
 .icon-check {
     color: var(--color-primary);
-    filter: drop-shadow(0 0 4px rgba(46, 204, 113, 0.3));
+    filter: drop-shadow(0 0 4px var(--color-primary-soft));
 }
 
 .icon-x {
@@ -87,21 +87,14 @@ th.highlight-column {
 }
 
 .comparison-table tr:hover td.highlight-column {
-    background: rgba(46, 204, 113, 0.08) !important;
+    background: var(--highlight-col-bg-hover) !important;
 }
 
 /* Light theme overrides for better contrast */
 .light-theme .comparison-table td {
-    color: rgba(15, 23, 42, 0.72);
+    color: var(--text-secondary);
 }
 
 .light-theme .comparison-table td.feature-name {
-    color: rgba(15, 23, 42, 0.9);
-}
-
-.light-theme .highlight-column {
-    background: rgba(46, 204, 113, 0.03) !important;
-}
-.light-theme .comparison-table tr:hover td.highlight-column {
-    background: rgba(46, 204, 113, 0.06) !important;
+    color: var(--text-primary);
 }

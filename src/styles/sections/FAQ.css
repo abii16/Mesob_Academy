@@ -27,7 +27,7 @@
 .faq-item.active {
   background: var(--color-surface-container-highest);
   border-color: var(--color-primary);
-  box-shadow: 0 4px 20px rgba(46, 204, 113, 0.06);
+  box-shadow: var(--faq-shadow);
 }
 
 .faq-question-row {

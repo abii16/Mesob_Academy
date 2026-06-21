@@ -97,11 +97,11 @@
 }
 
 .mobile-menu-btn:hover {
-  background: rgba(21, 128, 61, 0.1);
+  background: var(--color-primary-soft);
 }
 
 .mobile-menu-btn:hover .hamburger-box span {
-  background: #15803d;
+  background: var(--color-primary);
 }
 
 @media (max-width: 768px) {
@@ -124,8 +124,8 @@
 }
 
 .navbar-scrolled .mobile-menu-btn:hover {
-  background: rgba(21, 128, 61, 0.15);
-  border-color: rgba(21, 128, 61, 0.4);
+  background: var(--color-primary-soft);
+  border-color: var(--color-primary);
 }
 
 .hamburger-box {
@@ -168,12 +168,12 @@
 
 .mobile-menu-btn.is-open .hamburger-box span:nth-child(2) {
   transform: rotate(45deg);
-  background: #15803d;
+  background: var(--color-primary);
 }
 
 .mobile-menu-btn.is-open .hamburger-box span:nth-child(3) {
   transform: rotate(-45deg);
-  background: #15803d;
+  background: var(--color-primary);
 }
 
 .mobile-menu-btn.is-open .hamburger-box span:nth-child(4) {
