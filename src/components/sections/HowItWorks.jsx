@@ -6,7 +6,7 @@ import "../../styles/sections/HowItWorks.css";
 const HowItWorks = ({ language }) => {
   const t = {
     en: {
-      subtitle: "THE MESOB ACADEMY WAY",
+      subtitle: "THE MESOB WAY",
       title: "Getting started is as easy as 1-2-3",
       steps: [
         {

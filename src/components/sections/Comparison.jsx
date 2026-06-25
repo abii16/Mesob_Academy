@@ -6,9 +6,9 @@ import "../../styles/sections/Comparison.css";
 const Comparison = ({ language }) => {
   const t = {
     en: {
-      subtitle: "WHY MESOB ACADEMY",
+      subtitle: "WHY MESOB APP",
       title: "Built Around Real Study Needs",
-      desc: "Mesob Academy is built to help students learn with clarity, consistency, and confidence.",
+      desc: "Mesob APP is built to help students learn with clarity, consistency, and confidence.",
       featureCol: "What Students Get",
       detailCol: "Why It Matters",
       features: [
@@ -40,14 +40,14 @@ const Comparison = ({ language }) => {
         {
           name: "Modern digital learning foundation",
           detail:
-            "Mesob Academy is being shaped as a serious long-term product, not just a simple content page.",
+            "Mesob APP is being shaped as a serious long-term product, not just a simple content page.",
         },
       ],
     },
     am: {
-      subtitle: "ለምን Mesob Academy",
+      subtitle: "ለምን Mesob APP",
       title: "ለእውነተኛ የጥናት ፍላጎት የተገነባ",
-      desc: "Mesob Academy ተማሪዎች በግልጽነት፣ በቀጣይነት እና በመተማመን እንዲማሩ እንዲያግዝ ተገንብቷል።",
+      desc: "Mesob APP ተማሪዎች በግልጽነት፣ በቀጣይነት እና በመተማመን እንዲማሩ እንዲያግዝ ተገንብቷል።",
       featureCol: "ተማሪዎች የሚያገኙት",
       detailCol: "ለምን አስፈላጊ ነው",
       features: [
@@ -76,7 +76,7 @@ const Comparison = ({ language }) => {
         {
           name: "ዘመናዊ የዲጂታል ትምህርት መሠረት",
           detail:
-            "Mesob Academy እንደ ቀላል የይዘት ገጽ ሳይሆን እንደ ከባድ የረጅም ጊዜ ምርት እየተገነባ ነው።",
+            "Mesob APP እንደ ቀላል የይዘት ገጽ ሳይሆን እንደ ከባድ የረጅም ጊዜ ምርት እየተገነባ ነው።",
         },
       ],
     },

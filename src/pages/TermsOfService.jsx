@@ -6,7 +6,7 @@ const TermsOfService = ({ language = "en" }) => {
     en: {
       backHome: "← Back to Home",
       title: "Terms of Service",
-      lastUpdated: "Last updated: June 13, 2026",
+      lastUpdated: "Last updated: June 25, 2026",
       introDesc: "Please read these Terms of Service carefully. By using our website or mobile application, you agree to these rules.",
       
       sec1Title: "1. Eligibility & User Accounts",
@@ -31,21 +31,15 @@ const TermsOfService = ({ language = "en" }) => {
       sec4Bullet3: "Reverse Engineering: Trying to decompile the mobile app code.",
       
       sec5Title: "5. Technical Anti-Piracy Measures",
-      sec5Text: "We use technical measures (like blocking screenshots, screen recording, background blurs, and user watermarks) to prevent unauthorized sharing.",
+      sec5Text: "We use technical measures (like blocking screenshots, screen recording, background blurs, and user watermarks) to prevent unauthorized sharing. Violations will result in immediate bans and account termination without refund.",
       
-      sec6Title: "6. Limitation of Liability",
-      sec6Text: "We provide educational prep materials. We do not guarantee specific exam results or scores. We are not responsible for internet outages or server downtime.",
-      
-      sec7Title: "7. Termination & Account Bans",
-      sec7Text: "We can ban accounts that violate copyright rules, bypass screenshot locks, or share accounts. Banned accounts do not receive refunds.",
-      
-      sec8Title: "8. Governing Law & Support",
-      sec8Text: "These terms are governed by and construed in accordance with the laws of the Federal Democratic Republic of Ethiopia."
+      sec6Title: "6. Governing Law",
+      sec6Text: "These terms are governed by and construed in accordance with the laws of the Federal Democratic Republic of Ethiopia."
     },
     am: {
       backHome: "← ወደ መነሻ ገጽ",
       title: "የአገልግሎት ውሎች",
-      lastUpdated: "የመጨረሻ መሻሻል፡ ሰኔ 6 ቀን 2018 ዓ.ም.",
+      lastUpdated: "የመጨረሻ መሻሻል፡ ሰኔ 18 ቀን 2018 ዓ.ም.",
       introDesc: "እባክዎን እነዚህን የአገልግሎት ውሎች በጥንቃቄ ያንብቡ። አገልግሎታችንን ወይም መተግበሪያችንን ሲጠቀሙ በእነዚህ ውሎች ለመገዛት ተስማምተዋል።",
       
       sec1Title: "1. ብቁነት እና የተጠቃሚ አካውንት",
@@ -70,16 +64,10 @@ const TermsOfService = ({ language = "en" }) => {
       sec4Bullet3: "ሪቨርስ-ኢንጂነሪንግ፦ የመተግበሪያውን ኮድ ለመበተን መሞከር።",
       
       sec5Title: "5. የቴክኒክ ፀረ-ኮፒ መከላከያዎች",
-      sec5Text: "ያለፈቃድ ቪዲዮ መቅረጽን ለመከላከል ስክሪንሾት መከልከልን፣ የጀርባ መደብዘዝን እና የውሃ ምልክት ማሳየትን እንጠቀማለን።",
+      sec5Text: "ያለፈቃድ ቪዲዮ መቅረጽን ለመከላከል ስክሪንሾት መከልከልን፣ የጀርባ መደብዘዝን እና የውሃ ምልክት ማሳየትን እንጠቀማለን። ህግ የጣሱ አካውንቶችን ያለ ምንም ክፍያ ተመላሽ የማገድ መብታችን የተጠበቀ ነው።",
       
-      sec6Title: "6. የኃላፊነት ወሰን",
-      sec6Text: "የትምህርት መርጃዎችን እናቀርባለን እንጂ የተለየ የፈተና ውጤት ለማምጣት ዋስትና አንሰጥም። ለኢንተርኔት መቆራረጥ ተጠያቂ አንሆንም።",
-      
-      sec7Title: "7. አገልግሎት ማቋረጥ እና አካውንት ማገድ",
-      sec7Text: "ደንብ የጣሱ ወይም የቅጂ መብት ያላከበሩ አካውንቶችን ያለ ምንም ገንዘብ ተመላሽ የማገድ መብት አለን።",
-      
-      sec8Title: "8. የሚገዛበት ሕግ እና ድጋፍ",
-      sec8Text: "እነዚህ ውሎች በኢትዮጵያ ፌዴራላዊ ዲሞክራሲያዊ ሪፐብሊክ ሕጎች መሠረት የሚገዙ እና የሚተረጎሙ ናቸው።"
+      sec6Title: "6. የሚገዛበት ሕግ",
+      sec6Text: "እነዚህ ውሎች በኢትዮጵያ ፌዴራላዊ ዲሞክራሲያዊ ሪፐብሊክ ሕጎች መሠረት የሚገዙ እና የሚተረጎሙ ናቸው።"
     }
   };
 
@@ -173,18 +161,6 @@ const TermsOfService = ({ language = "en" }) => {
           <div className="privacy-doc-section">
             <h2>{curr.sec6Title}</h2>
             <p>{curr.sec6Text}</p>
-          </div>
-
-          {/* Section 7 */}
-          <div className="privacy-doc-section">
-            <h2>{curr.sec7Title}</h2>
-            <p>{curr.sec7Text}</p>
-          </div>
-
-          {/* Section 8 */}
-          <div className="privacy-doc-section">
-            <h2>{curr.sec8Title}</h2>
-            <p>{curr.sec8Text}</p>
           </div>
         </div>
 
