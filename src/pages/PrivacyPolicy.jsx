@@ -147,12 +147,6 @@ const PrivacyPolicy = ({ language = "en" }) => {
   return (
     <div className="privacy-document-layout">
       <div className="container privacy-document-inner">
-        {/* Back Link */}
-        <div className="privacy-document-header">
-          <a href="/#" className="privacy-back-link">
-            {curr.backHome}
-          </a>
-        </div>
 
         {/* Date & Title */}
         <div className="privacy-document-title-block">
@@ -289,12 +283,7 @@ const PrivacyPolicy = ({ language = "en" }) => {
           </div>
         </div>
 
-        {/* Back Link Footer */}
-        <div className="privacy-document-footer">
-          <a href="/#" className="privacy-back-link">
-            {curr.backHome}
-          </a>
-        </div>
+
       </div>
     </div>
   );
