@@ -134,6 +134,10 @@
   line-height: 1;
 }
 
+.privacy-toc-list li::before {
+  content: none;
+}
+
 .privacy-doc-list li strong {
   color: var(--text-primary);
   font-weight: 600;

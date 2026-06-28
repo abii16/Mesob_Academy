@@ -173,7 +173,7 @@ const PrivacyPolicy = ({ language = "en" }) => {
         {/* Table of Contents */}
         <div className="privacy-doc-section" style={{ marginBottom: "3rem", paddingBottom: "2rem", borderBottom: "1px solid var(--border-color)" }}>
           <h3 style={{ marginTop: 0, fontSize: "1.25rem", color: "var(--color-primary)", letterSpacing: "0.05em" }}>{curr.tocTitle}</h3>
-          <ul className="privacy-doc-list" style={{ gap: "0.6rem" }}>
+          <ul className="privacy-doc-list privacy-toc-list" style={{ gap: "0.6rem" }}>
             {sections.map((sec) => (
               <li key={sec.id} style={{ display: "block", paddingLeft: 0 }}>
                 <a 
