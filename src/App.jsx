@@ -137,13 +137,15 @@ const App = () => {
 
   return (
     <div className="app-container">
-      <Navbar
-        setCurrentPage={setCurrentPage}
-        language={language}
-        setLanguage={setLanguage}
-        theme={theme}
-        toggleTheme={toggleTheme}
-      />
+      {currentPage !== "privacy" && (
+        <Navbar
+          setCurrentPage={setCurrentPage}
+          language={language}
+          setLanguage={setLanguage}
+          theme={theme}
+          toggleTheme={toggleTheme}
+        />
+      )}
 
       {currentPage === "home" && (
         <>
@@ -162,11 +164,13 @@ const App = () => {
       {currentPage === "terms" && <TermsOfService language={language} />}
       {currentPage === "404" && <NotFoundPage />}
 
-      <Footer
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-        language={language}
-      />
+      {currentPage !== "privacy" && (
+        <Footer
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          language={language}
+        />
+      )}
 
       <AnimatePresence>
         {showToast && (
