@@ -186,7 +186,7 @@ const PrivacyPolicy = ({ language = "en" }) => {
                     if (el) el.scrollIntoView({ behavior: "smooth" });
                   }}
                 >
-                  {sec.title}
+                  {sec.title.replace(/^(\d+)\./, "$1")}
                 </a>
               </li>
             ))}
