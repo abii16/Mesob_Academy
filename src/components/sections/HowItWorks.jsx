@@ -27,7 +27,7 @@ const HowItWorks = ({ language }) => {
       ],
     },
     am: {
-      subtitle: "የኢትዮ ዩኒክ መንገድ",
+      subtitle: "የመሶብ መንገድ",
       title: "ለመጀመር 1-2-3 ያህል ቀላል ነው",
       steps: [
         {

@@ -26,7 +26,7 @@ const Footer = ({ currentPage, setCurrentPage, language }) => {
       contact: "ያግኙን",
       help: "የእርዳታ ማዕከል",
       community: "ማህበረሰብ",
-      copyright: `© ${new Date().getFullYear()} ኢትዮ ዩኒክ አካዳሚ። በኢትዮጵያ ውስጥ በጥበብ የተገነባ።`,
+      copyright: `© ${new Date().getFullYear()} መሶብ አካዳሚ። በኢትዮጵያ ውስጥ በጥበብ የተገነባ።`,
       verified: "ደህንነቱ የተረጋገጠ",
       privacyFirst: "ለግላዊነት ቅድሚያ",
     },
@@ -106,7 +106,7 @@ const Footer = ({ currentPage, setCurrentPage, language }) => {
             Telegram
           </a>
           <a
-            href="https://www.youtube.com/@ETHIOUNIQUEACADEMY"
+            href="https://www.youtube.com/@MESOBACADEMY"
             target="_blank"
             rel="noreferrer"
             className="footer-link-item"

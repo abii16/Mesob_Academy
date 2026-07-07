@@ -106,7 +106,7 @@ const App = () => {
             "content",
             language === "en"
               ? "Review our terms of service governing usage of the Mesob Academy platform."
-              : "የኢትዮ ዩኒክ ፕላትፎርም አጠቃቀምን የሚገዙ የአገልግሎት ውሎቻችንን ይገምግሙ።",
+              : "የመሶብ አካዳሚ ፕላትፎርም አጠቃቀምን የሚገዙ የአገልግሎት ውሎቻችንን ይገምግሙ።",
           );
         window.scrollTo(0, 0);
       } else {
@@ -117,7 +117,7 @@ const App = () => {
             "content",
             language === "en"
               ? "The requested page could not be found on Mesob Academy."
-              : "የተጠየቀው ገጽ በኢትዮ ዩኒክ አካዳሚ ላይ አልተገኘም።",
+              : "የተጠየቀው ገጽ በመሶብ አካዳሚ ላይ አልተገኘም።",
           );
         window.scrollTo(0, 0);
       }
