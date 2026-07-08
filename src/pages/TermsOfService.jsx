@@ -4,13 +4,12 @@ import "../styles/pages/TermsOfService.css";
 const TermsOfService = ({ language = "en" }) => {
   const t = {
     en: {
-      backHome: "← Back to Home",
       title: "Terms of Service",
       lastUpdated: "Last updated: June 25, 2026",
-      introDesc: "Please read these Terms of Service carefully. By using our website or mobile application, you agree to these rules.",
+      introDesc: "Please read these Terms of Service carefully. By using our mobile application, you agree to these rules.",
       
       sec1Title: "1. Eligibility & User Accounts",
-      sec1Text: "Mesob Academy is for students in Grades 9-12. If you are under 18, you need parent or guardian consent. You are responsible for keeping your password secret.",
+      sec1Text: "Mesob App is for students in Grades 9-12. If you are under 18, you need parent or guardian consent. You are responsible for keeping your password secret.",
       
       sec2Title: "2. Subscriptions, Payments & Access Limits",
       sec2Text: "Premium packages require payment via local bank transfers or telebirr:",
@@ -37,7 +36,6 @@ const TermsOfService = ({ language = "en" }) => {
       sec6Text: "These terms are governed by and construed in accordance with the laws of the Federal Democratic Republic of Ethiopia."
     },
     am: {
-      backHome: "← ወደ መነሻ ገጽ",
       title: "የአገልግሎት ውሎች",
       lastUpdated: "የመጨረሻ መሻሻል፡ ሰኔ 18 ቀን 2018 ዓ.ም.",
       introDesc: "እባክዎን እነዚህን የአገልግሎት ውሎች በጥንቃቄ ያንብቡ። አገልግሎታችንን ወይም መተግበሪያችንን ሲጠቀሙ በእነዚህ ውሎች ለመገዛት ተስማምተዋል።",
@@ -76,12 +74,6 @@ const TermsOfService = ({ language = "en" }) => {
   return (
     <div className="privacy-document-layout">
       <div className="container privacy-document-inner">
-        {/* Back Link */}
-        <div className="privacy-document-header">
-          <a href="/#" className="privacy-back-link">
-            {curr.backHome}
-          </a>
-        </div>
 
         {/* Date & Title */}
         <div className="privacy-document-title-block">
@@ -164,12 +156,7 @@ const TermsOfService = ({ language = "en" }) => {
           </div>
         </div>
 
-        {/* Back Link Footer */}
-        <div className="privacy-document-footer">
-          <a href="/#" className="privacy-back-link">
-            {curr.backHome}
-          </a>
-        </div>
+
       </div>
     </div>
   );

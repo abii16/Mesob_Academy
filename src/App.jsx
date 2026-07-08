@@ -137,7 +137,7 @@ const App = () => {
 
   return (
     <div className="app-container">
-      {currentPage !== "privacy" && (
+      {currentPage !== "privacy" && currentPage !== "terms" && (
         <Navbar
           setCurrentPage={setCurrentPage}
           language={language}
@@ -164,7 +164,7 @@ const App = () => {
       {currentPage === "terms" && <TermsOfService language={language} />}
       {currentPage === "404" && <NotFoundPage />}
 
-      {currentPage !== "privacy" && (
+      {currentPage !== "privacy" && currentPage !== "terms" && (
         <Footer
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
