@@ -10,7 +10,7 @@ const PrivacyPolicy = ({ language = "en" }) => {
       introText1: "This privacy notice for Mesob Academy (\"Company\", \"we\", \"us\", or \"our\"), describes how and why we might collect, store, use, and/or share (\"process\") your information when you use our services (\"Services\"), such as when you:",
       introBullet1: "Download and use our mobile application (Mesob Academy), or any other application of ours that links to this privacy notice",
       introBullet2: "Engage with us in other related ways, including any sales, marketing, or events",
-      questionsConcerns: "Questions or concerns? Reading this privacy notice will help you understand your privacy rights and choices. If you do not agree with our policies and practices, please do not use our Services. If you still have any questions or concerns, please contact us at support@mesobacademy.com.",
+      questionsConcerns: "Questions or concerns? Reading this privacy notice will help you understand your privacy rights and choices. If you do not agree with our policies and practices, please do not use our Services. If you still have any questions or concerns, please contact us at mesobacademy@gmail.com.",
       
       tocTitle: "TABLE OF CONTENTS",
       
@@ -18,7 +18,7 @@ const PrivacyPolicy = ({ language = "en" }) => {
       sec1Intro: "We collect personal information that you voluntarily provide to us when you register on the Services, express an interest in obtaining information about us or our products and Services, when you participate in activities on the Services, or otherwise when you contact us.",
       sec1Sub1: "Personal information you disclose to us",
       sec1Sub1Desc: "The personal information that we collect depends on the context of your interactions with us and the Services, the choices you make, and the products and features you use. The personal information we collect may include the following:",
-      sec1Bullet1: "Account Profile Data: Names, phone numbers, email addresses, grade level, academic stream, and securely hashed passwords.",
+      sec1Bullet1: "Account Profile Data: Names, phone numbers, grade level, academic stream, and securely hashed passwords.",
       sec1Bullet2: "Payment Log Data: Uploaded screenshots of payment receipts or transaction references used to activate premium access.",
       sec1Bullet3: "Mobile Device Access: We may request access or permission to certain features from your mobile device, including your mobile device's camera, photo library, storage for offline downloads, and push notifications. You can change these permissions at any time in your device's settings.",
       sec1Bullet4: "Device and Usage Data: We automatically collect information such as device ID, model, operating system, system configuration, browser type, IP address, log and usage data (activity timestamps, viewed files, searches, and error reports/crash logs).",
@@ -42,7 +42,7 @@ const PrivacyPolicy = ({ language = "en" }) => {
       sec5Intro: "We have implemented appropriate and reasonable technical and organizational security measures designed to protect the security of any personal information we process. However, despite our safeguards and efforts to secure your information, no electronic transmission over the Internet or information storage technology can be guaranteed to be 100% secure, so we cannot promise or guarantee that hackers, cybercriminals, or other unauthorized third parties will not be able to defeat our security and improperly collect, access, steal, or modify your information. Transmission of personal information to and from our Services is at your own risk. You should only access the Services within a secure environment.",
 
       sec6Title: "6. WHAT ARE YOUR PRIVACY RIGHTS?",
-      sec6Intro: "You may review, change, or terminate your account at any time. If you have questions or comments about your privacy rights, you may email us at support@mesobacademy.com.",
+      sec6Intro: "You may review, change, or terminate your account at any time. If you have questions or comments about your privacy rights, you may email us at mesobacademy@gmail.com.",
       sec6Sub: "Account Information",
       sec6SubDesc: "If you would at any time like to review or change the information in your account or terminate your account, you can do so through the app settings or by contacting us. Upon your request to terminate your account, we will deactivate or delete your account and information from our active databases. However, we may retain some information in our files to prevent fraud, troubleshoot problems, assist with any investigations, enforce our legal terms, or comply with legal requirements.",
 
@@ -56,11 +56,11 @@ const PrivacyPolicy = ({ language = "en" }) => {
       sec9Intro: "Yes, we will update this notice as necessary to stay compliant with relevant laws. The updated version will be indicated by an updated \"Revised\" date and the updated version will be effective as soon as it is accessible. We encourage you to review this privacy notice frequently to be informed of how we are protecting your information.",
 
       sec10Title: "10. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?",
-      sec10Intro: "If you have questions or comments about this notice, you may email us at support@mesobacademy.com or by post to:",
-      sec10Addr: "Mesob Academy, Bole, Addis Ababa, Ethiopia",
+      sec10Intro: "If you have questions or comments about this notice, you may email us at mesobacademy@gmail.com or by post to:",
+      sec10Addr: "Mesob Academy, Butajira, Ethiopia",
 
       sec11Title: "11. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?",
-      sec11Intro: "Based on the applicable laws of your country, you may have the right to request access to the personal information we collect from you, change that information, or delete it. To request to review, update, or delete your personal information, please submit a request by contacting us at support@mesobacademy.com.",
+      sec11Intro: "Based on the applicable laws of your country, you may have the right to request access to the personal information we collect from you, change that information, or delete it. To request to review, update, or delete your personal information, please submit a request by contacting us at mesobacademy@gmail.com.",
       
       createdUsing: "This privacy policy was created with reference to standard privacy regulations."
     },
@@ -71,7 +71,7 @@ const PrivacyPolicy = ({ language = "en" }) => {
       introText1: "ይህ የሜሶብ አካዳሚ (\"ኩባንያ\"፣ \"እኛ\"፣ \"እኛን\" ወይም \"የእኛ\") የግላዊነት ማሳወቂያ አገልግሎቶቻችንን (\"አገልግሎቶች\") ሲጠቀሙ መረጃዎን እንዴት እና ለምን እንደምንሰበስብ፣ እንደምናከማች፣ እንደምንጠቀም እና/ወይም እንደምናጋራ (\"ማስተናገድ\") ያብራራል፣ ለምሳሌ ያህል፦",
       introBullet1: "የእኛን የሞባይል መተግበሪያ (ሜሶብ አካዳሚ) ወይም ከዚህ የግላዊነት ማሳወቂያ ጋር የተያያዘ ማንኛውንም መተግበሪያችንን ሲያወርዱ እና ሲጠቀሙ",
       introBullet2: "በማንኛውም ሽያጭ፣ ግብይት ወይም ዝግጅቶች ጨምሮ በሌሎች ተዛማጅ መንገዶች ከእኛ ጋር መስተጋብር ሲያደርጉ",
-      questionsConcerns: "ጥያቄዎች ወይም ስጋቶች አሉዎት? ይህንን የግላዊነት ማሳወቂያ ማንበብዎ የግላዊነት መብቶችዎን እና ምርጫዎችዎን ለመረዳት ይረዳዎታል። በፖሊሲዎቻችን እና አሰራሮቻችን ካልተስማሙ እባክዎ አገልግሎቶቻችንን አይጠቀሙ። አሁንም ማንኛውም ጥያቄ ወይም ስጋት ካለዎት እባክዎ በ support@mesobacademy.com ያግኙን።",
+      questionsConcerns: "ጥያቄዎች ወይም ስጋቶች አሉዎት? ይህንን የግላዊነት ማሳወቂያ ማንበብዎ የግላዊነት መብቶችዎን እና ምርጫዎችዎን ለመረዳት ይረዳዎታል። በፖሊሲዎቻችን እና አሰራሮቻችን ካልተስማሙ እባክዎ አገልግሎቶቻችንን አይጠቀሙ። አሁንም ማንኛውም ጥያቄ ወይም ስጋት ካለዎት እባክዎ በ mesobacademy@gmail.com ያግኙን።",
       
       tocTitle: "ማውጫ",
       
@@ -79,7 +79,7 @@ const PrivacyPolicy = ({ language = "en" }) => {
       sec1Intro: "በአገልግሎቶቹ ላይ ሲመዘገቡ፣ ስለእኛ ወይም ስለ ምርቶቻችን መረጃ ለማግኘት ፍላጎትዎን ሲገልጹ፣ በአገልግሎቶቹ ላይ በሚደረጉ እንቅስቃሴዎች ላይ ሲሳተፉ ወይም በሌላ መልኩ እኛን ሲያነጋግሩ በፈቃደኝነት የሚሰጡንን የግል መረጃዎችን እንሰበስባለን።",
       sec1Sub1: "እርስዎ ለእኛ የሚገልጹት የግል መረጃ",
       sec1Sub1Desc: "የምንሰበስበው የግል መረጃ ከእኛ እና ከአገልግሎቶቹ ጋር ባደረጉት ግንኙነት፣ በሚያደርጉት ምርጫዎች እና በሚጠቀሙባቸው ምርቶች እና ባህሪያት ላይ ይወሰናል። የምንሰበስበው የግል መረጃ የሚከተሉትን ሊያካትት ይችላል፦",
-      sec1Bullet1: "የመለያ ፕሮፋይል መረጃ፦ ስሞች፣ የስልክ ቁጥሮች፣ የኢሜል አድራሻዎች፣ የክፍል ደረጃ፣ የትምህርት ዘርፍ እና ደህንነታቸው የተጠበቁ የይለፍ ቃላት።",
+      sec1Bullet1: "የመለያ ፕሮፋይል መረጃ፦ ስሞች፣ የስልክ ቁጥሮች፣ የክፍል ደረጃ፣ የትምህርት ዘርፍ እና ደህንነታቸው የተጠበቁ የይለፍ ቃላት።",
       sec1Bullet2: "የክፍያ ምዝግብ ማስታወሻዎች፦ የፕሪሚየም አገልግሎት ለማግበር የተጫኑ የክፍያ ደረሰኞች ፎቶዎች ወይም የግብይት ማጣቀሻዎች።",
       sec1Bullet3: "የሞባይል መሣሪያ መዳረሻ ፍቃድ፦ ከሞባይል መሣሪያዎ የተወሰኑ ባህሪያትን ለመጠቀም ፍቃድ ልንጠይቅ እንችላለን፤ እነዚህም ካሜራ፣ ፎቶ ጋለሪ፣ መጽሐፍትን ከመስመር ውጭ ለማውረድ የሚያስፈልግ ፋይል ማስቀመጫ እና ማሳወቂያዎችን (notifications) ያካትታሉ። እነዚህን ፈቃዶች በማንኛውም ጊዜ በመሣሪያዎ ቅንብሮች ውስጥ መለወጥ ይችላሉ።",
       sec1Bullet4: "የመሣሪያ እና የአጠቃቀም መረጃ፦ እንደ የመሣሪያ መለያ (Device ID)፣ ሞዴል፣ ኦፕሬቲንግ ሲስተም፣ የስርዓት ውቅር፣ የአይፒ (IP) አድራሻ፣ የአጠቃቀም ምዝግብ ማስታወሻዎች (የእንቅስቃሴ ጊዜያት፣ የታዩ ፋይሎች፣ ፍለጋዎች እና የስህተት ሪፖርቶች/ብልሽቶች) ያሉ መረጃዎችን በራስ-ሰር እንሰበስባለን።",
@@ -103,7 +103,7 @@ const PrivacyPolicy = ({ language = "en" }) => {
       sec5Intro: "የምናስተናግደውን ማንኛውንም የግል መረጃ ደህንነት ለመጠበቅ የተነደፉ ተገቢ እና ምክንያታዊ የሆኑ ቴክኒካዊ እና ድርጅታዊ የደህንነት እርምጃዎችን ተግባራዊ አድርገናል። ነገር ግን፣ መረጃዎን ለመጠበቅ የምናደርገውን ጥረት እና ጥንቃቄዎች ቢኖሩም፣ በበይነመረብ ላይ የሚደረግ ማንኛውም የኤሌክትሮኒክስ ስርጭት ወይም የመረጃ ማከማቻ ቴክኖሎጂ 100% ደህንነቱ የተጠበቀ ነው ተብሎ ዋስትና ሊሰጥ አይችልም። ስለሆነም ሃከሮች፣ የሳይበር ወንጀለኞች ወይም ሌሎች ያልተፈቀደላቸው ሶስተኛ ወገኖች የደህንነታችንን ስርዓት ጥሰው መረጃዎን በሌላ መንገድ ሊሰርቁ ወይም ሊያሻሽሉ አይችሉም ብለን ቃል መግባት ወይም ዋስትና መስጠት አንችልም። የግል መረጃን ወደ አገልግሎቶቻችን ማስተላለፍ በራስዎ ኃላፊነት ነው። አገልግሎቶቹን ደህንነቱ በተጠበቀ አካባቢ ውስጥ ብቻ ማግኘት አለብዎት።",
 
       sec6Title: "6. የግላዊነት መብቶችዎ ምንድናቸው?",
-      sec6Intro: "በማንኛውም ጊዜ መለያዎን መገምገም፣ መለወጥ ወይም ማቋረጥ ይችላሉ። ስለ ግላዊነት መብቶችዎ ጥያቄዎች ወይም አስተያየቶች ካሉዎት በ support@mesobacademy.com ኢሜል ሊልኩልን ይችላሉ።",
+      sec6Intro: "በማንኛውም ጊዜ መለያዎን መገምገም፣ መለወጥ ወይም ማቋረጥ ይችላሉ። ስለ ግላዊነት መብቶችዎ ጥያቄዎች ወይም አስተያየቶች ካሉዎት በ mesobacademy@gmail.com ኢሜል ሊልኩልን ይችላሉ።",
       sec6Sub: "የመለያ መረጃ",
       sec6SubDesc: "በማንኛውም ጊዜ በመለያዎ ውስጥ ያለውን መረጃ ለመገምገም ወይም ለመለወጥ ወይም መለያዎን ለማቋረጥ ከፈለጉ፣ በመተግበሪያው ቅንብሮች ውስጥ ማድረግ ወይም እኛን ማግኘት ይችላሉ። መለያዎን ለማቋረጥ ለሚያቀርቡት ጥያቄ ምላሽ በመስጠት መለያዎን እና መረጃዎን ከንቁ የውሂብ ጎታዎቻችን እናጠፋለን። ነገር ግን ማጭበርበርን ለመከላከል፣ ችግሮችን ለመፍታት፣ ለማንኛውም ምርመራ ለመርዳት፣ የአገልግሎት ውሎቻችንን ተግባራዊ ለማድረግ ወይም የህግ መስፈርቶችን ለማክበር አንዳንድ መረጃዎችን በመዝገቦቻችን ውስጥ ልናቆይ እንችላለን።",
 
@@ -117,11 +117,11 @@ const PrivacyPolicy = ({ language = "en" }) => {
       sec9Intro: "አዎ፣ ከሚመለከታቸው ህጎች ጋር ተጣጥሞ ለመኖር እንደ አስፈላጊነቱ ይህንን ማሳወቂያ እናሻሽላለን። የዘመነው ስሪት በተሻሻለው \"Revised\" ቀን የሚጠቆም ሲሆን የዘመነው ስሪት ተደራሽ በሆነበት ቅጽበት ተግባራዊ ይሆናል። መረጃዎን እንዴት እየጠበቅን እንደሆነ ለማወቅ ይህንን የግላዊነት ማሳወቂያ በተደጋጋሚ እንዲገመግሙ እናበረታታዎታለን።",
 
       sec10Title: "10. በዚህ ፖሊሲ ዙሪያ እንዴት ሊያገኙን ይችላሉ?",
-      sec10Intro: "ስለዚህ ማሳወቂያ ጥያቄዎች ወይም አስተያየቶች ካሉዎት በ support@mesobacademy.com ኢሜል ሊልኩልን ወይም በፖስታ ወደሚከተለው አድራሻ መላክ ይችላሉ፦",
+      sec10Intro: "ስለዚህ ማሳወቂያ ጥያቄዎች ወይም አስተያየቶች ካሉዎት በ mesobacademy@gmail.com ኢሜል ሊልኩልን ወይም በፖስታ ወደሚከተለው አድራሻ መላክ ይችላሉ፦",
       sec10Addr: "ሜሶብ አካዳሚ፣ ቦሌ፣ አዲስ አበባ፣ ኢትዮጵያ",
 
       sec11Title: "11. የምንሰበስበውን መረጃ እንዴት መገምገም፣ ማሻሻል ወይም ማጥፋት ይችላሉ?",
-      sec11Intro: "በሀገርዎ ህጎች ላይ በመመስረት ከእርስዎ የምንሰበስበውን የግል መረጃ የመድረስ፣ የመለወጥ ወይም የማጥፋት መብት ሊኖርዎት ይችላል። የግል መረጃዎን ለመገምገም፣ ለማሻሻል ወይም ለማጥፋት ጥያቄ ለማቅረብ እባክዎ በ support@mesobacademy.com በኩል ያግኙን።",
+      sec11Intro: "በሀገርዎ ህጎች ላይ በመመስረት ከእርስዎ የምንሰበስበውን የግል መረጃ የመድረስ፣ የመለወጥ ወይም የማጥፋት መብት ሊኖርዎት ይችላል። የግል መረጃዎን ለመገምገም፣ ለማሻሻል ወይም ለማጥፋት ጥያቄ ለማቅረብ እባክዎ በ mesobacademy@gmail.com በኩል ያግኙን።",
       
       createdUsing: "ይህ የግላዊነት ፖሊሲ የተዘጋጀው መደበኛ የግላዊነት ደንቦችን መሰረት በማድረግ ነው።"
     }
