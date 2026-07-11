@@ -46,15 +46,13 @@ const PrivacyPolicy = ({ language = "en" }) => {
       sec6Sub: "Account Information",
       sec6SubDesc: "If you would at any time like to review or change the information in your account or terminate your account, you can do so through the app settings or by contacting us. Upon your request to terminate your account, we will deactivate or delete your account and information from our active databases. However, we may retain some information in our files to prevent fraud, troubleshoot problems, assist with any investigations, enforce our legal terms, or comply with legal requirements.",
 
-      sec7Title: "7. CONTROLS FOR DO-NOT-TRACK FEATURES",
-      sec7Intro: "Most web browsers and some mobile operating systems and mobile applications include a Do-Not-Track (\"DNT\") feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected. At this stage, no uniform technology standard for recognizing and implementing DNT signals has been finalized. As such, we do not currently respond to DNT browser signals or any other mechanism that automatically communicates your choice not to be tracked online.",
+      sec7Title: "7. Do Not Track (DNT) Signals Handling",
+      sec7Intro: "Currently, because standard technology frameworks for recognizing and implementing 'Do Not Track' (DNT) signals sent automatically by users' web browsers have not been finalized either nationally or internationally, our system does not currently respond to these signals.",
+      sec8Title: "8. Users' Personal Data Rights (According to Ethiopian Law)",
+      sec8Intro: "According to the Ethiopian Personal Data Protection Proclamation, the following rights are granted based on our product's utilization:Right to Know: You have the right to know which of your personal data is being collected, for what purpose it is being used, and if the data is being shared with a third party.Right to Access and Correct: You have the right to view any of your personal data stored within our system, and the right to correct or amend it.Right to Erasure: Unless restricted by legal obligations, you have the right to request that your data be completely deleted from our system.",
 
-      sec8Title: "8. DO CALIFORNIA RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?",
-      sec8Intro: "Yes, if you are a resident of California, you are granted specific rights regarding access to your personal information. Under California Civil Code Section 1798.83 (the \"Shine The Light\" law), California residents may request and obtain from us, once a year and free of charge, information about categories of personal information we disclosed to third parties for direct marketing purposes and the names and addresses of all third parties with which we shared personal information in the immediately preceding calendar year.",
-
-      sec9Title: "9. DO WE MAKE UPDATES TO THIS NOTICE?",
-      sec9Intro: "Yes, we will update this notice as necessary to stay compliant with relevant laws. The updated version will be indicated by an updated \"Revised\" date and the updated version will be effective as soon as it is accessible. We encourage you to review this privacy notice frequently to be informed of how we are protecting your information.",
-
+      sec9Title: "9. Amendments Made to This Policy",
+      sec9Intro: "We may update this privacy policy from time to time to better improve the security of our service or to comply with the country's legal frameworks. When significant changes are made to the policy, we will notify you through our system or via email for users of the service.",
       sec10Title: "10. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?",
       sec10Intro: "If you have questions or comments about this notice, you may email us at mesobacademy@gmail.com or by post to:",
       sec10Addr: "Mesob Academy, Butajira, Ethiopia",
@@ -107,14 +105,13 @@ const PrivacyPolicy = ({ language = "en" }) => {
       sec6Sub: "የመለያ መረጃ",
       sec6SubDesc: "በማንኛውም ጊዜ በመለያዎ ውስጥ ያለውን መረጃ ለመገምገም ወይም ለመለወጥ ወይም መለያዎን ለማቋረጥ ከፈለጉ፣ በመተግበሪያው ቅንብሮች ውስጥ ማድረግ ወይም እኛን ማግኘት ይችላሉ። መለያዎን ለማቋረጥ ለሚያቀርቡት ጥያቄ ምላሽ በመስጠት መለያዎን እና መረጃዎን ከንቁ የውሂብ ጎታዎቻችን እናጠፋለን። ነገር ግን ማጭበርበርን ለመከላከል፣ ችግሮችን ለመፍታት፣ ለማንኛውም ምርመራ ለመርዳት፣ የአገልግሎት ውሎቻችንን ተግባራዊ ለማድረግ ወይም የህግ መስፈርቶችን ለማክበር አንዳንድ መረጃዎችን በመዝገቦቻችን ውስጥ ልናቆይ እንችላለን።",
 
-      sec7Title: "7. DO-NOT-TRACK (አትከተለኝ) ባህሪያት መቆጣጠሪያዎች",
-      sec7Intro: "አብዛኛዎቹ የድር አሳሾች (browsers) እና አንዳንድ የሞባይል ኦፕሬቲንግ ሲስተሞች እና የሞባይል መተግበሪያዎች የእርስዎን የመስመር ላይ አሰሳ እንቅስቃሴዎች እንዳይከታተሉ ምርጫዎን ለማሳወቅ የሚያስችል Do-Not-Track (\"DNT\") ባህሪ ወይም ቅንብር ያካትታሉ። በዚህ ደረጃ፣ የDNT ምልክቶችን ለመለየት እና ተግባራዊ ለማድረግ የሚያስችል ወጥ የሆነ የቴክኖሎጂ መስፈርት አልተጠናቀቀም። ስለሆነም በአሁኑ ጊዜ ለDNT አሳሽ ምልክቶች ወይም መስመር ላይ እንዳይከታተሉ በራስ-ሰር ለሚያሳውቅ ለማንኛውም ሌላ ዘዴ ምላሽ አንሰጥም።",
+      sec7Title: "የአሰሳ መከታተያ (Do Not Track - DNT) ምልክቶች አያያዝ",
+      sec7Intro: "በአሁኑ ጊዜ ከተጠቃሚዎች የድረ-ገጽ አሳሽ (Browser) በራስ-ሰር የሚላኩ የ«Do Not Track» (DNT) ምልክቶችን ለመለየትና ለመተግበር የሚያስችል ወጥ የሆነ የቴክኖሎጂ መስፈርት በአገር አቀፍም ሆነ በዓለም አቀፍ ደረጃ ስላልተጠናቀቀ፣ ሲስተማችን ለእነዚህ ምልክቶች በአሁኑ ጊዜ ምላሽ አይሰጥም።",
 
-      sec8Title: "8. የካሊፎርኒያ ነዋሪዎች ልዩ የግላዊነት መብቶች አሏቸው?",
-      sec8Intro: "አዎ፣ የካሊፎርኒያ ነዋሪ ከሆኑ፣ የግል መረጃዎን ከመድረስ ጋር በተያያዘ የተወሰኑ መብቶች ተሰጥቶዎታል። በካሊፎርኒያ ሲቪል ኮድ ክፍል 1798.83 መሠረት፣ የካሊፎርኒያ ነዋሪዎች በዓመት አንድ ጊዜ እና ከክፍያ ነፃ ለቀጥታ ግብይት ዓላማዎች ለሶስተኛ ወገኖች የገለጥናቸውን የግል መረጃዎች ምድቦች እና መረጃዎቻቸውን ያጋራናቸውን የሶስተኛ ወገኖች ስም እና አድራሻ እንዲሰጣቸው መጠየቅ እና ማግኘት ይችላሉ።",
-
-      sec9Title: "9. በዚህ ፖሊሲ ላይ ማሻሻያዎችን እናደርጋለን?",
-      sec9Intro: "አዎ፣ ከሚመለከታቸው ህጎች ጋር ተጣጥሞ ለመኖር እንደ አስፈላጊነቱ ይህንን ማሳወቂያ እናሻሽላለን። የዘመነው ስሪት በተሻሻለው \"Revised\" ቀን የሚጠቆም ሲሆን የዘመነው ስሪት ተደራሽ በሆነበት ቅጽበት ተግባራዊ ይሆናል። መረጃዎን እንዴት እየጠበቅን እንደሆነ ለማወቅ ይህንን የግላዊነት ማሳወቂያ በተደጋጋሚ እንዲገመግሙ እናበረታታዎታለን።",
+      sec8Title: "8. የተጠቃሚዎች የግል መረጃ መብቶች (በኢትዮጵያ ሕግ መሠረት)",
+      sec8Intro: "በኢትዮጵያ የግል መረጃ ጥበቃ አዋጅ መሠረት፣ እንደ ምርታችን ተጠቃሚነቶ የሚከተሉት መብቶች ተሰጥተውዎታል፦የማወቅ መብት፦ የትኞቹ የግል መረጃዎችዎ እየተሰበሰቡ እንደሆነ፣ ለምን ዓላማ ጥቅም ላይ እንደሚውሉ እና መረጃው ለሶስተኛ ወገን የሚጋራ ከሆነ የማወቅ መብት አለዎት። የማግኘት እና የማረም መብት፦ በእኛ ሲስተም ውስጥ የተቀመጡ ማናቸውንም የግል መረጃዎችዎን የመመልከት፣ የማረም ወይም የማስተካከል መብት አለዎት። መረጃን የማሰረዝ መብት፦ ሕጋዊ ግዴታዎች እስካልከለከሉ ድረስ፣ የእርስዎ መረጃ ከሲስተማችን ላይ ሙሉ በሙሉ እንዲሰረዝ የመጠየቅ መብት አልዎት።",
+      sec9Title: "9. በዚህ ፖሊሲ ላይ የሚደረጉ ማሻሻያዎች",
+      sec9Intro: "የአገልግሎታችንን ደህንነት ይበልጥ ለማሻሻል ወይም የአገሪቱን ሕጋዊ ማዕቀፎች ለመከተል ስንል ይህንን የግል ሚስጥር ጥበቃ ፖሊሲ በየጊዜው ልናሻሽለው እንችላለን። በፖሊሲው ላይ ጉልህ ለውጦች ሲደረጉ በሲስተማችን ወይም በኢሜይል በኩል ለአገልግሎቱ ተጠቃሚዎች የምናሳውቅ ይሆናል።",
 
       sec10Title: "10. በዚህ ፖሊሲ ዙሪያ እንዴት ሊያገኙን ይችላሉ?",
       sec10Intro: "ስለዚህ ማሳወቂያ ጥያቄዎች ወይም አስተያየቶች ካሉዎት በ mesobacademy@gmail.com ኢሜል ሊልኩልን ወይም በፖስታ ወደሚከተለው አድራሻ መላክ ይችላሉ፦",
