@@ -22,7 +22,29 @@ import FAQ from "./components/sections/FAQ";
 import Contact from "./components/sections/Contact";
 
 const App = () => {
-  const [currentPage, setCurrentPage] = useState("home");
+  const getInitialRoute = () => {
+    const path = window.location.pathname.replace(/^\/+|\/+$/g, "");
+    const hash = window.location.hash.replace("#/", "").replace("#", "");
+    const activeRoute = path || hash;
+    if (activeRoute === "privacy") return "privacy";
+    if (activeRoute === "terms") return "terms";
+    if (
+      !activeRoute ||
+      [
+        "features",
+        "how-it-works",
+        "pricing",
+        "reviews",
+        "faq",
+        "contact",
+      ].includes(activeRoute)
+    ) {
+      return "home";
+    }
+    return "404";
+  };
+
+  const [currentPage, setCurrentPage] = useState(getInitialRoute);
   const [language, setLanguage] = useState("en");
 
   const [toastMessage, setToastMessage] = useState("");
