@@ -20,7 +20,7 @@ const Navbar = ({ setCurrentPage, language, setLanguage, theme, toggleTheme }) =
       }
 
       // Scroll Spy to highlight current section
-      const sections = ["features", "how-it-works", "pricing", "reviews", "faq", "contact"];
+      const sections = ["features", "how-it-works", "why-mesob", "pricing", "reviews", "faq", "contact"];
       const scrollPosition = window.scrollY + 200;
       let matched = false;
 
@@ -58,6 +58,7 @@ const Navbar = ({ setCurrentPage, language, setLanguage, theme, toggleTheme }) =
     en: {
       features: "Features",
       howItWorks: "How it Works",
+      whyMesob: "Why Mesob App",
       pricing: "Pricing",
       reviews: "Reviews",
       faq: "FAQ",
@@ -68,6 +69,7 @@ const Navbar = ({ setCurrentPage, language, setLanguage, theme, toggleTheme }) =
     am: {
       features: "ባህሪያት",
       howItWorks: "እንዴት እንደሚሰራ",
+      whyMesob: "ለምን Mesob App",
       pricing: "ዋጋዎች",
       reviews: "አስተያየቶች",
       faq: "ጥያቄዎች",
@@ -145,6 +147,16 @@ const Navbar = ({ setCurrentPage, language, setLanguage, theme, toggleTheme }) =
             }}
           >
             {currentT.howItWorks}
+          </a>
+          <a
+            href="#why-mesob"
+            className={`nav-link ${activeSection === "why-mesob" ? "nav-link-active" : ""}`}
+            onClick={(e) => {
+              e.preventDefault();
+              navigateToSection("why-mesob");
+            }}
+          >
+            {currentT.whyMesob}
           </a>
           <a
             href="#pricing"
@@ -310,6 +322,17 @@ const Navbar = ({ setCurrentPage, language, setLanguage, theme, toggleTheme }) =
                   }}
                 >
                   {currentT.howItWorks}
+                </motion.a>
+                <motion.a
+                  variants={itemVariants}
+                  href="#why-mesob"
+                  className={`mobile-link ${activeSection === "why-mesob" ? "mobile-link-active" : ""}`}
+                  onClick={() => {
+                    setIsOpen(false);
+                    navigateToSection("why-mesob");
+                  }}
+                >
+                  {currentT.whyMesob}
                 </motion.a>
                 <motion.a
                   variants={itemVariants}

@@ -85,7 +85,7 @@ const Comparison = ({ language }) => {
   const currentT = t[language] || t.en;
 
   return (
-    <section className="comparison-section">
+    <section id="why-mesob" className="comparison-section">
       <div className="container">
         <div className="section-header">
           <span className="section-subtitle-new">{currentT.subtitle}</span>

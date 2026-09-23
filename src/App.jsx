@@ -34,6 +34,7 @@ const App = () => {
       [
         "features",
         "how-it-works",
+        "why-mesob",
         "pricing",
         "reviews",
         "faq",
@@ -95,6 +96,7 @@ const App = () => {
         [
           "features",
           "how-it-works",
+          "why-mesob",
           "pricing",
           "reviews",
           "faq",
