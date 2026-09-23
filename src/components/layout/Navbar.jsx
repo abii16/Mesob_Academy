@@ -99,35 +99,30 @@ const Navbar = ({ setCurrentPage, language, setLanguage, theme, toggleTheme }) =
       <div className="container nav-container">
         <div
           className="nav-brand"
-          onClick={() => setCurrentPage("home")}
-          style={{
-            cursor: "pointer",
-            display: "flex",
-            alignItems: "center",
-            gap: "0.75rem",
+          onClick={() => {
+            setCurrentPage("home");
+            window.scrollTo({ top: 0, behavior: "smooth" });
           }}
+          role="button"
+          tabIndex={0}
+          aria-label="Mesob Academy Home"
         >
-          <img
-            src="/favicon.png"
-            alt="Mesob Academy Logo"
-            style={{ height: "40px", width: "40px", objectFit: "contain" }}
-          />
-          <span className="brand-name">
-            <a
-              onClick={(e) => {
-                e.preventDefault();
-                setCurrentPage("home");
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }}
-              style={{
-                cursor: "pointer",
-                color: "var(--text-primary)",
-                textDecoration: "none",
-              }}
-            >
-              {currentT.brand}
-            </a>
-          </span>
+          <div className="brand-logo-container">
+            <img
+              src="/applogo.png"
+              alt="Mesob Academy Logo"
+              className="brand-logo-img"
+            />
+          </div>
+          <div className="brand-text-block">
+            <div className="brand-name-row">
+              <span className="brand-name-main">{language === "am" ? "መሶብ" : "Mesob"}</span>
+              <span className="brand-name-accent">{language === "am" ? "አካዳሚ" : "Academy"}</span>
+            </div>
+            <span className="brand-tagline">
+              {language === "am" ? "የትምህርት ፕላትፎርም" : "LEARNING PLATFORM"}
+            </span>
+          </div>
         </div>
 
         <div className="nav-desktop-links">
@@ -268,6 +263,32 @@ const Navbar = ({ setCurrentPage, language, setLanguage, theme, toggleTheme }) =
                 animate="show"
                 className="mobile-menu-content"
               >
+                <div 
+                  className="mobile-brand-header"
+                  onClick={() => {
+                    setIsOpen(false);
+                    setCurrentPage("home");
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                >
+                  <div className="brand-logo-container">
+                    <img
+                      src="/applogo.png"
+                      alt="Mesob Academy Logo"
+                      className="brand-logo-img"
+                    />
+                  </div>
+                  <div className="brand-text-block">
+                    <div className="brand-name-row">
+                      <span className="brand-name-main">{language === "am" ? "መሶብ" : "Mesob"}</span>
+                      <span className="brand-name-accent">{language === "am" ? "አካዳሚ" : "Academy"}</span>
+                    </div>
+                    <span className="brand-tagline">
+                      {language === "am" ? "የትምህርት ፕላትፎርም" : "LEARNING PLATFORM"}
+                    </span>
+                  </div>
+                </div>
+
                 <motion.a
                   variants={itemVariants}
                   href="#features"

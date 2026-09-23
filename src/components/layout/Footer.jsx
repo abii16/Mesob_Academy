@@ -38,6 +38,31 @@ const Footer = ({ currentPage, setCurrentPage, language }) => {
     <footer className="footer-new">
       <div className="container footer-grid-new">
         <div className="footer-brand-col">
+          <div 
+            className="nav-brand" 
+            onClick={() => {
+              if (currentPage !== "home") setCurrentPage("home");
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+            style={{ marginBottom: "1rem" }}
+          >
+            <div className="brand-logo-container">
+              <img
+                src="/applogo.png"
+                alt="Mesob Academy Logo"
+                className="brand-logo-img"
+              />
+            </div>
+            <div className="brand-text-block">
+              <div className="brand-name-row">
+                <span className="brand-name-main">{language === "am" ? "መሶብ" : "Mesob"}</span>
+                <span className="brand-name-accent">{language === "am" ? "አካዳሚ" : "Academy"}</span>
+              </div>
+              <span className="brand-tagline">
+                {language === "am" ? "የትምህርት ፕላትፎርም" : "LEARNING PLATFORM"}
+              </span>
+            </div>
+          </div>
           <p className="footer-brand-pitch">{currentT.pitch}</p>
         </div>
 
