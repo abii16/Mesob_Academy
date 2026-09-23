@@ -360,7 +360,7 @@ const AIChatWidget = ({ language = 'en', theme = 'dark' }) => {
     }
   ]);
 
-  const messagesEndRef = useRef(null);
+  const messagesContainerRef = useRef(null);
   const inputRef = useRef(null);
 
   const starterChips = language === 'am' ? [
@@ -375,15 +375,24 @@ const AIChatWidget = ({ language = 'en', theme = 'dark' }) => {
     { label: 'Offline Access', query: 'Does the app work without internet?' }
   ];
 
-  // Auto-scroll on new messages
+  const scrollToBottom = () => {
+    if (messagesContainerRef.current) {
+      messagesContainerRef.current.scrollTop = messagesContainerRef.current.scrollHeight;
+    }
+  };
+
+  // Auto-scroll messages container safely without moving webpage scroll
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    scrollToBottom();
   }, [messages, isTyping]);
 
-  // Focus input when opened
+  // Focus input when opened without jumping window scroll
   useEffect(() => {
     if (isOpen) {
-      setTimeout(() => inputRef.current?.focus(), 200);
+      setTimeout(() => {
+        inputRef.current?.focus({ preventScroll: true });
+        scrollToBottom();
+      }, 150);
     }
   }, [isOpen]);
 
@@ -473,37 +482,14 @@ const AIChatWidget = ({ language = 'en', theme = 'dark' }) => {
 
   return (
     <div className={`support-widget-container ${theme === 'light' ? 'light-widget' : ''}`}>
-      {/* Floating Trigger Button */}
-      <AnimatePresence>
-        {!isOpen && (
-          <motion.button
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0, opacity: 0 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="support-trigger-btn"
-            onClick={() => setIsOpen(true)}
-            aria-label="Open Support Chat"
-          >
-            <div className="support-trigger-icon">
-              <MessageCircle size={22} />
-            </div>
-            <span className="support-trigger-text">
-              {language === 'am' ? 'እርዳታ ይፈልጋሉ?' : 'Need Help?'}
-            </span>
-          </motion.button>
-        )}
-      </AnimatePresence>
-
-      {/* Chat Window Modal */}
+      {/* Chat Window Modal (Floats directly above launcher button) */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.96 }}
+            initial={{ opacity: 0, y: 16, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.96 }}
-            transition={{ duration: 0.2, ease: 'easeOut' }}
+            exit={{ opacity: 0, y: 16, scale: 0.96 }}
+            transition={{ duration: 0.22, ease: 'easeOut' }}
             className="support-chat-window"
           >
             {/* Header */}
@@ -555,7 +541,7 @@ const AIChatWidget = ({ language = 'en', theme = 'dark' }) => {
             </div>
 
             {/* Messages Area */}
-            <div className="support-messages-container">
+            <div ref={messagesContainerRef} className="support-messages-container">
               {messages.map((msg) => (
                 <div key={msg.id} className={`support-msg-row ${msg.sender === 'user' ? 'user-row' : 'agent-row'}`}>
                   {msg.sender === 'support' && (
@@ -600,7 +586,6 @@ const AIChatWidget = ({ language = 'en', theme = 'dark' }) => {
                 </div>
               )}
 
-              <div ref={messagesEndRef} />
             </div>
 
             {/* Input Footer */}
@@ -635,6 +620,24 @@ const AIChatWidget = ({ language = 'en', theme = 'dark' }) => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Persistent Floating Launcher Button */}
+      <motion.button
+        whileHover={{ scale: 1.04 }}
+        whileTap={{ scale: 0.96 }}
+        className={`support-trigger-btn ${isOpen ? 'is-active' : ''}`}
+        onClick={() => setIsOpen(!isOpen)}
+        aria-label={isOpen ? "Close Support Chat" : "Open Support Chat"}
+      >
+        <div className="support-trigger-icon">
+          {isOpen ? <X size={18} /> : <MessageCircle size={20} />}
+        </div>
+        <span className="support-trigger-text">
+          {isOpen 
+            ? (language === 'am' ? 'ዝጋ' : 'Close') 
+            : (language === 'am' ? 'እርዳታ ይፈልጋሉ?' : 'Need Help?')}
+        </span>
+      </motion.button>
     </div>
   );
 };

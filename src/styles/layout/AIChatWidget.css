@@ -8,6 +8,9 @@
   right: 2rem;
   z-index: 9999;
   font-family: var(--font-body);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 /* Floating Trigger Button */
@@ -31,6 +34,21 @@
   filter: brightness(1.05);
 }
 
+.support-trigger-btn.is-active {
+  background: var(--color-surface-container-high, #242424);
+  color: var(--text-primary, #ffffff);
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.15));
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.support-trigger-btn.is-active .support-trigger-icon {
+  color: var(--color-primary, #10b981);
+}
+
+.support-trigger-btn.is-active .support-trigger-text {
+  color: var(--text-primary, #ffffff);
+}
+
 .support-trigger-icon {
   display: flex;
   align-items: center;
@@ -45,16 +63,20 @@
   letter-spacing: 0.01em;
 }
 
-/* Chat Window */
+/* Chat Window Modal */
 .support-chat-window {
-  width: 370px;
+  position: absolute;
+  bottom: calc(100% + 14px);
+  right: 0;
+  transform-origin: bottom right;
+  width: 375px;
   max-width: calc(100vw - 2.5rem);
   height: 520px;
-  max-height: calc(100vh - 6rem);
+  max-height: calc(100vh - 7.5rem);
   background: var(--color-surface, #141414);
   border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
   border-radius: var(--radius-lg, 1.25rem);
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.05);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -475,17 +497,30 @@
   border-color: rgba(0, 0, 0, 0.05);
 }
 
+.light-widget .support-trigger-btn.is-active {
+  background: #ffffff;
+  color: #0f172a;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.light-widget .support-trigger-btn.is-active .support-trigger-text {
+  color: #0f172a;
+}
+
 /* Mobile Responsive */
 @media (max-width: 480px) {
   .support-widget-container {
-    bottom: 1.25rem;
-    right: 1.25rem;
+    bottom: 1rem;
+    right: 1rem;
   }
   
   .support-chat-window {
-    width: calc(100vw - 2.5rem);
+    width: calc(100vw - 2rem);
     height: 480px;
-    bottom: 0;
+    max-height: calc(100vh - 6rem);
+    bottom: calc(100% + 10px);
     right: 0;
   }
 }
+
