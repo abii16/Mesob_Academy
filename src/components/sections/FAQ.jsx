@@ -18,11 +18,11 @@ const FAQ = ({ language }) => {
         },
         { 
           question: "What pricing packages are available?", 
-          answer: "We offer flexible plans: Grade 9-10 (400 ETB/Two Year), Grade 11-12 (400 ETB/Two Year), and the Full High School 9-12 Package (700 ETB/Two Year)." 
+          answer: "We offer transparent one-time payment packages with zero recurring fees or hidden costs:\n• Grades 9 & 10 Package (400 ETB): 2 full years of access to all Grade 9 & 10 core subjects.\n• Grades 11 & 12 Package (400 ETB): 2 full years of access to your chosen stream (Natural or Social Science) plus National Exam prep archive.\n• Full High School 9-12 Package (700 ETB): 4 full years of access covering all grades 9, 10, 11, and 12 until graduation.\nEvery package includes full offline downloads and practice exams." 
         },
         { 
           question: "How do I subscribe and pay in Ethiopia?", 
-          answer: "We support easy local payment methods including Telebirr, CBE Birr, and direct bank transfers. You can subscribe directly through our mobile app." 
+          answer: "Subscribing is fast and simple!\n1. Download the Mesob Academy app and choose your grade package.\n2. Transfer the fee via Telebirr (0905865441), Commercial Bank of Ethiopia - CBE (1000714423669), Awash Bank, or Abay Bank.\n3. Take a screenshot of the transfer and upload it directly inside the app.\nOur verification team approves and activates your full access within 24 hours." 
         },
         { 
           question: "Does the app track my study scores?", 
@@ -44,11 +44,11 @@ const FAQ = ({ language }) => {
         },
         { 
           question: "ምን ዓይነት የክፍያ ጥቅሎች አሉ?", 
-          answer: "ተለዋዋጭ ጥቅሎችን እናቀርባለን፡ ከ9-10ኛ ክፍል (400 ብር ለሁለት አመት)፣ ከ11-12ኛ ክፍል (400 ብር ለሁለት አመት)፣ ወይም የሙሉ ሁለተኛ ደረጃ ከ9-12ኛ ክፍል ጥቅል (700 ብር ለሁለት አመት)።" 
+          answer: "ምንም ዓይነት ተደጋጋሚ ክፍያ የሌላቸው ግልጽ የአንድ ጊዜ የክፍያ ጥቅሎችን እናቀርባለን፦\n• የ9-10ኛ ክፍል ጥቅል (400 ብር)፦ ለ2 ሙሉ የትምህርት ዓመታት፣ ሁሉም የ9 እና 10ኛ ክፍል ትምህርቶች።\n• የ11-12ኛ ክፍል ጥቅል (400 ብር)፦ ለ2 ሙሉ የትምህርት ዓመታት፣ የተፈጥሮ ወይም ማህበራዊ ሳይንስ ዘርፍ ከብሔራዊ ፈተና ዝግጅት ጋር።\n• የሙሉ ሁለተኛ ደረጃ ከ9-12ኛ ክፍል ጥቅል (700 ብር)፦ ለ4 ሙሉ የትምህርት ዓመታት ከ9 እስከ 12ኛ ክፍል እስከ ምረቃ ድረስ የሚያገለግል።\nሁሉም ጥቅሎች ሙሉ ከመስመር ውጭ የማውረድ እና የቪዲዮ ትምህርቶች ተጠቃሚነትን ያካትታሉ።" 
         },
         { 
           question: "በኢትዮጵያ እንዴት መክፈል እና መመዝገብ እችላለሁ?", 
-          answer: "ቴሌብር፣ ሲቢኢ ብር እና ቀጥታ የባንክ ዝውውሮችን ጨምሮ የሀገር ውስጥ የመክፈያ ዘዴዎችን እንደግፋለን። በሞባይል መተግበሪያችን በቀጥታ መመዝገብ ይችላሉ።" 
+          answer: "ክፍያ መፈጸም በጣም ቀላል ነው፦\n1. የሜሶብ አካዳሚ የሞባይል መተግበሪያን ያውርዱና የክፍል ጥቅልዎን ይምረጡ።\n2. ክፍያውን በቴሌብር (0905865441)፣ በኢትዮጵያ ንግድ ባንክ (1000714423669)፣ በአዋሽ ወይም በአባይ ባንክ ይላኩ።\n3. የከፈሉበትን ደረሰኝ ስክሪንሾት በመተግበሪያው ውስጥ በቀጥታ ይጫኑ።\nየማረጋገጫ ቡድናችን ደረሰኙን በማረጋገጥ በ24 ሰዓት ውስጥ ሙሉ የፕሪሚየም አገልግሎትዎን ይከፍታል።" 
         },
         { 
           question: "መተግበሪያው የጥናት ውጤቴን ይከታተላል?", 

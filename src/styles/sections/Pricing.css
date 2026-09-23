@@ -4,6 +4,14 @@
   background: var(--color-surface-dim);
 }
 
+.pricing-header-tagline {
+  max-width: 600px;
+  margin: 1rem auto 0;
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
 .pricing-grid-new {
   display: grid;
   grid-template-columns: 1fr;
@@ -63,22 +71,75 @@
 }
 
 .pricing-subtitle-new {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-secondary);
+  margin-bottom: 1.75rem;
+  min-height: 2.4rem;
+}
+
+.pricing-price-container {
   margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .pricing-price-new {
   font-family: var(--font-display);
   font-size: 3.5rem;
-  margin-bottom: 2rem;
+  line-height: 1;
+  margin-bottom: 0.75rem;
   color: var(--text-primary);
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
 }
 
 .pricing-price-new .currency {
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 1.125rem;
+  font-weight: 600;
   color: var(--text-secondary);
+}
+
+.pricing-duration-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.duration-pill {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  letter-spacing: 0.02em;
+}
+
+.billing-pill {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-container);
+  color: var(--color-primary);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  letter-spacing: 0.02em;
+}
+
+.duration-pill-highlight {
+  background: rgba(171, 201, 237, 0.15);
+  color: #abc9ed;
+  border-color: rgba(171, 201, 237, 0.3);
+}
+
+.billing-pill-highlight {
+  background: var(--color-primary-container);
+  color: var(--color-primary);
+  border-color: rgba(16, 185, 129, 0.4);
 }
 
 .pricing-features-new {
@@ -98,6 +159,7 @@
 
 .pricing-features-new svg {
   color: var(--color-primary);
+  flex-shrink: 0;
 }
 
 .highlight-card {
@@ -137,4 +199,64 @@
   background: var(--color-primary);
   border-color: var(--color-primary);
   color: #0b0b0c;
+}
+
+/* Value & Trust Guarantees Strip */
+.pricing-guarantees-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 4.5rem auto 0;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+@media (min-width: 768px) {
+  .pricing-guarantees-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.pricing-guarantee-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.5rem 1.75rem;
+  background: var(--color-surface-container);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(16px);
+  transition: var(--transition-smooth);
+}
+
+.pricing-guarantee-card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.guarantee-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  background: var(--color-primary-container);
+  color: var(--color-primary);
+}
+
+.guarantee-content h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.guarantee-content p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin: 0;
 }
