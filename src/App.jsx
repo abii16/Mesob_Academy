@@ -5,6 +5,7 @@ import "./App.css";
 // Components
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
+import AIChatWidget from "./components/common/AIChatWidget";
 
 // Pages
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -193,6 +194,13 @@ const App = () => {
           language={language}
         />
       )}
+
+      {/* Floating Interactive Mesob AI Assistant */}
+      <AIChatWidget 
+        language={language} 
+        theme={theme} 
+        triggerToast={triggerToast} 
+      />
 
       <AnimatePresence>
         {showToast && (
