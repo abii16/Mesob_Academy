@@ -7,101 +7,97 @@ const Pricing = ({ triggerToast, language }) => {
   const t = {
     en: {
       subtitle: "TRANSPARENT PRICING",
-      title: "One-Time Payment. Zero Recurring Fees.",
-      tagline: "Pay once with Telebirr or CBE Birr and get full access for your entire academic cycle.",
+      title: "Affordable 2-Year Plans. No Monthly Fees.",
+      tagline: "Every package provides 2 full years of access to lessons, offline vault, and exam prep.",
       essential: "ESSENTIAL",
       recommended: "BEST VALUE",
       focused: "NATIONAL EXAM PREP",
       currency: "ETB",
-      oneTimeBadge: "One-Time Payment",
+      billingBadge: "No Monthly Fees",
+      twoYearPeriod: "2 Years Full Access",
       
       grade910Title: "Grades 9 & 10",
-      grade910Subtitle: "General Curriculum Package",
+      grade910Subtitle: "General Curriculum Package (2 Years)",
       grade910Price: "400",
-      grade910Period: "2 Years Full Access",
       grade910F1: "All Grade 9 & 10 Core Subjects",
       grade910F2: "100% Offline Vault (Zero Data Study)",
       grade910F3: "Chapter Summaries & Practice Drills",
       grade910F4: "Student Discussion & Peer Hub",
-      grade910F5: "Valid across both Grades 9 & 10",
+      grade910F5: "Valid for 2 Full Academic Years",
 
       fullTitle: "Full High School",
-      fullSubtitle: "Complete 4-Year Academic Journey",
+      fullSubtitle: "Complete Grades 9-12 Vault (2 Years)",
       fullPrice: "700",
-      fullPeriod: "4 Years Full Access",
-      fullF1: "Complete 4-Year Vault (Grades 9, 10, 11 & 12)",
+      fullF1: "Complete Grades 9, 10, 11 & 12 Materials",
       fullF2: "Natural or Social Stream Included",
       fullF3: "10+ Years National Exam Prep Archive",
       fullF4: "100% Offline Vault (Zero Data Study)",
-      fullF5: "One payment active until graduation",
+      fullF5: "2 Full Years of Access Across All 4 Grades",
 
       grade1112Title: "Grades 11 & 12",
-      grade1112Subtitle: "Natural or Social Science Stream",
+      grade1112Subtitle: "Natural or Social Science Stream (2 Years)",
       grade1112Price: "400",
-      grade1112Period: "2 Years Full Access",
       grade1112F1: "All Stream Subjects (Natural or Social)",
       grade1112F2: "National Exam Simulations & Timed Drills",
       grade1112F3: "100% Offline Vault (Zero Data Study)",
       grade1112F4: "Interactive Community & Peer Study Rooms",
-      grade1112F5: "Valid across both Grades 11 & 12",
+      grade1112F5: "Valid for 2 Full Academic Years",
 
       choosePlan: "Choose Plan",
-      goPremium: "Get 4-Year Access",
+      goPremium: "Get 2-Year Pass",
       toastMsg: "Please download our mobile app to subscribe.",
 
-      guarantee1Title: "100% One-Time Payment",
-      guarantee1Desc: "No subscriptions, auto-renewals, or surprise recurring charges.",
+      guarantee1Title: "2 Full Years of Access",
+      guarantee1Desc: "Every package gives you 2 full years (730 days) of access with zero recurring monthly charges.",
       guarantee2Title: "Ethiopian Local Payments",
       guarantee2Desc: "Instant transfer via Telebirr, CBE Birr, Awash Bank, or Abay Bank.",
       guarantee3Title: "Full Offline Learning",
       guarantee3Desc: "Download video lessons & notes once, study anytime without internet."
     },
     am: {
-      subtitle: "ግልጽ እና አስተማማኝ ክፍያዎች",
-      title: "የአንድ ጊዜ ክፍያ፤ ተደጋጋሚ ክፍያ የሌለው",
-      tagline: "በቴሌብር ወይም በሲቢኢ አንዴ ብቻ በመክፈል ለሙሉ የትምህርት ዘመንዎ ይጠቀሙ።",
+      subtitle: "ግልጽ እና ተመጣጣኝ ክፍያዎች",
+      title: "ተመጣጣኝ የ2 ዓመት ክፍያዎች፤ ወርሃዊ ክፍያ የሌለው",
+      tagline: "እያንዳንዱ ጥቅል ለ2 ዓመት ሙሉ የትምህርት ይዘቶችን፣ ከመስመር ውጭ ማውረድና የፈተና ዝግጅትን ያካትታል።",
       essential: "መሰረታዊ",
       recommended: "የሚመረጥ",
       focused: "የፈተና ዝግጅት",
       currency: "ብር",
-      oneTimeBadge: "የአንድ ጊዜ ክፍያ",
+      billingBadge: "ወርሃዊ ክፍያ የሌለው",
+      twoYearPeriod: "ለ2 ዓመት ሙሉ ተጠቃሚነት",
 
       grade910Title: "ከ9 - 10ኛ ክፍል",
-      grade910Subtitle: "የአጠቃላይ ሥርዓተ ትምህርት ጥቅል",
+      grade910Subtitle: "የአጠቃላይ ሥርዓተ ትምህርት ጥቅል (ለ2 ዓመት)",
       grade910Price: "400",
-      grade910Period: "ለ2 ዓመት ሙሉ ተጠቃሚነት",
       grade910F1: "ሁሉም የ9 እና 10ኛ ክፍል ዋና ዋና ትምህርቶች",
       grade910F2: "100% ከመስመር ውጭ (ያለ ሞባይል ዳታ) ማጥናት",
       grade910F3: "የምዕራፍ ማጠቃለያዎችና የሙከራ ፈተናዎች",
       grade910F4: "የተማሪዎች ማህበረሰብና የውይይት መድረክ",
-      grade910F5: "ለ9ኛ እና 10ኛ ክፍል ሙሉ የሚያገለግል",
+      grade910F5: "ለ2 ሙሉ የትምህርት ዓመታት የሚያገለግል",
 
       fullTitle: "የሙሉ ሁለተኛ ደረጃ",
-      fullSubtitle: "የ4 ዓመት ሁለተኛ ደረጃ (ከ9-12ኛ ክፍል)",
+      fullSubtitle: "የ9-12ኛ ክፍል ሙሉ ማህደር (ለ2 ዓመት)",
       fullPrice: "700",
-      fullPeriod: "ለ4 ዓመት ሙሉ (እስከ ምረቃ ድረስ)",
-      fullF1: "የሙሉ 4 ዓመት ትምህርቶች (ከ9 እስከ 12ኛ ክፍል)",
+      fullF1: "የሁሉም የ9፣ 10፣ 11 እና 12ኛ ክፍል ትምህርቶች",
       fullF2: "የተፈጥሮ ወይም የማህበራዊ ሳይንስ ዘርፍን ያካተተ",
       fullF3: "የ10+ ዓመታት የብሔራዊ ፈተናዎች ማህደርና ልምምዶች",
       fullF4: "100% ከመስመር ውጭ (ያለ ሞባይል ዳታ) ማጥናት",
-      fullF5: "እስከ ሁለተኛ ደረጃ ምረቃ ድረስ ያለ ተጨማሪ ክፍያ",
+      fullF5: "ለሁሉም 4 የክፍል ደረጃዎች ለ2 ዓመት ሙሉ የሚያገለግል",
 
       grade1112Title: "ከ11 - 12ኛ ክፍል",
-      grade1112Subtitle: "የተፈጥሮ ወይም የማህበራዊ ሳይንስ ዘርፍ",
+      grade1112Subtitle: "የተፈጥሮ ወይም የማህበራዊ ሳይንስ ዘርፍ (ለ2 ዓመት)",
       grade1112Price: "400",
-      grade1112Period: "ለ2 ዓመት ሙሉ ተጠቃሚነት",
       grade1112F1: "ሁሉም የ11 እና 12ኛ ክፍል የዘርፉ ትምህርቶች",
       grade1112F2: "የብሔራዊ ፈተና አስመስሎ መስራትና የጊዜ ልምምዶች",
       grade1112F3: "100% ከመስመር ውጭ (ያለ ሞባይል ዳታ) ማጥናት",
       grade1112F4: "የጋራ ጥናት ክፍሎችና የተማሪዎች ማህበረሰብ",
-      grade1112F5: "ለ11ኛ እና 12ኛ ክፍል ሙሉ የሚያገለግል",
+      grade1112F5: "ለ2 ሙሉ የትምህርት ዓመታት የሚያገለግል",
 
       choosePlan: "ጥቅል ይምረጡ",
-      goPremium: "የ4 ዓመት ጥቅል ያግኙ",
+      goPremium: "የ2 ዓመት ጥቅል ያግኙ",
       toastMsg: "እባክዎ ለመመዝገብ የሞባይል መተግበሪያችንን ያውርዱ።",
 
-      guarantee1Title: "100% የአንድ ጊዜ ክፍያ",
-      guarantee1Desc: "ምንም ዓይነት ተደጋጋሚ ወርሃዊ ወይም የተደበቀ እድሳት ክፍያ የለም።",
+      guarantee1Title: "የ2 ዓመት ሙሉ ተጠቃሚነት",
+      guarantee1Desc: "እያንዳንዱ ጥቅል ለ2 ዓመት (730 ቀናት) ሙሉ የሚያገለግል ሲሆን ተደጋጋሚ ወርሃዊ ክፍያ የለውም።",
       guarantee2Title: "ቀላል የሀገር ውስጥ ክፍያዎች",
       guarantee2Desc: "በቴሌብር፣ በኢትዮጵያ ንግድ ባንክ (CBE)፣ በአዋሽ ወይም በአባይ ባንክ ይክፈሉ።",
       guarantee3Title: "ሙሉ ከመስመር ውጭ (Offline)",
@@ -137,8 +133,8 @@ const Pricing = ({ triggerToast, language }) => {
                 {currentT.grade910Price} <span className="currency">{currentT.currency}</span>
               </div>
               <div className="pricing-duration-row">
-                <span className="duration-pill">{currentT.grade910Period}</span>
-                <span className="billing-pill">{currentT.oneTimeBadge}</span>
+                <span className="duration-pill">{currentT.twoYearPeriod}</span>
+                <span className="billing-pill">{currentT.billingBadge}</span>
               </div>
             </div>
 
@@ -178,8 +174,8 @@ const Pricing = ({ triggerToast, language }) => {
                 {currentT.fullPrice} <span className="currency">{currentT.currency}</span>
               </div>
               <div className="pricing-duration-row">
-                <span className="duration-pill duration-pill-highlight">{currentT.fullPeriod}</span>
-                <span className="billing-pill billing-pill-highlight">{currentT.oneTimeBadge}</span>
+                <span className="duration-pill duration-pill-highlight">{currentT.twoYearPeriod}</span>
+                <span className="billing-pill billing-pill-highlight">{currentT.billingBadge}</span>
               </div>
             </div>
 
@@ -219,8 +215,8 @@ const Pricing = ({ triggerToast, language }) => {
                 {currentT.grade1112Price} <span className="currency">{currentT.currency}</span>
               </div>
               <div className="pricing-duration-row">
-                <span className="duration-pill">{currentT.grade1112Period}</span>
-                <span className="billing-pill">{currentT.oneTimeBadge}</span>
+                <span className="duration-pill">{currentT.twoYearPeriod}</span>
+                <span className="billing-pill">{currentT.billingBadge}</span>
               </div>
             </div>
 

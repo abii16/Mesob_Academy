@@ -18,7 +18,7 @@ const FAQ = ({ language }) => {
         },
         { 
           question: "What pricing packages are available?", 
-          answer: "We offer transparent one-time payment packages with zero recurring fees or hidden costs:\n• Grades 9 & 10 Package (400 ETB): 2 full years of access to all Grade 9 & 10 core subjects.\n• Grades 11 & 12 Package (400 ETB): 2 full years of access to your chosen stream (Natural or Social Science) plus National Exam prep archive.\n• Full High School 9-12 Package (700 ETB): 4 full years of access covering all grades 9, 10, 11, and 12 until graduation.\nEvery package includes full offline downloads and practice exams." 
+          answer: "We offer 3 distinct 2-year packages with zero recurring monthly charges:\n• Grades 9 & 10 Package (400 ETB): 2 full years of access to all Grade 9 & 10 core subjects.\n• Grades 11 & 12 Package (400 ETB): 2 full years of access to your chosen stream (Natural or Social Science) plus National Exam prep archive.\n• Full High School 9-12 Package (700 ETB): 2 full years of access covering all grades 9 through 12, all streams, and national exams.\nEvery package provides 2 full years (730 days) of access and includes offline vault downloads." 
         },
         { 
           question: "How do I subscribe and pay in Ethiopia?", 
@@ -44,7 +44,7 @@ const FAQ = ({ language }) => {
         },
         { 
           question: "ምን ዓይነት የክፍያ ጥቅሎች አሉ?", 
-          answer: "ምንም ዓይነት ተደጋጋሚ ክፍያ የሌላቸው ግልጽ የአንድ ጊዜ የክፍያ ጥቅሎችን እናቀርባለን፦\n• የ9-10ኛ ክፍል ጥቅል (400 ብር)፦ ለ2 ሙሉ የትምህርት ዓመታት፣ ሁሉም የ9 እና 10ኛ ክፍል ትምህርቶች።\n• የ11-12ኛ ክፍል ጥቅል (400 ብር)፦ ለ2 ሙሉ የትምህርት ዓመታት፣ የተፈጥሮ ወይም ማህበራዊ ሳይንስ ዘርፍ ከብሔራዊ ፈተና ዝግጅት ጋር።\n• የሙሉ ሁለተኛ ደረጃ ከ9-12ኛ ክፍል ጥቅል (700 ብር)፦ ለ4 ሙሉ የትምህርት ዓመታት ከ9 እስከ 12ኛ ክፍል እስከ ምረቃ ድረስ የሚያገለግል።\nሁሉም ጥቅሎች ሙሉ ከመስመር ውጭ የማውረድ እና የቪዲዮ ትምህርቶች ተጠቃሚነትን ያካትታሉ።" 
+          answer: "ምንም ዓይነት ወርሃዊ ክፍያ የሌላቸውን 3 የ2 ዓመት ጥቅሎችን እናቀርባለን፦\n• የ9-10ኛ ክፍል ጥቅል (400 ብር)፦ ለ2 ዓመት ሙሉ፣ ሁሉም የ9 እና 10ኛ ክፍል ዋና ዋና ትምህርቶች።\n• የ11-12ኛ ክፍል ጥቅል (400 ብር)፦ ለ2 ዓመት ሙሉ፣ የተፈጥሮ ወይም ማህበራዊ ሳይንስ ዘርፍ ከብሔራዊ ፈተና ዝግጅት ጋር።\n• የሙሉ ሁለተኛ ደረጃ ከ9-12ኛ ክፍል ጥቅል (700 ብር)፦ ለ2 ዓመት ሙሉ፣ ከ9 እስከ 12ኛ ክፍል ያሉትን ሁሉንም የትምህርት ደረጃዎች፣ ዘርፎችና የፈተና ማህደሮች የሚያካትት።\nሁሉም ጥቅሎች ለ2 ዓመት ሙሉ የሚያገለግሉ ሲሆን ከመስመር ውጭ የማውረድ አገልግሎትን ያካትታሉ።" 
         },
         { 
           question: "በኢትዮጵያ እንዴት መክፈል እና መመዝገብ እችላለሁ?", 
