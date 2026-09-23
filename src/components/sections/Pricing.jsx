@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle2, ShieldCheck, CreditCard, Download } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 import '../../styles/sections/Pricing.css';
 
 const Pricing = ({ triggerToast, language }) => {
@@ -45,14 +45,7 @@ const Pricing = ({ triggerToast, language }) => {
 
       choosePlan: "Choose Plan",
       goPremium: "Get 2-Year Pass",
-      toastMsg: "Please download our mobile app to subscribe.",
-
-      guarantee1Title: "2 Full Years of Access",
-      guarantee1Desc: "Every package gives you 2 full years (730 days) of access with zero recurring monthly charges.",
-      guarantee2Title: "Ethiopian Local Payments",
-      guarantee2Desc: "Instant transfer via Telebirr, CBE Birr, Awash Bank, or Abay Bank.",
-      guarantee3Title: "Full Offline Learning",
-      guarantee3Desc: "Download video lessons & notes once, study anytime without internet."
+      toastMsg: "Please download our mobile app to subscribe."
     },
     am: {
       subtitle: "ግልጽ እና ተመጣጣኝ ክፍያዎች",
@@ -94,14 +87,7 @@ const Pricing = ({ triggerToast, language }) => {
 
       choosePlan: "ጥቅል ይምረጡ",
       goPremium: "የ2 ዓመት ጥቅል ያግኙ",
-      toastMsg: "እባክዎ ለመመዝገብ የሞባይል መተግበሪያችንን ያውርዱ።",
-
-      guarantee1Title: "የ2 ዓመት ሙሉ ተጠቃሚነት",
-      guarantee1Desc: "እያንዳንዱ ጥቅል ለ2 ዓመት (730 ቀናት) ሙሉ የሚያገለግል ሲሆን ተደጋጋሚ ወርሃዊ ክፍያ የለውም።",
-      guarantee2Title: "ቀላል የሀገር ውስጥ ክፍያዎች",
-      guarantee2Desc: "በቴሌብር፣ በኢትዮጵያ ንግድ ባንክ (CBE)፣ በአዋሽ ወይም በአባይ ባንክ ይክፈሉ።",
-      guarantee3Title: "ሙሉ ከመስመር ውጭ (Offline)",
-      guarantee3Desc: "ቪዲዮዎችንና ማስታወሻዎችን አንዴ በማውረድ ያለ ኢንተርኔት ያጥኑ።"
+      toastMsg: "እባክዎ ለመመዝገብ የሞባይል መተግበሪያችንን ያውርዱ።"
     }
   };
 
@@ -239,37 +225,6 @@ const Pricing = ({ triggerToast, language }) => {
             </button>
           </motion.div>
         </div>
-
-        {/* Value & Trust Guarantees */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-          className="pricing-guarantees-grid"
-        >
-          <div className="pricing-guarantee-card">
-            <div className="guarantee-icon"><ShieldCheck size={22} /></div>
-            <div className="guarantee-content">
-              <h4>{currentT.guarantee1Title}</h4>
-              <p>{currentT.guarantee1Desc}</p>
-            </div>
-          </div>
-          <div className="pricing-guarantee-card">
-            <div className="guarantee-icon"><CreditCard size={22} /></div>
-            <div className="guarantee-content">
-              <h4>{currentT.guarantee2Title}</h4>
-              <p>{currentT.guarantee2Desc}</p>
-            </div>
-          </div>
-          <div className="pricing-guarantee-card">
-            <div className="guarantee-icon"><Download size={22} /></div>
-            <div className="guarantee-content">
-              <h4>{currentT.guarantee3Title}</h4>
-              <p>{currentT.guarantee3Desc}</p>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
