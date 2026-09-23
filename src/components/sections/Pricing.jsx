@@ -8,7 +8,6 @@ const Pricing = ({ triggerToast, language }) => {
     en: {
       subtitle: "TRANSPARENT PRICING",
       title: "Affordable 2-Year Plans. No Monthly Fees.",
-      tagline: "Every package provides 2 full years of access to lessons, offline vault, and exam prep.",
       essential: "ESSENTIAL",
       recommended: "BEST VALUE",
       focused: "NATIONAL EXAM PREP",
@@ -50,7 +49,6 @@ const Pricing = ({ triggerToast, language }) => {
     am: {
       subtitle: "ግልጽ እና ተመጣጣኝ ክፍያዎች",
       title: "ተመጣጣኝ የ2 ዓመት ክፍያዎች፤ ወርሃዊ ክፍያ የሌለው",
-      tagline: "እያንዳንዱ ጥቅል ለ2 ዓመት ሙሉ የትምህርት ይዘቶችን፣ ከመስመር ውጭ ማውረድና የፈተና ዝግጅትን ያካትታል።",
       essential: "መሰረታዊ",
       recommended: "የሚመረጥ",
       focused: "የፈተና ዝግጅት",
@@ -99,7 +97,6 @@ const Pricing = ({ triggerToast, language }) => {
         <div className="section-header">
           <span className="section-subtitle-new">{currentT.subtitle}</span>
           <h2 className="section-title-new">{currentT.title}</h2>
-          <p className="pricing-header-tagline">{currentT.tagline}</p>
         </div>
         
         <div className="pricing-grid-new">

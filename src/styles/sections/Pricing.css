@@ -4,14 +4,6 @@
   background: var(--color-surface-dim);
 }
 
-.pricing-header-tagline {
-  max-width: 600px;
-  margin: 1rem auto 0;
-  font-size: 15px;
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
 .pricing-grid-new {
   display: grid;
   grid-template-columns: 1fr;
