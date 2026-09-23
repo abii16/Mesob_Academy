@@ -49,20 +49,20 @@ const getSupportResponse = (userText, language) => {
     if (isAm) {
       return {
         text: `ክፍያ ለመፈጸም የሚከተሉትን የባንክ ወይም የቴሌብር ሂሳቦች መጠቀም ይችላሉ፦\n\n` +
-          `• **ቴሌብር (Telebirr)**: 0905865441\n` +
-          `• **የኢትዮጵያ ንግድ ባንክ (CBE)**: 1000714423669\n` +
-          `• **አዋሽ ባንክ**: 013201468713200\n` +
-          `• **አባይ ባንክ**: A401011070050017\n\n` +
+          `• **ቴሌብር (Telebirr)**: \`0905865441\`\n` +
+          `• **የኢትዮጵያ ንግድ ባንክ (CBE)**: \`1000714423669\`\n` +
+          `• **አዋሽ ባንክ**: \`013201468713200\`\n` +
+          `• **አባይ ባንክ**: \`A401011070050017\`\n\n` +
           `ክፍያውን ከፈጸሙ በኋላ ደረሰኙን ስክሪንሾት በማንሳት በሜሶብ መተግበሪያ ውስጥ ይጫኑ። መለያዎ በ24 ሰዓት ውስጥ ይከፈታል።`,
         action: 'contact'
       };
     }
     return {
       text: `You can make a direct payment through any of these local accounts:\n\n` +
-        `• **Telebirr**: 0905865441\n` +
-        `• **Commercial Bank of Ethiopia (CBE)**: 1000714423669\n` +
-        `• **Awash Bank**: 013201468713200\n` +
-        `• **Abay Bank**: A401011070050017\n\n` +
+        `• **Telebirr**: \`0905865441\`\n` +
+        `• **Commercial Bank of Ethiopia (CBE)**: \`1000714423669\`\n` +
+        `• **Awash Bank**: \`013201468713200\`\n` +
+        `• **Abay Bank**: \`A401011070050017\`\n\n` +
         `After completing the transfer, take a screenshot of your receipt and upload it in the Mesob Academy app. Your account will be activated within 24 hours.`,
       action: 'contact'
     };
@@ -249,6 +249,100 @@ const getSupportResponse = (userText, language) => {
       `• Offline learning features`,
     action: null
   };
+};
+
+// Formatter for streaming markdown (bold **text**, inline `code`, bullets, etc.)
+// Prevents '**' or '*' from leaking during real-time typing animation
+const parseStreamingMarkdown = (text) => {
+  if (!text) return [];
+
+  let cleaned = text;
+
+  // Handle trailing asterisk(s) when stream is typing '**' or '*'
+  if (cleaned.endsWith('**')) {
+    const pairs = (cleaned.match(/\*\*/g) || []).length;
+    if (pairs % 2 === 1) cleaned = cleaned.slice(0, -2);
+  } else if (cleaned.endsWith('*') && !cleaned.endsWith('**')) {
+    cleaned = cleaned.slice(0, -1);
+  }
+
+  // Handle trailing backtick if stream is typing '`'
+  if (cleaned.endsWith('`')) {
+    const backticks = (cleaned.match(/`/g) || []).length;
+    if (backticks % 2 === 1) cleaned = cleaned.slice(0, -1);
+  }
+
+  const nodes = [];
+  const boldParts = cleaned.split('**');
+
+  for (let i = 0; i < boldParts.length; i++) {
+    let seg = boldParts[i];
+    if (!seg) continue;
+
+    const isBold = (i % 2 === 1);
+    // Strip any rogue remaining asterisks
+    seg = seg.replace(/\*\*/g, '');
+
+    // Check for inline code backticks within the segment
+    if (seg.includes('`')) {
+      const codeParts = seg.split('`');
+      for (let j = 0; j < codeParts.length; j++) {
+        let codeSeg = codeParts[j];
+        if (!codeSeg) continue;
+        const isCode = (j % 2 === 1);
+        nodes.push({ isBold, isCode, text: codeSeg });
+      }
+    } else {
+      nodes.push({ isBold, isCode: false, text: seg });
+    }
+  }
+
+  return nodes;
+};
+
+const FormatSupportText = ({ text }) => {
+  if (!text) return null;
+  const lines = text.split('\n');
+
+  return (
+    <>
+      {lines.map((line, lIdx) => {
+        const trimmed = line.trim();
+        if (!trimmed) {
+          return <div key={lIdx} className="support-line-break" />;
+        }
+
+        const isBullet = trimmed.startsWith('•') || trimmed.startsWith('-');
+        const isNumbered = /^\d+\.\s/.test(trimmed);
+        const formattedNodes = parseStreamingMarkdown(line);
+
+        return (
+          <p 
+            key={lIdx} 
+            className={`support-text-line ${isBullet ? 'bullet-line' : ''} ${isNumbered ? 'numbered-line' : ''}`}
+          >
+            {formattedNodes.map((node, nIdx) => {
+              if (node.isBold) {
+                return (
+                  <strong key={nIdx} className="support-bold-text">
+                    {node.text}
+                  </strong>
+                );
+              }
+              if (node.isCode) {
+                return (
+                  <code key={nIdx} className="support-inline-code">
+                    {node.text}
+                  </code>
+                );
+              }
+              return <React.Fragment key={nIdx}>{node.text}</React.Fragment>;
+            })}
+          </p>
+        );
+      })}
+    </>
+  );
 };
 
 const AIChatWidget = ({ language = 'en', theme = 'dark' }) => {
@@ -471,11 +565,7 @@ const AIChatWidget = ({ language = 'en', theme = 'dark' }) => {
                   )}
                   <div className="support-bubble">
                     <div className="support-bubble-text">
-                      {msg.text.split('\n').map((line, lIdx) => (
-                        <p key={lIdx} className={line.startsWith('•') ? 'bullet-line' : ''}>
-                          {line}
-                        </p>
-                      ))}
+                      <FormatSupportText text={msg.text} />
                     </div>
                     {msg.action && (
                       <button 
