@@ -1,21 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Sparkles, 
+  MessageCircle, 
   X, 
   Send, 
   RotateCcw, 
-  ChevronDown, 
-  CreditCard, 
-  Download, 
-  HelpCircle,
-  ExternalLink,
-  Bot
+  ExternalLink 
 } from 'lucide-react';
 import '../../styles/layout/AIChatWidget.css';
 
-// Pre-programmed Knowledge Base for Mesob AI
-const getAIResponse = (userText, language) => {
+// Knowledge Base for Mesob Support Assistant
+const getSupportResponse = (userText, language) => {
   const q = userText.toLowerCase().trim();
   const isAm = language === 'am' || /[\u1200-\u137F]/.test(userText);
 
@@ -27,20 +22,20 @@ const getAIResponse = (userText, language) => {
   ) {
     if (isAm) {
       return {
-        text: `የሜሶብ አካዳሚ የ2 ዓመት የክፍያ ጥቅሎች ግልጽ እና ተመጣጣኝ ናቸው (ምንም ዓይነት ወርሃዊ ክፍያ የለም)፦\n\n` +
-          `• 📘 **ከ9 - 10ኛ ክፍል ጥቅል**፦ 400 ብር (ለሁለት ሙሉ ዓመታት፣ ሁሉም የ9 እና 10ኛ ክፍል ትምህርቶች)\n` +
-          `• 🔬 **ከ11 - 12ኛ ክፍል ጥቅል**፦ 400 ብር (ለሁለት ሙሉ ዓመታት፣ የተፈጥሮ ወይም ማህበራዊ ሳይንስ ከብሔራዊ ፈተና ዝግጅት ጋር)\n` +
-          `• 🎓 **የሙሉ ሁለተኛ ደረጃ (ከ9-12ኛ ክፍል) ጥቅል**፦ 700 ብር (ለሁለት ዓመት ሙሉ፣ ከ9 እስከ 12ኛ ክፍል ያሉትን ሁሉንም ትምህርቶች የሚያካትት)\n\n` +
-          `ሁሉም ጥቅሎች 100% ከመስመር ውጭ (ያለ ሞባይል ዳታ) ማጥናትን ያካትታሉ!`,
+        text: `የሜሶብ አካዳሚ የ2 ዓመት የክፍያ ጥቅሎች ዝርዝር የሚከተሉት ናቸው (ተደጋጋሚ ወርሃዊ ክፍያ የለውም)፦\n\n` +
+          `• **ከ9 - 10ኛ ክፍል ጥቅል**፦ 400 ብር ለ2 ሙሉ የትምህርት ዓመታት (ሁሉም የ9 እና 10ኛ ክፍል ትምህርቶች)\n` +
+          `• **ከ11 - 12ኛ ክፍል ጥቅል**፦ 400 ብር ለ2 ሙሉ የትምህርት ዓመታት (የተፈጥሮ ወይም ማህበራዊ ሳይንስ ከብሔራዊ ፈተና ዝግጅት ጋር)\n` +
+          `• **የሙሉ ሁለተኛ ደረጃ (ከ9-12ኛ ክፍል) ጥቅል**፦ 700 ብር ለ2 ሙሉ ዓመታት (ሁሉንም 4 የክፍል ደረጃዎች ያካተተ)\n\n` +
+          `ሁሉም ጥቅሎች ሙሉ ከመስመር ውጭ (ያለ ሞባይል ዳታ) ማጥናትን ያካትታሉ።`,
         action: 'pricing'
       };
     }
     return {
-      text: `Here is our transparent 2-year pricing structure with **zero monthly fees**:\n\n` +
-        `• 📘 **Grades 9 & 10 Package**: **400 ETB** for 2 full academic years (All core subjects)\n` +
-        `• 🔬 **Grades 11 & 12 Package**: **400 ETB** for 2 full academic years (Natural or Social Science stream + National Exam prep)\n` +
-        `• 🎓 **Full High School (9-12) Package**: **700 ETB** for 2 full academic years (Access across all 4 grades and streams)\n\n` +
-        `Every package includes 100% offline vault access so you can study without mobile data!`,
+      text: `Here is our 2-year pricing overview (no recurring monthly fees):\n\n` +
+        `• **Grades 9 & 10 Package**: 400 ETB for 2 full academic years (All core subjects)\n` +
+        `• **Grades 11 & 12 Package**: 400 ETB for 2 full academic years (Natural or Social Science stream + National Exam prep)\n` +
+        `• **Full High School (9-12) Package**: 700 ETB for 2 full academic years (Complete access across all 4 grades)\n\n` +
+        `Every package includes full offline vault access so you can study without using mobile data.`,
       action: 'pricing'
     };
   }
@@ -53,28 +48,22 @@ const getAIResponse = (userText, language) => {
   ) {
     if (isAm) {
       return {
-        text: `ክፍያ በሀገር ውስጥ በቀላሉ መፈጸም ይችላሉ፦\n\n` +
-          `📱 **ቴሌብር (Telebirr)**: \`0905865441\`\n` +
-          `🏦 **የኢትዮጵያ ንግድ ባንክ (CBE)**: \`1000714423669\`\n` +
-          `🏦 **አዋሽ ባንክ** እና **አባይ ባንክ**ም ይደገፋሉ።\n\n` +
-          `**ቀጣይ ደረጃዎች:**\n` +
-          `1. ክፍያውን ከላይ ባሉት ሂሳቦች ይላኩ።\n` +
-          `2. የከፈሉበትን ደረሰኝ ስክሪንሾት ያንሱ።\n` +
-          `3. በመተግበሪያው ውስጥ በቀጥታ ስክሪንሾቱን ይጫኑ።\n` +
-          `የማረጋገጫ ቡድናችን በ24 ሰዓት ውስጥ ሙሉ የፕሪሚየም አገልግሎትዎን ይከፍታል!`,
+        text: `ክፍያ ለመፈጸም የሚከተሉትን የባንክ ወይም የቴሌብር ሂሳቦች መጠቀም ይችላሉ፦\n\n` +
+          `• **ቴሌብር (Telebirr)**: 0905865441\n` +
+          `• **የኢትዮጵያ ንግድ ባንክ (CBE)**: 1000714423669\n` +
+          `• **አዋሽ ባንክ**: 013201468713200\n` +
+          `• **አባይ ባንክ**: A401011070050017\n\n` +
+          `ክፍያውን ከፈጸሙ በኋላ ደረሰኙን ስክሪንሾት በማንሳት በሜሶብ መተግበሪያ ውስጥ ይጫኑ። መለያዎ በ24 ሰዓት ውስጥ ይከፈታል።`,
         action: 'contact'
       };
     }
     return {
-      text: `You can easily pay in Ethiopia via local bank transfer or Telebirr:\n\n` +
-        `📱 **Telebirr**: \`0905865441\`\n` +
-        `🏦 **CBE (Commercial Bank of Ethiopia)**: \`1000714423669\`\n` +
-        `🏦 **Awash Bank** & **Abay Bank** are also supported.\n\n` +
-        `**How to activate:**\n` +
-        `1. Transfer the fee for your chosen package (400 ETB or 700 ETB).\n` +
-        `2. Take a screenshot or photo of the payment receipt.\n` +
-        `3. Upload the receipt inside the Mesob Academy mobile app.\n` +
-        `Our team will verify and activate your 2-year access within 24 hours!`,
+      text: `You can make a direct payment through any of these local accounts:\n\n` +
+        `• **Telebirr**: 0905865441\n` +
+        `• **Commercial Bank of Ethiopia (CBE)**: 1000714423669\n` +
+        `• **Awash Bank**: 013201468713200\n` +
+        `• **Abay Bank**: A401011070050017\n\n` +
+        `After completing the transfer, take a screenshot of your receipt and upload it in the Mesob Academy app. Your account will be activated within 24 hours.`,
       action: 'contact'
     };
   }
@@ -86,36 +75,34 @@ const getAIResponse = (userText, language) => {
   ) {
     if (isAm) {
       return {
-        text: `አዎ! መተግበሪያችን አስተማማኝ **ከመስመር ውጭ ማስቀመጫ (Offline Vault)** አለው።\n\n` +
-          `የቪዲዮ ትምህርቶችን፣ ማጠቃለያዎችን እና የልምምድ ፈተናዎችን በዋይፋይ ወይም በዳታ አንዴ በማውረድ፣ በማንኛውም ቦታ ያለ ምንም የሞባይል ዳታ መጠቀም ይችላሉ!`,
+        text: `አዎ! መተግበሪያው ያለ ኢንተርኔት ይሰራል。\n\nበመተግበሪያው ውስጥ ያሉ የቪዲዮ ትምህርቶችን፣ ማጠቃለያዎችን እና የልምምድ ፈተናዎችን አንዴ ካወረዱ በኋላ በማንኛውም ሰዓት ያለ ሞባይል ዳታ መጠቀም ይችላሉ።`,
         action: 'features'
       };
     }
     return {
-      text: `Yes! Mesob Academy features a secure **Offline Vault**.\n\n` +
-        `You can download video lessons, booklet summaries, and chapter quizzes while connected to the internet, and then study anytime, anywhere with **zero mobile data**!`,
+      text: `Yes, the app works completely offline.\n\nOnce you download your video lessons, booklet summaries, and practice quizzes, you can access and study them anytime without using any mobile data.`,
       action: 'features'
     };
   }
 
   // 4. Grade 9 & 10 specifics
-  if (q.includes('grade 9') || q.includes('grade 10') || q.includes('9th') || q.includes('10th') || q.includes('9') && q.includes('10') || q.includes('9ኛ') || q.includes('10ኛ')) {
+  if (q.includes('grade 9') || q.includes('grade 10') || q.includes('9th') || q.includes('10th') || (q.includes('9') && q.includes('10')) || q.includes('9ኛ') || q.includes('10ኛ')) {
     if (isAm) {
       return {
-        text: `**የ9 እና 10ኛ ክፍል ጥቅል (400 ብር ለ2 ዓመት)**፦\n\n` +
-          `• ሁሉንም የ9 እና 10ኛ ክፍል አጠቃላይ የትምህርት ዓይነቶች ያካትታል (ሒሳብ፣ ፊዚክስ፣ ኬሚስትሪ፣ ባዮሎጂ፣ እንግሊዝኛ ወዘተ)\n` +
-          `• የምዕራፍ ማጠቃለያዎች እና በሺዎች የሚቆጠሩ የሙከራ ጥያቄዎች\n` +
-          `• 100% ከመስመር ውጭ ማውረድና ማጥናት\n` +
-          `• ለሁለት ሙሉ ዓመታት የሚያገለግል!`,
+        text: `**የ9 እና 10ኛ ክፍል ጥቅል (400 ብር)**፦\n\n` +
+          `• ሁሉንም የ9ኛ እና 10ኛ ክፍል አጠቃላይ የትምህርት ዓይነቶች ያካትታል (ሒሳብ፣ ፊዚክስ፣ ኬሚስትሪ፣ ባዮሎጂ፣ እንግሊዝኛ ወዘተ)\n` +
+          `• የምዕራፍ ማጠቃለያዎች እና የልምምድ ፈተናዎች\n` +
+          `• 100% ከመስመር ውጭ የማውረድ ዕድል\n` +
+          `• ለ2 ሙሉ የትምህርት ዓመታት የሚያገለግል`,
         action: 'pricing'
       };
     }
     return {
-      text: `**Grades 9 & 10 Package (400 ETB for 2 Years)**:\n\n` +
-        `• Complete coverage of all Grade 9 & 10 core subjects (Maths, Physics, Chemistry, Biology, English, etc.)\n` +
+      text: `**Grades 9 & 10 Package (400 ETB)**:\n\n` +
+        `• Covers all Grade 9 & 10 subjects (Mathematics, Physics, Chemistry, Biology, English, etc.)\n` +
         `• Chapter summaries & interactive practice drills\n` +
-        `• 100% offline vault downloads\n` +
-        `• Valid for 2 full academic years!`,
+        `• Full offline downloads\n` +
+        `• Active for 2 full academic years`,
       action: 'pricing'
     };
   }
@@ -128,20 +115,20 @@ const getAIResponse = (userText, language) => {
   ) {
     if (isAm) {
       return {
-        text: `**የ11 እና 12ኛ ክፍል ጥቅል (400 ብር ለ2 ዓመት)**፦\n\n` +
-          `በመመዝገብ ወቅት የመረጡትን የትምህርት ዘርፍ ይወስዳሉ፦\n` +
-          `🔬 **የተፈጥሮ ሳይንስ (Natural Science)**: ሒሳብ፣ ፊዚክስ፣ ኬሚስትሪ፣ ባዮሎጂ፣ እንግሊዝኛ ወዘተ\n` +
-          `📖 **የማህበራዊ ሳይንስ (Social Science)**: ታሪክ፣ ጂኦግራፊ፣ ኢኮኖሚክስ፣ ሒሳብ፣ እንግሊዝኛ ወዘተ\n\n` +
-          `በተጨማሪም የ10+ ዓመታት የብሔራዊ ፈተናዎች ማህደር እና አስመስሎ የተሰሩ የጊዜ ልምምዶችን ያካትታል!`,
+        text: `**የ11 እና 12ኛ ክፍል ጥቅል (400 ብር)**፦\n\n` +
+          `በምዝገባ ወቅት የተፈጥሮ ወይም የማህበራዊ ሳይንስ ዘርፍዎን ይመርጣሉ፦\n` +
+          `• **የተፈጥሮ ሳይንስ (Natural Science)**: ሒሳብ፣ ፊዚክስ፣ ኬሚስትሪ፣ ባዮሎጂ፣ እንግሊዝኛ ወዘተ\n` +
+          `• **የማህበራዊ ሳይንስ (Social Science)**: ታሪክ፣ ጂኦግራፊ፣ ኢኮኖሚክስ፣ ሒሳብ፣ እንግሊዝኛ ወዘተ\n\n` +
+          `ሁለቱም ዘርፎች የ10+ ዓመታት የብሔራዊ ፈተና ማህደርን እና የጊዜ ልምምዶችን ያካትታሉ። ጥቅሉ ለ2 ዓመት ሙሉ ያገለግላል።`,
         action: 'pricing'
       };
     }
     return {
-      text: `**Grades 11 & 12 Package (400 ETB for 2 Years)**:\n\n` +
-        `You select your stream upon subscription:\n` +
-        `🔬 **Natural Science**: Mathematics, Physics, Chemistry, Biology, English, etc.\n` +
-        `📖 **Social Science**: History, Geography, Economics, Mathematics, English, etc.\n\n` +
-        `Both include 10+ years of national exam simulation drills, timed practice sessions, and full offline vault access!`,
+      text: `**Grades 11 & 12 Package (400 ETB)**:\n\n` +
+        `You select your stream when registering:\n` +
+        `• **Natural Science**: Mathematics, Physics, Chemistry, Biology, English, etc.\n` +
+        `• **Social Science**: History, Geography, Economics, Mathematics, English, etc.\n\n` +
+        `Both streams include a 10+ year national exam prep archive, timed practice exams, and full offline vault access for 2 full academic years.`,
       action: 'pricing'
     };
   }
@@ -150,14 +137,14 @@ const getAIResponse = (userText, language) => {
   if (q.includes('9-12') || q.includes('9 to 12') || q.includes('full') || q.includes('ሁለተኛ ደረጃ')) {
     if (isAm) {
       return {
-        text: `**የሙሉ ሁለተኛ ደረጃ ከ9-12ኛ ክፍል ጥቅል (700 ብር ለ2 ዓመት)**፦\n\n` +
-          `የእኛ ምርጥ ጥቅል ነው! ከ9ኛ እስከ 12ኛ ክፍል ያሉትን ሁሉንም የትምህርት ይዘቶች፣ ሁለቱንም ዘርፎች (ተፈጥሮና ማህበራዊ) እንዲሁም የብሔራዊ ፈተና ማህደርን ለ2 ዓመት ሙሉ ያለምንም ገደብ ያስከፍታል።`,
+        text: `**የሙሉ ሁለተኛ ደረጃ ከ9-12ኛ ክፍል ጥቅል (700 ብር)**፦\n\n` +
+          `ከ9ኛ እስከ 12ኛ ክፍል ያሉትን ሁሉንም የትምህርት ይዘቶች፣ ሁለቱንም ዘርፎች (ተፈጥሮና ማህበራዊ) እንዲሁም የብሔራዊ ፈተና ማህደርን ለ2 ዓመት ሙሉ ያለምንም ገደብ ያስከፍታል።`,
         action: 'pricing'
       };
     }
     return {
-      text: `**Full High School (Grades 9-12) Package (700 ETB for 2 Years)**:\n\n` +
-        `Our best value package! Unlocks full access across all 4 grades (9, 10, 11, and 12), including both Natural and Social streams, all video lessons, and the complete 10+ years national examination archive for 2 full years.`,
+      text: `**Full High School (Grades 9-12) Package (700 ETB)**:\n\n` +
+        `Unlocks full access across all 4 grades (9, 10, 11, and 12), including both Natural and Social streams, all video lessons, and the complete 10+ years national examination archive for 2 full years.`,
       action: 'pricing'
     };
   }
@@ -169,19 +156,17 @@ const getAIResponse = (userText, language) => {
   ) {
     if (isAm) {
       return {
-        text: `ሁሉም የሜሶብ አካዳሚ ጥቅሎች ለ**2 ዓመት ሙሉ (730 ቀናት)** የሚያገለግሉ ናቸው።\n\n` +
-          `ክፍያው አንዴ አስቀድሞ የሚፈጸም ሲሆን ምንም ዓይነት ወርሃዊ ተደጋጋሚ ክፍያ የለውም። የ2 ዓመት የጥናት ጊዜዎ ሲያልቅ እንደገና ማደስ ይችላሉ።`,
+        text: `ሁሉም የሜሶብ አካዳሚ ጥቅሎች ለ2 ዓመት ሙሉ (730 ቀናት) የሚያገለግሉ ናቸው። ምንም ዓይነት ወርሃዊ ክፍያ የለም። የ2 ዓመት ጊዜዎ ሲያልቅ እንደገና ማደስ ይችላሉ።`,
         action: 'pricing'
       };
     }
     return {
-      text: `All Mesob Academy packages grant **2 full years (730 days)** of access from the date your payment is approved.\n\n` +
-        `There are zero recurring monthly charges or auto-renewals. When your 2-year cycle concludes, you can renew for your next grade level!`,
+      text: `All Mesob Academy packages are active for 2 full years (730 days) from payment approval. There are zero monthly charges. When your 2-year period ends, you can renew for your next cycle.`,
       action: 'pricing'
     };
   }
 
-  // 8. Recommendation / Which plan should I choose
+  // 8. Recommendation
   if (
     q.includes('recommend') || q.includes('which plan') || q.includes('choose') || q.includes('help me choose') || 
     q.includes('ምረጡልኝ') || q.includes('የትኛውን') || q.includes('የትኛው')
@@ -189,17 +174,17 @@ const getAIResponse = (userText, language) => {
     if (isAm) {
       return {
         text: `ለእርስዎ የሚመጥነውን ጥቅል ለመምረጥ፦\n\n` +
-          `1. **የ9ኛ ወይም 10ኛ ክፍል ተማሪ ከሆኑ** ➜ **የ9-10ኛ ክፍል ጥቅል (400 ብር)** ይምረጡ።\n` +
-          `2. **የ11ኛ ወይም 12ኛ ክፍል ተማሪ ከሆኑ** ➜ **የ11-12ኛ ክፍል ጥቅል (400 ብር)** በመምረጥ የትምህርት ዘርፍዎን (ተፈጥሮ ወይም ማህበራዊ) ይለዩ።\n` +
-          `3. **ሁሉንም ከ9-12ኛ ክፍል ያለውን ይዘት ለክለሳ እና ለፈተና ዝግጅት በአንድ ላይ ከፈለጉ** ➜ **የሙሉ ሁለተኛ ደረጃ ጥቅል (700 ብር)** ይምረጡ።`,
+          `1. **የ9ኛ ወይም 10ኛ ክፍል ተማሪ ከሆኑ** ➜ የ9-10ኛ ክፍል ጥቅል (400 ብር)\n` +
+          `2. **የ11ኛ ወይም 12ኛ ክፍል ተማሪ ከሆኑ** ➜ የ11-12ኛ ክፍል ጥቅል (400 ብር)\n` +
+          `3. **ሁሉንም ከ9-12ኛ ክፍል ያለውን ይዘት በአንድ ላይ ለክለሳ ከፈለጉ** ➜ የሙሉ ሁለተኛ ደረጃ ጥቅል (700 ብር)`,
         action: 'pricing'
       };
     }
     return {
-      text: `Here is our quick recommendation guide:\n\n` +
-        `1. **If you are in Grade 9 or 10** ➜ Choose the **Grades 9 & 10 Package (400 ETB)**.\n` +
-        `2. **If you are in Grade 11 or 12** ➜ Choose the **Grades 11 & 12 Package (400 ETB)** and select your stream (Natural or Social Science).\n` +
-        `3. **If you want all 4 years in one place for comprehensive national exam review** ➜ Choose the **Full High School Package (700 ETB)**!`,
+      text: `Here is a quick guide to help you choose:\n\n` +
+        `1. **If you are in Grade 9 or 10** ➜ Choose the Grades 9 & 10 Package (400 ETB).\n` +
+        `2. **If you are in Grade 11 or 12** ➜ Choose the Grades 11 & 12 Package (400 ETB) with your stream.\n` +
+        `3. **If you need all 4 years in one place for national exam review** ➜ Choose the Full High School Package (700 ETB).`,
       action: 'pricing'
     };
   }
@@ -208,12 +193,12 @@ const getAIResponse = (userText, language) => {
   if (q.includes('download') || q.includes('app') || q.includes('apk') || q.includes('install') || q.includes('ማውረድ') || q.includes('መተግበሪያ')) {
     if (isAm) {
       return {
-        text: `የሜሶብ አካዳሚ አንድሮይድ የሞባይል መተግበሪያን በGoogle Play Store ወይም በድረ-ገጻችን አናት ላይ የሚገኘውን 'Download' ቁልፍ በመጫን ማውረድ ይችላሉ!`,
+        text: `የሜሶብ አካዳሚ የሞባይል መተግበሪያን በGoogle Play Store ወይም በገጻችን አናት ላይ የሚገኘውን 'Download' ቁልፍ በመጫን ማውረድ ይችላሉ።`,
         action: 'download'
       };
     }
     return {
-      text: `You can download the Mesob Academy mobile app on Android via the Google Play Store or directly from the download button in the top navigation bar!`,
+      text: `You can download the Mesob Academy app on Android via Google Play Store or by clicking the Download button in the top navigation bar.`,
       action: 'download'
     };
   }
@@ -222,12 +207,12 @@ const getAIResponse = (userText, language) => {
   if (q.includes('hi') || q.includes('hello') || q.includes('hey') || q.includes('ሰላም') || q.includes('ጤና ይስጥልኝ')) {
     if (isAm) {
       return {
-        text: `ሰላም! እኔ የሜሶብ አካዳሚ AI ረዳት ነኝ።\n\nስለ የትምህርት ጥቅሎቻችን ዋጋ፣ የክፍያ መንገዶች (ቴሌብር/CBE)፣ የ11-12ኛ ክፍል ዘርፎች ወይም ከመስመር ውጭ ስለማጥናት ምን ማወቅ ይፈልጋሉ?`,
+        text: `ሰላም! ወደ ሜሶብ አካዳሚ እንኳን በደህና መጡ። በምን ልንረዳዎ እንችላለን? ስለ ጥቅሎች ዋጋ፣ የክፍያ መንገዶች ወይም ከመስመር ውጭ ስለማጥናት መጠየቅ ይችላሉ።`,
         action: null
       };
     }
     return {
-      text: `Hello! I am your Mesob Academy AI Assistant. ✨\n\nI can help you with questions about our 2-year packages, pricing, Telebirr/CBE payment steps, grade streams, or offline study! How can I assist you today?`,
+      text: `Hello! Welcome to Mesob Academy. How can we help you today? Feel free to ask about our packages, pricing, Telebirr/CBE payment, or offline learning.`,
       action: null
     };
   }
@@ -235,12 +220,12 @@ const getAIResponse = (userText, language) => {
   if (q.includes('thank') || q.includes('አመሰግናለሁ') || q.includes('thanks')) {
     if (isAm) {
       return {
-        text: `በደስታ ነው! ተጨማሪ ጥያቄ ካለዎት በማንኛውም ጊዜ መጠየቅ ይችላሉ። ለጥናትዎ መልካም እድል! 🎓`,
+        text: `በደስታ ነው! ተጨማሪ ጥያቄ ካለዎት በማንኛውም ጊዜ ይጠይቁን። ለጥናትዎ መልካም ውጤት እንመኛለን!`,
         action: null
       };
     }
     return {
-      text: `You're very welcome! If you have any other questions about courses, prices, or study tips, feel free to ask anytime. Best of luck with your studies! 🎓`,
+      text: `You're very welcome! If you have any further questions, feel free to ask anytime. Wishing you success in your studies!`,
       action: null
     };
   }
@@ -248,37 +233,35 @@ const getAIResponse = (userText, language) => {
   // Fallback
   if (isAm) {
     return {
-      text: `ጥሩ ጥያቄ ነው! የሚከተሉትን ርዕሶች በመጠየቅ ፈጣን ምላሽ ማግኘት ይችላሉ፦\n\n` +
-        `• 💰 "የጥቅሎቹ ዋጋ ስንት ነው?"\n` +
-        `• 💳 "በቴሌብር ወይም በሲቢኢ እንዴት መክፈል እችላለሁ?"\n` +
-        `• 🔬 "የ11 እና 12ኛ ክፍል የተፈጥሮ ወይም ማህበራዊ ሳይንስ ጥቅል"\n` +
-        `• 📱 "ያለ ኢንተርኔት (Offline) ይሰራል?"\n` +
-        `• 🎯 "ለእኔ የሚመጥነውን ጥቅል ምረጡልኝ"`,
+      text: `ጥያቄዎን በተሻለ ለመመለስ የሚከተሉትን ርዕሶች መምረጥ ይችላሉ፦\n\n` +
+        `• የጥቅሎች ዋጋ (ከ9-10 እና ከ11-12)\n` +
+        `• የክፍያ መንገዶች (ቴሌብር እና CBE)\n` +
+        `• የተፈጥሮ እና ማህበራዊ ሳይንስ ዘርፎች\n` +
+        `• ከመስመር ውጭ (Offline) አጠቃቀም`,
       action: null
     };
   }
   return {
-    text: `I'm happy to help! Here are popular questions you can ask me:\n\n` +
-      `• 💰 "What are the prices for Grade 9-10 and 11-12?"\n` +
-      `• 💳 "How do I pay with Telebirr or CBE?"\n` +
-      `• 🔬 "Tell me about Grade 11-12 Natural vs Social stream"\n` +
-      `• 📱 "Does the app work without internet?"\n` +
-      `• 🎯 "Which package do you recommend for me?"`,
+    text: `How can we help? Here are common topics you can ask about:\n\n` +
+      `• Pricing for Grade 9-10 and Grade 11-12\n` +
+      `• Payment options via Telebirr or CBE\n` +
+      `• Natural vs. Social Science streams\n` +
+      `• Offline learning features`,
     action: null
   };
 };
 
-const AIChatWidget = ({ language = 'en', theme = 'dark', triggerToast }) => {
+const AIChatWidget = ({ language = 'en', theme = 'dark' }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [messages, setMessages] = useState([
     {
       id: 'welcome',
-      sender: 'ai',
+      sender: 'support',
       text: language === 'am' 
-        ? 'ሰላም! እኔ የሜሶብ AI ረዳት ነኝ። ስለ ጥቅሎች ዋጋ፣ የክፍያ መንገዶች (ቴሌብር/ሲቢኢ) ወይም ከመስመር ውጭ ስለማጥናት ማንኛውንም ጥያቄ ይጠይቁኝ!'
-        : 'Hi there! I am your Mesob AI Assistant. ✨ Ask me anything about our 2-year packages, pricing, Telebirr/CBE payment, or offline learning!',
+        ? 'ሰላም! ወደ ሜሶብ አካዳሚ እንኳን በደህና መጡ። በምን ልንረዳዎ እንችላለን? ስለ ጥቅሎች ዋጋ፣ የክፍያ መንገዶች (ቴሌብር/ሲቢኢ) ወይም ከመስመር ውጭ ስለማጥናት መጠየቅ ይችላሉ።'
+        : 'Hello! Welcome to Mesob Academy. How can we help you today? Ask us about our 2-year grade packages, Telebirr/CBE payment, or offline learning.',
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     }
   ]);
@@ -287,15 +270,15 @@ const AIChatWidget = ({ language = 'en', theme = 'dark', triggerToast }) => {
   const inputRef = useRef(null);
 
   const starterChips = language === 'am' ? [
-    { label: '💰 የጥቅሎቹ ዋጋ ስንት ነው?', query: 'የጥቅሎቹ ዋጋ ስንት ነው?' },
-    { label: '💳 በቴሌብር/CBE መክፈል', query: 'በቴሌብር ወይም በሲቢኢ እንዴት መክፈል እችላለሁ?' },
-    { label: '🔬 የ11-12ኛ ክፍል ዘርፎች', query: 'የ11 እና 12ኛ ክፍል የተፈጥሮ ወይም ማህበራዊ ሳይንስ ጥቅል' },
-    { label: '📱 ያለ ኢንተርኔት ይሰራል?', query: 'መተግበሪያው ያለ ኢንተርኔት ይሰራል?' }
+    { label: 'የጥቅሎች ዋጋ', query: 'የጥቅሎቹ ዋጋ ስንት ነው?' },
+    { label: 'በቴሌብር/CBE መክፈል', query: 'በቴሌብር ወይም በሲቢኢ እንዴት መክፈል እችላለሁ?' },
+    { label: 'የ11-12ኛ ክፍል ዘርፎች', query: 'የ11 እና 12ኛ ክፍል የተፈጥሮ ወይም ማህበራዊ ሳይንስ ጥቅል' },
+    { label: 'ያለ ኢንተርኔት ይሰራል?', query: 'መተግበሪያው ያለ ኢንተርኔት ይሰራል?' }
   ] : [
-    { label: '💰 What are the prices?', query: 'What are the pricing packages?' },
-    { label: '💳 Pay with Telebirr / CBE', query: 'How do I pay with Telebirr or CBE?' },
-    { label: '🔬 Grade 11-12 Streams', query: 'Tell me about Grade 11-12 Natural and Social streams' },
-    { label: '📱 Does it work offline?', query: 'Does the app work without internet?' }
+    { label: 'Pricing Plans', query: 'What are the pricing packages?' },
+    { label: 'Pay with Telebirr / CBE', query: 'How do I pay with Telebirr or CBE?' },
+    { label: 'Grade 11-12 Streams', query: 'Tell me about Grade 11-12 Natural and Social streams' },
+    { label: 'Offline Access', query: 'Does the app work without internet?' }
   ];
 
   // Auto-scroll on new messages
@@ -306,11 +289,11 @@ const AIChatWidget = ({ language = 'en', theme = 'dark', triggerToast }) => {
   // Focus input when opened
   useEffect(() => {
     if (isOpen) {
-      setTimeout(() => inputRef.current?.focus(), 250);
+      setTimeout(() => inputRef.current?.focus(), 200);
     }
   }, [isOpen]);
 
-  // Send query & simulate real AI streaming
+  // Send query & stream natural response
   const handleSend = (textToSend = null) => {
     const query = (textToSend || input).trim();
     if (!query || isTyping) return;
@@ -327,28 +310,24 @@ const AIChatWidget = ({ language = 'en', theme = 'dark', triggerToast }) => {
     if (!textToSend) setInput('');
     setIsTyping(true);
 
-    // Compute answer
-    const responseData = getAIResponse(query, language);
+    const responseData = getSupportResponse(query, language);
     const fullText = responseData.text;
     const action = responseData.action;
 
-    // Simulate AI "thinking" time, then stream text
-    const thinkingDelay = 450 + Math.random() * 250;
     setTimeout(() => {
-      const aiMsgId = 'ai_' + Date.now();
-      const aiMsg = {
-        id: aiMsgId,
-        sender: 'ai',
+      const supportMsgId = 's_' + Date.now();
+      const supportMsg = {
+        id: supportMsgId,
+        sender: 'support',
         text: '',
         action: action,
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       };
 
-      setMessages((prev) => [...prev, aiMsg]);
+      setMessages((prev) => [...prev, supportMsg]);
 
-      // Stream words or characters
       let currentIndex = 0;
-      const charsPerTick = 4;
+      const charsPerTick = 5;
       const streamInterval = setInterval(() => {
         currentIndex += charsPerTick;
         if (currentIndex >= fullText.length) {
@@ -359,20 +338,20 @@ const AIChatWidget = ({ language = 'en', theme = 'dark', triggerToast }) => {
 
         const partial = fullText.slice(0, currentIndex);
         setMessages((prev) => 
-          prev.map((m) => m.id === aiMsgId ? { ...m, text: partial } : m)
+          prev.map((m) => m.id === supportMsgId ? { ...m, text: partial } : m)
         );
-      }, 20);
-    }, thinkingDelay);
+      }, 18);
+    }, 350);
   };
 
   const handleClearChat = () => {
     setMessages([
       {
         id: 'welcome_' + Date.now(),
-        sender: 'ai',
+        sender: 'support',
         text: language === 'am' 
-          ? 'ሰላም! ውይይቱ እንደ አዲስ ተጀምሯል። ምን ማወቅ ይፈልጋሉ?'
-          : 'Conversation restarted. ✨ How can I help you today?',
+          ? 'ውይይቱ እንደ አዲስ ተጀምሯል። በምን ልንረዳዎ እንችላለን?'
+          : 'Conversation restarted. How can we help you today?',
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       }
     ]);
@@ -399,7 +378,7 @@ const AIChatWidget = ({ language = 'en', theme = 'dark', triggerToast }) => {
   };
 
   return (
-    <div className={`ai-widget-container ${theme === 'light' ? 'light-widget' : ''}`}>
+    <div className={`support-widget-container ${theme === 'light' ? 'light-widget' : ''}`}>
       {/* Floating Trigger Button */}
       <AnimatePresence>
         {!isOpen && (
@@ -407,20 +386,18 @@ const AIChatWidget = ({ language = 'en', theme = 'dark', triggerToast }) => {
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
-            whileHover={{ scale: 1.06 }}
-            whileTap={{ scale: 0.94 }}
-            className="ai-trigger-btn"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="support-trigger-btn"
             onClick={() => setIsOpen(true)}
-            aria-label="Ask Mesob AI"
+            aria-label="Open Support Chat"
           >
-            <div className="ai-trigger-pulse" />
-            <div className="ai-trigger-icon-box">
-              <Sparkles size={22} className="ai-sparkle-icon" />
+            <div className="support-trigger-icon">
+              <MessageCircle size={22} />
             </div>
-            <div className="ai-trigger-label">
-              <span className="ai-trigger-title">{language === 'am' ? 'ሜሶብ AI' : 'Mesob AI'}</span>
-              <span className="ai-trigger-subtitle">{language === 'am' ? 'ይጠይቁን' : 'Ask Anything'}</span>
-            </div>
+            <span className="support-trigger-text">
+              {language === 'am' ? 'እርዳታ ይፈልጋሉ?' : 'Need Help?'}
+            </span>
           </motion.button>
         )}
       </AnimatePresence>
@@ -429,53 +406,53 @@ const AIChatWidget = ({ language = 'en', theme = 'dark', triggerToast }) => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+            initial={{ opacity: 0, y: 20, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 30, scale: 0.95 }}
-            transition={{ duration: 0.25, ease: 'easeOut' }}
-            className="ai-chat-window"
+            exit={{ opacity: 0, y: 20, scale: 0.96 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
+            className="support-chat-window"
           >
             {/* Header */}
-            <div className="ai-chat-header">
-              <div className="ai-header-left">
-                <div className="ai-avatar-badge">
-                  <Bot size={20} />
-                  <span className="ai-online-indicator" />
+            <div className="support-chat-header">
+              <div className="support-header-left">
+                <div className="support-avatar">
+                  <img src="/applogo.png" alt="Mesob" className="support-avatar-img" />
+                  <span className="support-online-dot" />
                 </div>
                 <div>
-                  <h3 className="ai-header-title">
-                    {language === 'am' ? 'ሜሶብ AI ረዳት' : 'Mesob AI Assistant'}
+                  <h3 className="support-header-title">
+                    {language === 'am' ? 'የሜሶብ ድጋፍ ሰጪ' : 'Mesob Support'}
                   </h3>
-                  <p className="ai-header-status">
-                    <span className="pulse-dot" /> {language === 'am' ? 'ኦንላይን • የጥናትና የዋጋ ረዳት' : 'Online • Instant Plan Advisor'}
+                  <p className="support-header-sub">
+                    {language === 'am' ? 'በደቂቃዎች ውስጥ ይመልሳል' : 'Typically replies instantly'}
                   </p>
                 </div>
               </div>
               
-              <div className="ai-header-actions">
+              <div className="support-header-actions">
                 <button 
-                  className="ai-icon-btn" 
+                  className="support-icon-btn" 
                   onClick={handleClearChat} 
-                  title={language === 'am' ? 'አዲስ ውይይት ጀምር' : 'Restart Chat'}
+                  title={language === 'am' ? 'አዲስ ውይይት' : 'Restart'}
                 >
-                  <RotateCcw size={16} />
+                  <RotateCcw size={15} />
                 </button>
                 <button 
-                  className="ai-icon-btn" 
+                  className="support-icon-btn" 
                   onClick={() => setIsOpen(false)} 
                   title={language === 'am' ? 'ዝጋ' : 'Close'}
                 >
-                  <X size={18} />
+                  <X size={17} />
                 </button>
               </div>
             </div>
 
             {/* Quick Starter Chips */}
-            <div className="ai-chips-scroll">
+            <div className="support-chips-bar">
               {starterChips.map((chip, idx) => (
                 <button
                   key={idx}
-                  className="ai-starter-chip"
+                  className="support-chip"
                   onClick={() => handleSend(chip.query)}
                 >
                   {chip.label}
@@ -483,17 +460,17 @@ const AIChatWidget = ({ language = 'en', theme = 'dark', triggerToast }) => {
               ))}
             </div>
 
-            {/* Messages Body */}
-            <div className="ai-messages-container">
+            {/* Messages Area */}
+            <div className="support-messages-container">
               {messages.map((msg) => (
-                <div key={msg.id} className={`ai-message-row ${msg.sender === 'user' ? 'user-row' : 'ai-row'}`}>
-                  {msg.sender === 'ai' && (
-                    <div className="ai-msg-avatar">
-                      <Sparkles size={14} />
+                <div key={msg.id} className={`support-msg-row ${msg.sender === 'user' ? 'user-row' : 'agent-row'}`}>
+                  {msg.sender === 'support' && (
+                    <div className="support-msg-avatar">
+                      <img src="/applogo.png" alt="Mesob" />
                     </div>
                   )}
-                  <div className="ai-msg-bubble">
-                    <div className="ai-msg-text">
+                  <div className="support-bubble">
+                    <div className="support-bubble-text">
                       {msg.text.split('\n').map((line, lIdx) => (
                         <p key={lIdx} className={line.startsWith('•') ? 'bullet-line' : ''}>
                           {line}
@@ -502,28 +479,28 @@ const AIChatWidget = ({ language = 'en', theme = 'dark', triggerToast }) => {
                     </div>
                     {msg.action && (
                       <button 
-                        className="ai-action-btn"
+                        className="support-action-link"
                         onClick={() => handleActionClick(msg.action)}
                       >
-                        {msg.action === 'pricing' && (language === 'am' ? 'ወደ ዋጋዎች ዝርዝር ሂድ' : 'View Pricing Plans')}
-                        {msg.action === 'contact' && (language === 'am' ? 'ተደጋጋሚ ጥያቄዎችን እይ' : 'View Payment FAQ')}
-                        {msg.action === 'features' && (language === 'am' ? 'የመተግበሪያውን ገጽታዎች እይ' : 'Explore Features')}
-                        {msg.action === 'download' && (language === 'am' ? 'መተግበሪያውን አውርድ' : 'Download App')}
-                        <ExternalLink size={13} />
+                        {msg.action === 'pricing' && (language === 'am' ? 'የዋጋ ዝርዝሮችን ይመልከቱ' : 'View Pricing Plans')}
+                        {msg.action === 'contact' && (language === 'am' ? 'የክፍያ መመሪያዎችን ይመልከቱ' : 'View Payment FAQ')}
+                        {msg.action === 'features' && (language === 'am' ? 'የመተግበሪያውን ገጽታዎች ይመልከቱ' : 'Explore Features')}
+                        {msg.action === 'download' && (language === 'am' ? 'መተግበሪያውን ያውርዱ' : 'Download App')}
+                        <ExternalLink size={12} />
                       </button>
                     )}
-                    <span className="ai-msg-time">{msg.timestamp}</span>
+                    <span className="support-msg-time">{msg.timestamp}</span>
                   </div>
                 </div>
               ))}
 
               {/* Typing indicator */}
               {isTyping && (
-                <div className="ai-message-row ai-row">
-                  <div className="ai-msg-avatar">
-                    <Sparkles size={14} />
+                <div className="support-msg-row agent-row">
+                  <div className="support-msg-avatar">
+                    <img src="/applogo.png" alt="Mesob" />
                   </div>
-                  <div className="ai-msg-bubble ai-typing-bubble">
+                  <div className="support-bubble typing-bubble">
                     <div className="typing-dots">
                       <span />
                       <span />
@@ -538,7 +515,7 @@ const AIChatWidget = ({ language = 'en', theme = 'dark', triggerToast }) => {
 
             {/* Input Footer */}
             <form 
-              className="ai-chat-input-bar" 
+              className="support-input-bar" 
               onSubmit={(e) => {
                 e.preventDefault();
                 handleSend();
@@ -551,18 +528,18 @@ const AIChatWidget = ({ language = 'en', theme = 'dark', triggerToast }) => {
                 onChange={(e) => setInput(e.target.value)}
                 placeholder={
                   language === 'am'
-                    ? 'ስለ ዋጋ፣ ክፍል፣ ትምህርቶች ወይም ክፍያ ይጠይቁ...'
-                    : 'Ask about pricing, grades, subjects, or Telebirr...'
+                    ? 'ጥያቄዎን እዚህ ይጻፉ...'
+                    : 'Type your question here...'
                 }
-                className="ai-input-field"
+                className="support-input-field"
               />
               <button 
                 type="submit" 
-                className={`ai-send-btn ${input.trim() ? 'active' : ''}`}
+                className={`support-send-btn ${input.trim() ? 'active' : ''}`}
                 disabled={!input.trim() || isTyping}
-                aria-label="Send Message"
+                aria-label="Send"
               >
-                <Send size={16} />
+                <Send size={15} />
               </button>
             </form>
           </motion.div>
