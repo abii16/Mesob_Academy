@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Why Mesob Section — Modern Crafted Bento Grid
+   Why Mesob Section — Master Card Layout
    ========================================================================== */
 
 .comparison-section {
@@ -17,116 +17,142 @@
   text-align: center;
 }
 
-/* 2-Column Bento Grid */
-.why-mesob-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.75rem;
+/* Master Card Container */
+.why-master-card {
   max-width: 1140px;
   margin: 0 auto;
-}
-
-/* Card */
-.why-card {
   background: var(--glass-bg);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  padding: 2.25rem 2rem;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--radius-xl, 24px);
+  overflow: hidden;
   box-shadow: var(--card-shadow);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  transition: var(--transition-smooth);
+}
+
+.why-master-card:hover {
+  border-color: rgba(52, 211, 153, 0.3);
+  box-shadow: 0 25px 50px -12px var(--color-primary-soft, rgba(5, 150, 105, 0.16));
+}
+
+/* Internal 2-Column Grid */
+.why-master-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Individual Cell inside the Master Card */
+.why-cell {
+  padding: 2.5rem 2.5rem;
   display: flex;
   flex-direction: column;
-  transition: var(--transition-smooth);
+  transition: background 0.3s ease, border-color 0.3s ease;
   position: relative;
-  overflow: hidden;
 }
 
-.why-card:hover {
-  border-color: var(--color-primary);
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px -12px var(--color-primary-soft, rgba(5, 150, 105, 0.16));
+/* Internal Grid Dividers on Desktop */
+@media (min-width: 861px) {
+  /* Right border on odd columns (left column cells 1, 3, 5) */
+  .why-cell:nth-child(odd) {
+    border-right: 1px solid var(--border-color);
+  }
+  
+  /* Bottom border on all except the last row (cells 1, 2, 3, 4) */
+  .why-cell:not(:nth-last-child(-n+2)) {
+    border-bottom: 1px solid var(--border-color);
+  }
 }
 
-/* Top Row: Icon and Meta Pill */
-.why-card-top {
+/* Cell Hover Effect */
+.why-cell:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.why-cell:hover .why-cell-icon {
+  transform: scale(1.08);
+  background: var(--color-primary);
+  color: #064e3b;
+}
+
+.why-cell:hover .why-cell-title {
+  color: var(--color-primary);
+}
+
+/* Cell Top: Icon & Meta */
+.why-cell-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
-.why-icon-box {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-md);
+.why-cell-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md, 12px);
   background: var(--color-primary-container);
   color: var(--color-primary);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.why-card:hover .why-icon-box {
-  transform: scale(1.06);
-}
-
-.why-meta-pill {
+.why-cell-meta {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.04em;
-  padding: 0.3rem 0.75rem;
+  padding: 0.25rem 0.65rem;
   border-radius: var(--radius-full);
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--border-color);
   color: var(--text-secondary);
 }
 
-.why-num {
+.why-cell-num {
   color: var(--color-primary);
   font-weight: 700;
   font-family: var(--font-display);
 }
 
-.why-tag {
+.why-cell-tag {
   color: var(--text-secondary);
   font-size: 11px;
 }
 
-/* Title & Description */
-.why-card-title {
+/* Cell Title & Description */
+.why-cell-title {
   font-family: var(--font-display);
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.65rem;
   line-height: 1.35;
   letter-spacing: -0.01em;
+  transition: color 0.3s ease;
 }
 
-.why-card-desc {
+.why-cell-desc {
   font-size: 0.95rem;
   line-height: 1.65;
   color: var(--text-secondary);
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.5rem;
   flex-grow: 1;
 }
 
-/* Footer Badge */
-.why-card-footer {
+/* Cell Footer */
+.why-cell-footer {
   display: flex;
   align-items: center;
   margin-top: auto;
-  padding-top: 1.25rem;
-  border-top: 1px solid var(--border-soft);
 }
 
-.why-badge {
+.why-cell-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
@@ -134,59 +160,76 @@
   font-weight: 600;
   color: var(--color-primary);
   background: var(--color-primary-container);
-  padding: 0.3rem 0.75rem;
+  padding: 0.25rem 0.65rem;
   border-radius: var(--radius-full);
   border: 1px solid rgba(16, 185, 129, 0.25);
   letter-spacing: 0.02em;
 }
 
-/* Responsive */
+/* Mobile & Tablet Responsive */
 @media (max-width: 860px) {
-  .why-mesob-grid {
+  .why-master-grid {
     grid-template-columns: 1fr;
-    gap: 1.25rem;
   }
 
-  .why-card {
-    padding: 1.75rem 1.5rem;
+  .why-cell {
+    padding: 2rem 1.5rem;
+  }
+
+  .why-cell:not(:last-child) {
+    border-bottom: 1px solid var(--border-color);
   }
 }
 
-/* Light Theme / White Mode Contrast Overrides */
-.light-theme .why-card {
+/* Light Theme / White Mode */
+.light-theme .why-master-card {
   background: #ffffff;
   border-color: rgba(95, 69, 46, 0.12);
-  box-shadow: 0 4px 20px rgba(95, 69, 46, 0.05);
+  box-shadow: 0 4px 25px rgba(95, 69, 46, 0.06);
 }
 
-.light-theme .why-card:hover {
+.light-theme .why-master-card:hover {
   border-color: var(--color-primary);
-  box-shadow: 0 20px 40px -12px rgba(5, 150, 105, 0.18);
+  box-shadow: 0 20px 45px -10px rgba(5, 150, 105, 0.18);
 }
 
-.light-theme .why-meta-pill {
-  background: rgba(45, 34, 24, 0.05);
-  border-color: rgba(45, 34, 24, 0.12);
+.light-theme .why-cell:hover {
+  background: rgba(5, 150, 105, 0.03);
 }
 
-.light-theme .why-num {
+.light-theme .why-cell-icon {
+  background: #ecfdf5;
+  color: #059669;
+}
+
+.light-theme .why-cell:hover .why-cell-icon {
+  background: #059669;
+  color: #ffffff;
+}
+
+.light-theme .why-cell-meta {
+  background: rgba(45, 34, 24, 0.04);
+  border-color: rgba(45, 34, 24, 0.1);
+}
+
+.light-theme .why-cell-num {
   color: var(--color-primary);
 }
 
-.light-theme .why-card-title {
+.light-theme .why-cell-title {
   color: #2d2218;
 }
 
-.light-theme .why-card-desc {
+.light-theme .why-cell:hover .why-cell-title {
+  color: #059669;
+}
+
+.light-theme .why-cell-desc {
   color: rgba(45, 34, 24, 0.75);
 }
 
-.light-theme .why-badge {
+.light-theme .why-cell-badge {
   background: #ecfdf5;
   color: #047857;
   border-color: rgba(5, 150, 105, 0.35);
-}
-
-.light-theme .why-card-footer {
-  border-top-color: rgba(95, 69, 46, 0.08);
 }

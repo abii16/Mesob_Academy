@@ -133,41 +133,42 @@ const Comparison = ({ language }) => {
           <p className="comparison-desc">{currentT.desc}</p>
         </div>
 
-        <div className="why-mesob-grid">
-          {currentT.features.map((feature, idx) => {
-            const IconComponent = featureIcons[idx % featureIcons.length];
-            return (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.45, delay: idx * 0.08 }}
-                className="why-card"
-              >
-                <div className="why-card-top">
-                  <div className="why-icon-box">
-                    <IconComponent size={22} />
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.6 }}
+          className="why-master-card glass"
+        >
+          <div className="why-master-grid">
+            {currentT.features.map((feature, idx) => {
+              const IconComponent = featureIcons[idx % featureIcons.length];
+              return (
+                <div key={idx} className="why-cell">
+                  <div className="why-cell-top">
+                    <div className="why-cell-icon">
+                      <IconComponent size={20} />
+                    </div>
+                    <div className="why-cell-meta">
+                      <span className="why-cell-num">{feature.num}</span>
+                      <span className="why-cell-tag">{feature.tag}</span>
+                    </div>
                   </div>
-                  <div className="why-meta-pill">
-                    <span className="why-num">{feature.num}</span>
-                    <span className="why-tag">{feature.tag}</span>
+
+                  <h3 className="why-cell-title">{feature.name}</h3>
+                  <p className="why-cell-desc">{feature.detail}</p>
+
+                  <div className="why-cell-footer">
+                    <span className="why-cell-badge">
+                      <CheckCircle2 size={13} />
+                      {feature.badge}
+                    </span>
                   </div>
                 </div>
-
-                <h3 className="why-card-title">{feature.name}</h3>
-                <p className="why-card-desc">{feature.detail}</p>
-
-                <div className="why-card-footer">
-                  <span className="why-badge">
-                    <CheckCircle2 size={13} />
-                    {feature.badge}
-                  </span>
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
