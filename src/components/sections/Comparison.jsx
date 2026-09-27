@@ -1,7 +1,25 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Check } from "lucide-react";
+import { 
+  WifiOff, 
+  Target, 
+  Calendar, 
+  Globe, 
+  Users, 
+  Sparkles, 
+  ArrowRight, 
+  CheckCircle2 
+} from "lucide-react";
 import "../../styles/sections/Comparison.css";
+
+const featureIcons = [
+  WifiOff,
+  Target,
+  Calendar,
+  Globe,
+  Users,
+  Sparkles
+];
 
 const Comparison = ({ language }) => {
   const t = {
@@ -93,41 +111,46 @@ const Comparison = ({ language }) => {
           <p className="comparison-desc">{currentT.desc}</p>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="comparison-table-wrapper glass"
-        >
-          <table className="comparison-table">
-            <thead>
-              <tr>
-                <th className="highlight-column">{currentT.featureCol}</th>
-                <th>{currentT.detailCol}</th>
-              </tr>
-            </thead>
-            <tbody>
-              {currentT.features.map((feature, idx) => (
-                <tr key={idx}>
-                  <td className="feature-name highlight-column">
-                    <div
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "0.75rem",
-                      }}
-                    >
-                      <Check className="icon-check" size={18} />
-                      <span>{feature.name}</span>
+        <div className="comparison-merged-list">
+          {currentT.features.map((feature, idx) => {
+            const IconComponent = featureIcons[idx % featureIcons.length];
+            return (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: idx * 0.07 }}
+                className="comparison-card"
+              >
+                <div className="comparison-side-get">
+                  <div className="comparison-tag-get">
+                    <CheckCircle2 size={13} />
+                    <span>{currentT.featureCol}</span>
+                  </div>
+                  <div className="comparison-feature-header">
+                    <div className="comparison-icon-container">
+                      <IconComponent size={20} />
                     </div>
-                  </td>
-                  <td>{feature.detail}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </motion.div>
+                    <h3 className="comparison-feature-title">{feature.name}</h3>
+                  </div>
+                </div>
+
+                <div className="comparison-connector">
+                  <ArrowRight size={16} />
+                </div>
+
+                <div className="comparison-side-matter">
+                  <div className="comparison-tag-matter">
+                    <Sparkles size={13} />
+                    <span>{currentT.detailCol}</span>
+                  </div>
+                  <p className="comparison-detail-text">{feature.detail}</p>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

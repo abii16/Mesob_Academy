@@ -1,100 +1,207 @@
-/* Comparison Table Styling */
+/* Comparison / Why Mesob Section */
 .comparison-section {
-    padding: 6rem 0;
-    background: var(--color-background);
+  padding: 6rem 0;
+  background: var(--color-background);
 }
 
 .comparison-desc {
-    max-width: 600px;
-    margin: 0 auto 3rem auto;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: var(--text-secondary);
-    text-align: center;
+  max-width: 640px;
+  margin: 0 auto 3.5rem auto;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  text-align: center;
 }
 
-.comparison-table-wrapper {
-    overflow-x: auto;
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--border-color);
-    box-shadow: var(--card-shadow);
-    margin-top: 1rem;
-    background: var(--glass-bg);
-    backdrop-filter: blur(20px);
+/* Merged Container */
+.comparison-merged-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 1080px;
+  margin: 0 auto;
 }
 
-.comparison-table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
-    min-width: 700px;
+/* Merged Card */
+.comparison-card {
+  display: grid;
+  grid-template-columns: 1fr auto 1.35fr;
+  align-items: center;
+  gap: 2rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 2.25rem;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: var(--card-shadow);
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
 }
 
-.comparison-table th,
-.comparison-table td {
-    padding: 1.5rem 2rem;
-    border-bottom: 1px solid var(--border-color);
-    font-family: var(--font-body);
+.comparison-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: transparent;
+  transition: background 0.3s ease;
 }
 
-.comparison-table th {
-    font-weight: 700;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--text-secondary);
-    background: rgba(255, 255, 255, 0.01);
+.comparison-card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px -10px var(--color-primary-soft, rgba(5, 150, 105, 0.16));
 }
 
-.comparison-table td {
-    color: rgba(228, 228, 231, 0.76);
+.comparison-card:hover::before {
+  background: var(--color-primary);
 }
 
-.comparison-table td.feature-name {
-    font-weight: 600;
-    color: rgba(228, 228, 231, 0.92);
-    font-size: 0.95rem;
+/* Left Side: What Students Get */
+.comparison-side-get {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
 }
 
-.highlight-column {
-    background: var(--highlight-col-bg) !important;
-    border-left: 1px solid var(--highlight-col-border);
-    border-right: 1px solid var(--highlight-col-border);
+.comparison-tag-get {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-primary);
+  width: fit-content;
 }
 
-th.highlight-column {
-    color: var(--color-primary) !important;
-    font-weight: 800;
-    text-align: left;
+.comparison-feature-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
-.cell-center {
-    text-align: center;
+.comparison-icon-container {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  background: var(--color-primary-container);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
 }
 
-.icon-check {
-    color: var(--color-primary);
-    filter: drop-shadow(0 0 4px var(--color-primary-soft));
+.comparison-card:hover .comparison-icon-container {
+  transform: scale(1.08);
 }
 
-.icon-x {
-    color: var(--color-error);
-    opacity: 0.45;
+.comparison-feature-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.35;
+  margin: 0;
 }
 
-.comparison-table tr:hover td:not(.highlight-column) {
-    background: rgba(255, 255, 255, 0.01);
+/* Connector in between */
+.comparison-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-color);
+  color: var(--color-primary);
+  flex-shrink: 0;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
-.comparison-table tr:hover td.highlight-column {
-    background: var(--highlight-col-bg-hover) !important;
+.comparison-card:hover .comparison-connector {
+  transform: translateX(4px);
+  background: var(--color-primary-container);
+  border-color: var(--color-primary);
 }
 
-/* Light theme overrides for better contrast */
-.light-theme .comparison-table td {
-    color: var(--text-secondary);
+/* Right Side: Why It Matters */
+.comparison-side-matter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.light-theme .comparison-table td.feature-name {
-    color: var(--text-primary);
+.comparison-tag-matter {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  width: fit-content;
+}
+
+.comparison-detail-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Responsive design for tablets and mobile */
+@media (max-width: 860px) {
+  .comparison-card {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    padding: 1.75rem 1.5rem;
+  }
+
+  .comparison-connector {
+    display: none;
+  }
+
+  .comparison-side-matter {
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-soft);
+  }
+}
+
+/* Light Theme / White Mode Contrast Overrides */
+.light-theme .comparison-card {
+  background: #ffffff;
+  border-color: rgba(95, 69, 46, 0.12);
+  box-shadow: 0 4px 18px rgba(95, 69, 46, 0.05);
+}
+
+.light-theme .comparison-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 16px 36px -8px rgba(5, 150, 105, 0.18);
+}
+
+.light-theme .comparison-connector {
+  background: #f8f3eb;
+  border-color: rgba(95, 69, 46, 0.14);
+}
+
+.light-theme .comparison-feature-title {
+  color: #2d2218;
+}
+
+.light-theme .comparison-detail-text {
+  color: rgba(45, 34, 24, 0.78);
+}
+
+.light-theme .comparison-tag-matter {
+  color: rgba(45, 34, 24, 0.6);
 }
