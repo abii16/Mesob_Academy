@@ -192,3 +192,76 @@
   border-color: var(--color-primary);
   color: #0b0b0c;
 }
+
+/* Light Theme / White Mode Contrast Overrides */
+.light-theme .pricing-card-new {
+  background: #ffffff;
+  border-color: rgba(95, 69, 46, 0.12);
+  box-shadow: 0 10px 30px -10px rgba(95, 69, 46, 0.08);
+}
+
+.light-theme .pricing-card-new:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 20px 40px -10px rgba(95, 69, 46, 0.15);
+}
+
+.light-theme .highlight-card {
+  background: #ffffff;
+  border: 2px solid var(--color-primary);
+  box-shadow: 0 15px 40px -10px rgba(5, 150, 105, 0.2), 0 4px 15px rgba(45, 34, 24, 0.06);
+}
+
+.light-theme .pricing-tag {
+  background: rgba(45, 34, 24, 0.07);
+  color: var(--text-primary);
+  border: 1px solid rgba(45, 34, 24, 0.14);
+}
+
+.light-theme .premium-tag {
+  background: #0284c7;
+  color: #ffffff;
+  border-color: transparent;
+}
+
+/* Ensure '2 Years Full Access' duration pill is crystal clear and prominent in white mode */
+.light-theme .duration-pill {
+  background: rgba(45, 34, 24, 0.06);
+  color: #1e1b18;
+  border: 1px solid rgba(45, 34, 24, 0.18);
+  font-weight: 600;
+}
+
+.light-theme .duration-pill-highlight {
+  background: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #7dd3fc;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.12);
+}
+
+.light-theme .billing-pill {
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid rgba(5, 150, 105, 0.35);
+  font-weight: 600;
+}
+
+.light-theme .billing-pill-highlight {
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid rgba(5, 150, 105, 0.45);
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(5, 150, 105, 0.12);
+}
+
+.light-theme .pricing-card-new .btn-secondary {
+  background: #f8f3eb;
+  border: 1px solid rgba(95, 69, 46, 0.16);
+  color: var(--text-primary);
+}
+
+.light-theme .pricing-card-new .btn-secondary:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+}
