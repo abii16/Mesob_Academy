@@ -50,10 +50,10 @@ const Comparison = ({ language }) => {
         },
         {
           num: "04",
-          name: "Bilingual, Local-First Experience",
-          detail: "Crafted specifically for Ethiopian learners with clear Amharic and English interfaces and explanations.",
-          tag: "Localized",
-          badge: "Amharic & English"
+          name: "Multilingual, Local-First Experience",
+          detail: "Crafted specifically for Ethiopian learners with support across Amharic, English, Afaan Oromoo, and Tigrigna.",
+          tag: "Multilingual",
+          badge: "Amharic • English • Afaan Oromoo • Tigrigna"
         },
         {
           num: "05",
@@ -99,10 +99,10 @@ const Comparison = ({ language }) => {
         },
         {
           num: "04",
-          name: "አገርኛና ሁለት ቋንቋዎችን ያማከለ",
-          detail: "ለኢትዮጵያ ተማሪዎች ምቹ በሆነ አማርኛ እና እንግሊዝኛ የተዘጋጀ ግልጽ እና ቀላል የመማር ጉዞ።",
-          tag: "አገርኛ ፕላትፎርም",
-          badge: "አማርኛ እና እንግሊዝኛ"
+          name: "አገርኛና ባለብዙ ቋንቋ ተደራሽነት",
+          detail: "ለኢትዮጵያ ተማሪዎች ምቹ በሆነ አማርኛ፣ እንግሊዝኛ፣ አፋን ኦሮሞ እና ትግርኛ ቋንቋዎች የተዘጋጀ ግልጽ የመማር ጉዞ።",
+          tag: "ባለብዙ ቋንቋ",
+          badge: "አማርኛ • እንግሊዝኛ • አፋን ኦሮሞ • ትግርኛ"
         },
         {
           num: "05",

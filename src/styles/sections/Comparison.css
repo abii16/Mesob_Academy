@@ -160,10 +160,13 @@
   font-weight: 600;
   color: var(--color-primary);
   background: var(--color-primary-container);
-  padding: 0.25rem 0.65rem;
+  padding: 0.3rem 0.75rem;
   border-radius: var(--radius-full);
   border: 1px solid rgba(16, 185, 129, 0.25);
   letter-spacing: 0.02em;
+  max-width: 100%;
+  flex-wrap: wrap;
+  line-height: 1.4;
 }
 
 /* Mobile & Tablet Responsive */
