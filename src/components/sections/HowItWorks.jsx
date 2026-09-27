@@ -10,18 +10,21 @@ const HowItWorks = ({ language }) => {
       title: "Getting started is as easy as 1-2-3",
       steps: [
         {
+          step: "STEP 01",
           icon: Smartphone,
-          title: "1. Download the App",
+          title: "Download the App",
           desc: "Available on Android. Create your student account in seconds.",
         },
         {
+          step: "STEP 02",
           icon: Star,
-          title: "2. Select Your Grade",
+          title: "Select Your Grade",
           desc: "Choose Grade 9-10 or 11-12 to access your textbooks, notes, and exam questions.",
         },
         {
+          step: "STEP 03",
           icon: Rocket,
-          title: "3. Study & Excel",
+          title: "Study & Excel",
           desc: "Practice past exams daily, ask questions in the community, and improve your grades.",
         },
       ],
@@ -31,18 +34,21 @@ const HowItWorks = ({ language }) => {
       title: "ለመጀመር 1-2-3 ያህል ቀላል ነው",
       steps: [
         {
+          step: "ደረጃ 01",
           icon: Smartphone,
-          title: "1. መተግበሪያውን ያውርዱ",
+          title: "መተግበሪያውን ያውርዱ",
           desc: "በአንድሮይድ ላይ ይገኛል። በጥቂት ሰከንዶች ውስጥ አካውንትዎን ይክፈቱ።",
         },
         {
+          step: "ደረጃ 02",
           icon: Star,
-          title: "2. ክፍልዎን ይምረጡ",
+          title: "ክፍልዎን ይምረጡ",
           desc: "የክፍልዎን የመማሪያ መጽሐፍት፣ ማጠቃለያዎችና የፈተና ጥያቄዎች ለማግኘት ክፍልዎን ይምረጡ።",
         },
         {
+          step: "ደረጃ 03",
           icon: Rocket,
-          title: "3. ውጤትዎን ያሳድጉ",
+          title: "ውጤትዎን ያሳድጉ",
           desc: "የቀደሙ የፈተና ጥያቄዎችን በየቀኑ ይለማመዱ፣ ጥያቄዎችን በማህበረሰቡ ይጠይቁ እና ውጤትዎን ያሳድጉ።",
         },
       ],
@@ -67,10 +73,13 @@ const HowItWorks = ({ language }) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="step-item"
+                className="step-card"
               >
+                <div className="step-card-badge-row">
+                  <span className="step-badge">{step.step}</span>
+                </div>
                 <div className="step-icon-wrapper">
-                  <step.icon size={24} />
+                  <step.icon size={26} />
                 </div>
                 <h3 className="step-title-new">{step.title}</h3>
                 <p className="step-desc-new">{step.desc}</p>
@@ -78,8 +87,10 @@ const HowItWorks = ({ language }) => {
               
               {i < currentT.steps.length - 1 && (
                 <div className="step-arrow-container">
-                  <ArrowRight className="step-arrow-desktop" size={24} />
-                  <ArrowDown className="step-arrow-mobile" size={24} />
+                  <div className="step-arrow-bubble">
+                    <ArrowRight className="step-arrow-desktop" size={20} />
+                    <ArrowDown className="step-arrow-mobile" size={20} />
+                  </div>
                 </div>
               )}
             </React.Fragment>
