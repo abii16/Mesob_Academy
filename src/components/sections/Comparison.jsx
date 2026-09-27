@@ -7,7 +7,6 @@ import {
   Globe, 
   Users, 
   Sparkles, 
-  ArrowRight, 
   CheckCircle2 
 } from "lucide-react";
 import "../../styles/sections/Comparison.css";
@@ -26,75 +25,98 @@ const Comparison = ({ language }) => {
     en: {
       subtitle: "WHY MESOB APP",
       title: "Built Around Real Study Needs",
-      desc: "Mesob APP is built to help students learn with clarity, consistency, and confidence.",
-      featureCol: "What Students Get",
-      detailCol: "Why It Matters",
+      desc: "Designed from the ground up for Ethiopian students — with clarity, consistency, and lasting value.",
       features: [
         {
-          name: "Offline-first learning access",
-          detail:
-            "Students can keep studying even when internet access is limited or unstable.",
+          num: "01",
+          name: "Offline-First Learning Access",
+          detail: "Keep studying without interruptions even when internet connectivity is unstable or completely unavailable.",
+          tag: "Offline Vault",
+          badge: "Zero Data Required"
         },
         {
-          name: "Exam-focused practice experience",
-          detail:
-            "Learning flows are designed to support revision, self-testing, and stronger exam readiness.",
+          num: "02",
+          name: "Exam-Focused Practice Experience",
+          detail: "Built around real Ethiopian national exam pacing, past paper archives, and targeted revision workflows.",
+          tag: "National Exams",
+          badge: "10+ Years Archive"
         },
         {
-          name: "Structured study support",
-          detail:
-            "Built-in planning and focus tools help students stay consistent instead of studying randomly.",
+          num: "03",
+          name: "Structured Study Support",
+          detail: "Integrated planning, focus intervals, and subject tracking help students stay disciplined and consistent.",
+          tag: "Study Discipline",
+          badge: "Habit & Focus"
         },
         {
-          name: "Bilingual, local-first experience",
-          detail:
-            "The platform is designed for Ethiopian students with a clearer, more familiar learning journey.",
+          num: "04",
+          name: "Bilingual, Local-First Experience",
+          detail: "Crafted specifically for Ethiopian learners with clear Amharic and English interfaces and explanations.",
+          tag: "Localized",
+          badge: "Amharic & English"
         },
         {
-          name: "Community-powered motivation",
-          detail:
-            "Students can feel more supported, connected, and accountable throughout their learning process.",
+          num: "05",
+          name: "Community-Powered Motivation",
+          detail: "Study alongside thousands of peers nationwide to discuss tough problems, share notes, and stay accountable.",
+          tag: "Student Network",
+          badge: "Peer Study Hub"
         },
         {
-          name: "Modern digital learning foundation",
-          detail:
-            "Mesob APP is being shaped as a serious long-term product, not just a simple content page.",
+          num: "06",
+          name: "Modern Digital Learning Foundation",
+          detail: "Engineered as an enduring, secure educational platform continuously maintained for long-term student success.",
+          tag: "Platform",
+          badge: "Built for the Future"
         },
       ],
     },
     am: {
       subtitle: "ለምን Mesob APP",
       title: "ለእውነተኛ የጥናት ፍላጎት የተገነባ",
-      desc: "Mesob APP ተማሪዎች በግልጽነት፣ በቀጣይነት እና በመተማመን እንዲማሩ እንዲያግዝ ተገንብቷል።",
-      featureCol: "ተማሪዎች የሚያገኙት",
-      detailCol: "ለምን አስፈላጊ ነው",
+      desc: "ለኢትዮጵያ ተማሪዎች ከስረ-መሠረቱ የታሰበ — በግልጽነት፣ በቀጣይነት እና ዘላቂ ፋይዳ ባለው መልኩ የቀረበ።",
       features: [
         {
-          name: "ከመስመር ውጭ የሚሰራ የመማር መዳረሻ",
-          detail: "የኢንተርኔት ግንኙነት ሲያንስ ወይም ሲቋረጥ እንኳን ተማሪዎች መማራቸውን ሊቀጥሉ ይችላሉ።",
+          num: "01",
+          name: "ከመስመር ውጭ የሚሰራ የመማሪያ ማህደር",
+          detail: "የኢንተርኔት ግንኙነት ሲያንስ ወይም ሙሉ በሙሉ ሲቋረጥ እንኳን ያለምንም መቆራረጥ ጥናትዎን ይቀጥሉ።",
+          tag: "ከመስመር ውጭ",
+          badge: "ያለ ሞባይል ዳታ"
         },
         {
-          name: "በፈተና ላይ ያተኮረ የልምምድ ልምድ",
-          detail: "የመማር ሂደቶቹ ለክለሳ፣ ለራስ-ፈተና እና ለተሻለ የፈተና ዝግጅት የተዘጋጁ ናቸው።",
+          num: "02",
+          name: "በብሔራዊ ፈተና ላይ ያተኮረ ልምምድ",
+          detail: "ለኢትዮጵያ ብሔራዊ ፈተናዎች በተዘጋጁ ያለፉ የፈተና ቡክሌቶች፣ የጊዜ ልምምዶች እና የክለሳ ዘዴዎች የታገዘ።",
+          tag: "የፈተና ዝግጅት",
+          badge: "የ10+ ዓመታት ማህደር"
         },
         {
-          name: "የተዋቀረ የጥናት ድጋፍ",
-          detail:
-            "የተገነቡ የእቅድ እና የትኩረት መሳሪያዎች ተማሪዎች በዘፈቀደ ሳይሆን በቀጣይነት እንዲያጠኑ ይረዳሉ።",
+          num: "03",
+          name: "የተዋቀረ የጥናት ድጋፍና እቅድ",
+          detail: "የተገነቡ የትኩረት ሰዓታትና የሞጁል ክትትል ተማሪዎች በዘፈቀደ ሳይሆን በስርዓት እንዲያጠኑ ያግዛሉ።",
+          tag: "የጥናት ስርዓት",
+          badge: "ትኩረት እና ስነ-ስርዓት"
         },
         {
-          name: "ሁለት ቋንቋ እና አካባቢን ያማከለ ልምድ",
-          detail: "ፕላትፎርሙ ለኢትዮጵያ ተማሪዎች የበለጠ ግልጽ እና የተለመደ የመማር ጉዞ እንዲሰጥ ተዘጋጅቷል።",
+          num: "04",
+          name: "አገርኛና ሁለት ቋንቋዎችን ያማከለ",
+          detail: "ለኢትዮጵያ ተማሪዎች ምቹ በሆነ አማርኛ እና እንግሊዝኛ የተዘጋጀ ግልጽ እና ቀላል የመማር ጉዞ።",
+          tag: "አገርኛ ፕላትፎርም",
+          badge: "አማርኛ እና እንግሊዝኛ"
         },
         {
-          name: "በማህበረሰብ የሚነቃቃ መነሳሳት",
-          detail:
-            "ተማሪዎች በመማር ሂደታቸው ውስጥ የበለጠ ድጋፍ፣ ግንኙነት እና ተጠያቂነት እንዲሰማቸው ያግዛል።",
+          num: "05",
+          name: "የተማሪዎች የጋራ መረዳዳት ማህበረሰብ",
+          detail: "በመላው አገሪቱ ካሉ ተማሪዎች ጋር በመገናኘት አስቸጋሪ ጥያቄዎችን ይፍቱ፣ ማስታወሻዎችን ይጋሩ እና አብረው ያጥኑ።",
+          tag: "የተማሪዎች ኔትወርክ",
+          badge: "የጋራ ጥናት መድረክ"
         },
         {
-          name: "ዘመናዊ የዲጂታል ትምህርት መሠረት",
-          detail:
-            "Mesob APP እንደ ቀላል የይዘት ገጽ ሳይሆን እንደ ከባድ የረጅም ጊዜ ምርት እየተገነባ ነው።",
+          num: "06",
+          name: "ዘመናዊና አስተማማኝ የትምህርት መሠረት",
+          detail: "እንደ ጊዜያዊ ገጽ ሳይሆን ተማሪዎችን ለዓመታት የሚያገለግል ጠንካራና ዘመናዊ የዲጂታል ትምህርት ፕላትፎርም።",
+          tag: "ዘላቂ ፕላትፎርም",
+          badge: "ለረጅም ጊዜ የተገነባ"
         },
       ],
     },
@@ -111,7 +133,7 @@ const Comparison = ({ language }) => {
           <p className="comparison-desc">{currentT.desc}</p>
         </div>
 
-        <div className="comparison-merged-list">
+        <div className="why-mesob-grid">
           {currentT.features.map((feature, idx) => {
             const IconComponent = featureIcons[idx % featureIcons.length];
             return (
@@ -119,29 +141,28 @@ const Comparison = ({ language }) => {
                 key={idx}
                 initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: idx * 0.07 }}
-                className="comparison-card"
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.45, delay: idx * 0.08 }}
+                className="why-card"
               >
-                <div className="comparison-side-get">
-                  <div className="comparison-tag-get">
+                <div className="why-card-top">
+                  <div className="why-icon-box">
+                    <IconComponent size={22} />
+                  </div>
+                  <div className="why-meta-pill">
+                    <span className="why-num">{feature.num}</span>
+                    <span className="why-tag">{feature.tag}</span>
+                  </div>
+                </div>
+
+                <h3 className="why-card-title">{feature.name}</h3>
+                <p className="why-card-desc">{feature.detail}</p>
+
+                <div className="why-card-footer">
+                  <span className="why-badge">
                     <CheckCircle2 size={13} />
-                    <span>{currentT.featureCol}</span>
-                  </div>
-                  <div className="comparison-feature-header">
-                    <div className="comparison-icon-container">
-                      <IconComponent size={20} />
-                    </div>
-                    <h3 className="comparison-feature-title">{feature.name}</h3>
-                  </div>
-                </div>
-
-                <div className="comparison-connector">
-                  <ArrowRight size={16} />
-                </div>
-
-                <div className="comparison-side-matter">
-                  <p className="comparison-detail-text">{feature.detail}</p>
+                    {feature.badge}
+                  </span>
                 </div>
               </motion.div>
             );
