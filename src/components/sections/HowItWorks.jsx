@@ -6,44 +6,44 @@ import "../../styles/sections/HowItWorks.css";
 const HowItWorks = ({ language }) => {
   const t = {
     en: {
-      subtitle: "THE MESOB WAY",
+      subtitle: "HOW IT WORKS",
       title: "Getting started is as easy as 1-2-3",
       steps: [
         {
           icon: Smartphone,
-          title: "1. Download App",
-          desc: "Available on Android. Set up your profile in seconds.",
+          title: "1. Download the App",
+          desc: "Available on Android. Create your student account in seconds.",
         },
         {
           icon: Star,
-          title: "2. Select Your Grade and Stream",
-          desc: "Choose Grade 9-10 or 11-12 or 9-12 to unlock specialized curriculum content.",
+          title: "2. Select Your Grade",
+          desc: "Choose Grade 9-10 or 11-12 to access your textbooks, notes, and exam questions.",
         },
         {
           icon: Rocket,
-          title: "3. Start Dominating",
-          desc: "Practice daily, participate in the community, and watch your scores skyrocket.",
+          title: "3. Study & Excel",
+          desc: "Practice past exams daily, ask questions in the community, and improve your grades.",
         },
       ],
     },
     am: {
-      subtitle: "የመሶብ መንገድ",
+      subtitle: "እንዴት እንደሚሰራ",
       title: "ለመጀመር 1-2-3 ያህል ቀላል ነው",
       steps: [
         {
           icon: Smartphone,
           title: "1. መተግበሪያውን ያውርዱ",
-          desc: "በአንድሮይድ ላይ ይገኛል። በጥቂት ሰከንዶች ውስጥ መገለጫዎን ያዋቅሩ።",
+          desc: "በአንድሮይድ ላይ ይገኛል። በጥቂት ሰከንዶች ውስጥ አካውንትዎን ይክፈቱ።",
         },
         {
           icon: Star,
-          title: "2. ክፍልዎን እና ዘርፍዎን ይምረጡ",
-          desc: "የተለየ የትምህርት ይዘትን ለመክፈት ከ9-10፣ 11-12 ወይም 9-12 ይምረጡ።",
+          title: "2. ክፍልዎን ይምረጡ",
+          desc: "የክፍልዎን የመማሪያ መጽሐፍት፣ ማጠቃለያዎችና የፈተና ጥያቄዎች ለማግኘት ክፍልዎን ይምረጡ።",
         },
         {
           icon: Rocket,
           title: "3. ውጤትዎን ያሳድጉ",
-          desc: "በየቀኑ ይለማመዱ፣ በማህበረሰቡ ውስጥ ይሳተፉ እና ውጤትዎ ሲጨምር ይመልከቱ።",
+          desc: "የቀደሙ የፈተና ጥያቄዎችን በየቀኑ ይለማመዱ፣ ጥያቄዎችን በማህበረሰቡ ይጠይቁ እና ውጤትዎን ያሳድጉ።",
         },
       ],
     },

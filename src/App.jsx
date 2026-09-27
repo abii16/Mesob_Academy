@@ -104,13 +104,13 @@ const App = () => {
         ].includes(activeRoute)
       ) {
         setCurrentPage("home");
-        document.title = "Mesob Academy | Premium Educational Platform";
+        document.title = "Mesob Academy | High School Learning App";
         if (metaDesc)
           metaDesc.setAttribute(
             "content",
             language === "en"
-              ? "#1 EdTech in Ethiopia for Grades 9-12. Master the curriculum and ace your exams with community support, exam drills, and secure offline video resources."
-              : "ለ9-12ኛ ክፍል በኢትዮጵያ #1 የትምህርት ቴክኖሎጂ። ፈተናዎችዎን በተማሪዎች ማህበረሰብ፣ በፈተና ልምምዶች እና ደህንነቱ በተጠበቀ ከመስመር ውጭ የቪዲዮ ግብአቶች ያጠናክሩ።",
+              ? "Ethiopia's #1 learning app for Grades 9-12. Study the curriculum and ace national exams with past papers, study groups, and offline video lessons."
+              : "ለ9-12ኛ ክፍል በኢትዮጵያ #1 የመማሪያ መተግበሪያ። አዲሱን ስርዓተ ትምህርት እና የብሔራዊ ፈተና ጥያቄዎችን ያለ ኢንተርኔት በሚሰሩ ትምህርቶች እና በተማሪዎች ማህበረሰብ ይማሩ።",
           );
       } else if (activeRoute === "privacy") {
         setCurrentPage("privacy");

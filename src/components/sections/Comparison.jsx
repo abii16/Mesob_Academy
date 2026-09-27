@@ -29,45 +29,45 @@ const Comparison = ({ language }) => {
       features: [
         {
           num: "01",
-          name: "Offline-First Learning Access",
-          detail: "Keep studying without interruptions even when internet connectivity is unstable or completely unavailable.",
-          tag: "Offline Vault",
+          name: "Offline Study Mode",
+          detail: "Study your textbooks and video lessons without interruptions, even when you have no internet connection.",
+          tag: "Offline Study",
           badge: "Zero Data Required"
         },
         {
           num: "02",
-          name: "Exam-Focused Practice Experience",
-          detail: "Built around real Ethiopian national exam pacing, past paper archives, and targeted revision workflows.",
+          name: "National Exam Practice",
+          detail: "Practice with 10+ years of past national exams, complete step-by-step solutions, and timed practice tests.",
           tag: "National Exams",
-          badge: "10+ Years Archive"
+          badge: "10+ Years of Past Exams"
         },
         {
           num: "03",
-          name: "Structured Study Support",
-          detail: "Integrated planning, focus intervals, and subject tracking help students stay disciplined and consistent.",
-          tag: "Study Discipline",
-          badge: "Habit & Focus"
+          name: "Study Timers & Daily Planning",
+          detail: "Built-in study timers, chapter checklists, and reminders to help you finish every subject on schedule.",
+          tag: "Daily Planning",
+          badge: "Stay Consistent"
         },
         {
           num: "04",
-          name: "Multilingual, Local-First Experience",
-          detail: "Crafted specifically for Ethiopian learners with support across Amharic, English, Afaan Oromoo, and Tigrigna.",
-          tag: "Multilingual",
+          name: "4 Ethiopian Languages",
+          detail: "Learn easily in the language you are most comfortable with: Amharic, English, Afaan Oromoo, or Tigrigna.",
+          tag: "Languages",
           badge: "Amharic • English • Afaan Oromoo • Tigrigna"
         },
         {
           num: "05",
-          name: "Community-Powered Motivation",
-          detail: "Study alongside thousands of peers nationwide to discuss tough problems, share notes, and stay accountable.",
-          tag: "Student Network",
-          badge: "Peer Study Hub"
+          name: "Student Study Community",
+          detail: "Connect with high school students across Ethiopia to ask difficult questions, share notes, and learn together.",
+          tag: "Community",
+          badge: "Helpful Student Group"
         },
         {
           num: "06",
-          name: "Modern Digital Learning Foundation",
-          detail: "Engineered as an enduring, secure educational platform continuously maintained for long-term student success.",
-          tag: "Platform",
-          badge: "Built for the Future"
+          name: "New Curriculum Aligned",
+          detail: "Constantly updated with the latest Ethiopian textbooks and syllabus so you always study the right materials.",
+          tag: "Curriculum",
+          badge: "Always Up-to-Date"
         },
       ],
     },
@@ -78,45 +78,45 @@ const Comparison = ({ language }) => {
       features: [
         {
           num: "01",
-          name: "ከመስመር ውጭ የሚሰራ የመማሪያ ማህደር",
-          detail: "የኢንተርኔት ግንኙነት ሲያንስ ወይም ሙሉ በሙሉ ሲቋረጥ እንኳን ያለምንም መቆራረጥ ጥናትዎን ይቀጥሉ።",
+          name: "ያለ ኢንተርኔት ማጥናት",
+          detail: "የኢንተርኔት ግንኙነት ሲቋረጥ እንኳን ያለምንም መቆራረጥ ትምህርቶችዎን በቀላሉ ያጥኑ።",
           tag: "ከመስመር ውጭ",
           badge: "ያለ ሞባይል ዳታ"
         },
         {
           num: "02",
-          name: "በብሔራዊ ፈተና ላይ ያተኮረ ልምምድ",
-          detail: "ለኢትዮጵያ ብሔራዊ ፈተናዎች በተዘጋጁ ያለፉ የፈተና ቡክሌቶች፣ የጊዜ ልምምዶች እና የክለሳ ዘዴዎች የታገዘ።",
+          name: "የብሔራዊ ፈተና ልምምድ",
+          detail: "የ10+ ዓመታት ያለፉ የብሔራዊ ፈተና ጥያቄዎችን ከመልሶቻቸው ጋር በመለማመድ ለፈተና በደንብ ይዘጋጁ።",
           tag: "የፈተና ዝግጅት",
-          badge: "የ10+ ዓመታት ማህደር"
+          badge: "የ10+ ዓመታት ያለፉ ፈተናዎች"
         },
         {
           num: "03",
-          name: "የተዋቀረ የጥናት ድጋፍና እቅድ",
-          detail: "የተገነቡ የትኩረት ሰዓታትና የሞጁል ክትትል ተማሪዎች በዘፈቀደ ሳይሆን በስርዓት እንዲያጠኑ ያግዛሉ።",
+          name: "የጥናት ሰዓትና የእቅድ ማውጫ",
+          detail: "የትኩረት ጊዜ ቆጣሪ እና የምዕራፍ ማስታወሻዎች ተማሪዎች ትምህርታቸውን በየቀኑ በስርዓት እንዲያጠኑ ያግዛሉ።",
           tag: "የጥናት ስርዓት",
-          badge: "ትኩረት እና ስነ-ስርዓት"
+          badge: "ቀጣይነት ያለው ጥናት"
         },
         {
           num: "04",
-          name: "አገርኛና ባለብዙ ቋንቋ ተደራሽነት",
-          detail: "ለኢትዮጵያ ተማሪዎች ምቹ በሆነ አማርኛ፣ እንግሊዝኛ፣ አፋን ኦሮሞ እና ትግርኛ ቋንቋዎች የተዘጋጀ ግልጽ የመማር ጉዞ።",
+          name: "በ4 አገርኛ ቋንቋዎች የቀረበ",
+          detail: "ለተማሪዎች ምቹ በሆነ አማርኛ፣ እንግሊዝኛ፣ አፋን ኦሮሞ እና ትግርኛ ቋንቋዎች በቀላሉ ተረድተው ይማሩ።",
           tag: "ባለብዙ ቋንቋ",
           badge: "አማርኛ • እንግሊዝኛ • አፋን ኦሮሞ • ትግርኛ"
         },
         {
           num: "05",
-          name: "የተማሪዎች የጋራ መረዳዳት ማህበረሰብ",
-          detail: "በመላው አገሪቱ ካሉ ተማሪዎች ጋር በመገናኘት አስቸጋሪ ጥያቄዎችን ይፍቱ፣ ማስታወሻዎችን ይጋሩ እና አብረው ያጥኑ።",
-          tag: "የተማሪዎች ኔትወርክ",
-          badge: "የጋራ ጥናት መድረክ"
+          name: "የተማሪዎች የውይይት ማህበረሰብ",
+          detail: "በመላው አገሪቱ ካሉ ተማሪዎች ጋር በመገናኘት አስቸጋሪ ጥያቄዎችን ይጠይቁ፣ ማስታወሻዎችን ይጋሩ እና አብረው ይማሩ።",
+          tag: "ማህበረሰብ",
+          badge: "የተማሪዎች ህብረት"
         },
         {
           num: "06",
-          name: "ዘመናዊና አስተማማኝ የትምህርት መሠረት",
-          detail: "እንደ ጊዜያዊ ገጽ ሳይሆን ተማሪዎችን ለዓመታት የሚያገለግል ጠንካራና ዘመናዊ የዲጂታል ትምህርት ፕላትፎርም።",
-          tag: "ዘላቂ ፕላትፎርም",
-          badge: "ለረጅም ጊዜ የተገነባ"
+          name: "በአዲሱ ስርዓተ ትምህርት የተዘጋጀ",
+          detail: "በአዲሱ የኢትዮጵያ ስርዓተ ትምህርት መሰረት በየጊዜው የሚታደስ እና ትክክለኛውን የትምህርት ይዘት የያዘ።",
+          tag: "ስርዓተ ትምህርት",
+          badge: "ሁልጊዜ ወቅታዊ"
         },
       ],
     },

@@ -6,36 +6,36 @@ import '../../styles/sections/Features.css';
 const Features = ({ language }) => {
   const t = {
     en: {
-      subtitle: "PREMIUM FEATURES",
-      title: "Built for Academic Success",
-      communityTitle: "Community Chat",
-      communityDesc: "Connect with thousands of students across Ethiopia. Share notes, discuss problems, and grow together.",
-      offlineVaultTitle: "Offline Resources",
-      offlineVaultDesc: "No internet? No problem. Download entire subjects and video lessons to study anywhere, anytime securely.",
+      subtitle: "FEATURES",
+      title: "Built for Your Academic Success",
+      communityTitle: "Student Community",
+      communityDesc: "Connect with students across Ethiopia. Share notes, discuss questions, and learn together.",
+      offlineVaultTitle: "Offline Study",
+      offlineVaultDesc: "No internet? No problem. Download subjects and video lessons to study anytime without mobile data.",
       quizArenaTitle: "Exam Simulator",
-      quizArenaDesc: "Practice in a quiet study environment with timed past paper booklets designed for optimal Ethiopian national exam pacing.",
-      pomodoroTitle: "Pomodoro Timer",
-      pomodoroDesc: "Train your brain for peak focus. Optimize study intervals using custom work-and-break checkpoints.",
+      quizArenaDesc: "Practice with timed past papers and full answers to build your speed and exam confidence.",
+      pomodoroTitle: "Focus Timer",
+      pomodoroDesc: "Stay focused while studying. Use simple study and break intervals to study longer without feeling tired.",
       studyPlannerTitle: "Study Planner",
-      studyPlannerDesc: "Build high-performance academic roadmaps tracking complete subject modules deterministically.",
-      analyticsTitle: "Score Analytics",
-      analyticsDesc: "View automated domain-by-domain passing scorecards and private speed pacing metrics upon booklet completion."
+      studyPlannerDesc: "Create a study schedule, track chapters you completed, and stay ready for exams.",
+      analyticsTitle: "Progress Tracking",
+      analyticsDesc: "Check your test scores, see chapters you need to review, and track your answering speed."
     },
     am: {
-      subtitle: "ልዩ ባህሪያት",
-      title: "ለአካዳሚክ ስኬት የተገነባ",
-      communityTitle: "የማህበረሰብ ውይይት",
-      communityDesc: "በመላው ኢትዮጵያ ካሉ በሺዎች የሚቆጠሩ ተማሪዎች ጋር ይገናኙ። ማስታወሻዎችን ያካፍሉ፣ ስለ ጥያቄዎች ይወያዩ እና አብረው ያድጉ።",
-      offlineVaultTitle: "ከመስመር ውጭ ማስቀመጫ",
-      offlineVaultDesc: "አይ ላንክስ? ምንም ችግር የለም። የትም ቦታ ሆነው ለመማር ሙሉ ትምህርቶችን እና የቪዲዮ ትምህርቶችን ያውርዱ።",
-      quizArenaTitle: "የፈተና ሲሙሌተር",
-      quizArenaDesc: "ለኢትዮጵያ ብሔራዊ ፈተና በተዘጋጁ ያለፉ የፈተና ቡክሌቶች ፀጥ ባለ የጥናት ቦታ ይለማመዱ።",
+      subtitle: "ዋና ዋና ባህሪያት",
+      title: "ለትምህርት ስኬትዎ የተዘጋጀ",
+      communityTitle: "የተማሪዎች ማህበረሰብ",
+      communityDesc: "በመላው ኢትዮጵያ ካሉ ተማሪዎች ጋር ይገናኙ። ማስታወሻዎችን ያካፍሉ፣ ስለ ጥያቄዎች ይወያዩ እና አብረው ይማሩ።",
+      offlineVaultTitle: "ያለ ኢንተርኔት ማጥናት",
+      offlineVaultDesc: "ኢንተርኔት የለም? ምንም ችግር የለም። ያለ ሞባይል ዳታ ለማጥናት ትምህርቶችንና ቪዲዮዎችን አስቀድመው ያውርዱ።",
+      quizArenaTitle: "የፈተና ልምምድ",
+      quizArenaDesc: "የቀደሙ የብሔራዊ ፈተና ጥያቄዎችን በጊዜ ገደብ በመስራት የፈተና ፍጥነትዎን እና ውጤትዎን ያሻሽሉ።",
       pomodoroTitle: "የጥናት ጊዜ ቆጣሪ",
-      pomodoroDesc: "ለከፍተኛ ትኩረት አእምሮዎን ያሰልጥኑ። ልዩ የጥናት እና የእረፍት ጊዜያትን በመጠቀም የጥናት ጊዜዎን ያመቻቹ።",
-      studyPlannerTitle: "የጥናት እቅድ አውጪ",
-      studyPlannerDesc: "ሙሉ የትምህርት ሞጁሎችን በመከታተል ከፍተኛ ጥራት ያላቸውን የጥናት እቅዶችን ይገንቡ።",
-      analyticsTitle: "የአካዳሚክ ትንታኔ",
-      analyticsDesc: "ቡክሌቱን ሲያጠናቅቁ በራስ-ሰር የተሰሩ የየክፍለ-ትምህርቶችን ማለፊያ ውጤቶች እና የግል የፍጥነት ትንታኔዎችን ይመልከቱ።"
+      pomodoroDesc: "በጥናት ወቅት ትኩረትዎ እንዳይበተን የጥናት እና የእረፍት ሰዓትን በመጠቀም በቀላሉ ይማሩ።",
+      studyPlannerTitle: "የጥናት እቅድ ማውጫ",
+      studyPlannerDesc: "የትምህርት እቅድዎን በቀላሉ ያዘጋጁ፤ ያጠናቀቋቸውን ምዕራፎች ይከታተሉ፤ ለፈተና በደንብ ይዘጋጁ።",
+      analyticsTitle: "የውጤት ክትትል",
+      analyticsDesc: "የሙከራ ፈተናዎችን ሲጨርሱ ውጤትዎን፣ ደካማ ጎኖችዎን እና የፈተና ፍጥነትዎን በቀላሉ ይከታተሉ።"
     }
   };
 

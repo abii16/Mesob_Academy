@@ -35,7 +35,7 @@ const getSupportResponse = (userText, language) => {
         `• **Grades 9 & 10 Package**: 450 ETB for 2 full academic years (All core subjects)\n` +
         `• **Grades 11 & 12 Package**: 450 ETB for 2 full academic years (Natural or Social Science stream + National Exam prep)\n` +
         `• **Full High School (9-12) Package**: 700 ETB for 2 full academic years (Complete access across all 4 grades)\n\n` +
-        `Every package includes full offline vault access so you can study without using mobile data.`,
+        `Every package includes full offline access so you can study without using mobile data.`,
       action: 'pricing'
     };
   }
@@ -100,7 +100,7 @@ const getSupportResponse = (userText, language) => {
     return {
       text: `**Grades 9 & 10 Package (450 ETB)**:\n\n` +
         `• Covers all Grade 9 & 10 subjects (Mathematics, Physics, Chemistry, Biology, English, etc.)\n` +
-        `• Chapter summaries & interactive practice drills\n` +
+        `• Chapter summaries & practice questions\n` +
         `• Full offline downloads\n` +
         `• Active for 2 full academic years`,
       action: 'pricing'
@@ -128,7 +128,7 @@ const getSupportResponse = (userText, language) => {
         `You select your stream when registering:\n` +
         `• **Natural Science**: Mathematics, Physics, Chemistry, Biology, English, etc.\n` +
         `• **Social Science**: History, Geography, Economics, Mathematics, English, etc.\n\n` +
-        `Both streams include a 10+ year national exam prep archive, timed practice exams, and full offline vault access for 2 full academic years.`,
+        `Both streams include 10+ years of past national exams with solutions, timed practice tests, and offline access for 2 full academic years.`,
       action: 'pricing'
     };
   }

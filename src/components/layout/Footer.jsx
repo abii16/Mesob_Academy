@@ -5,7 +5,7 @@ const Footer = ({ currentPage, setCurrentPage, language }) => {
   const t = {
     en: {
       pitch:
-        "The premium education platform empowering the next generation of Ethiopian students. Pure intelligence. Local context. Global success.",
+        "The trusted learning app empowering Ethiopian high school students to study anywhere, master the curriculum, and ace national exams.",
       legal: "Legal",
       privacy: "Privacy Policy",
       terms: "Terms of Service",
@@ -13,12 +13,12 @@ const Footer = ({ currentPage, setCurrentPage, language }) => {
       contact: "Contact Support",
       help: "Help Center",
       community: "Community",
-      copyright: `© ${new Date().getFullYear()} MESOB ACADEMY. BUILT WITH INTELLIGENCE IN ETHIOPIA.`,
+      copyright: `© ${new Date().getFullYear()} MESOB ACADEMY. BUILT FOR ETHIOPIAN STUDENTS.`,
       verified: "Verified Secure",
       privacyFirst: "Privacy First",
     },
     am: {
-      pitch: "ቀጣዩን የኢትዮጵያ ተማሪዎች ትውልድ የሚያበረታታ የኢትዮጵያ ቀዳሚ የትምህርት ፕላትፎርም።",
+      pitch: "የኢትዮጵያ ሁለተኛ ደረጃ ተማሪዎች በየትኛውም ቦታ ሆነው እንዲያጠኑ፣ ትምህርታቸውን እንዲረዱ እና ፈተናዎችን በብቃት እንዲያልፉ የተዘጋጀ የመማሪያ መተግበሪያ።",
       legal: "ሕጋዊ",
       privacy: "የግላዊነት ፖሊሲ",
       terms: "የአገልግሎት ውሎች",
@@ -26,7 +26,7 @@ const Footer = ({ currentPage, setCurrentPage, language }) => {
       contact: "ያግኙን",
       help: "የእርዳታ ማዕከል",
       community: "ማህበረሰብ",
-      copyright: `© ${new Date().getFullYear()} መሶብ አካዳሚ። በኢትዮጵያ ውስጥ በጥበብ የተገነባ።`,
+      copyright: `© ${new Date().getFullYear()} መሶብ አካዳሚ። ለኢትዮጵያ ተማሪዎች የተዘጋጀ።`,
       verified: "ደህንነቱ የተረጋገጠ",
       privacyFirst: "ለግላዊነት ቅድሚያ",
     },

@@ -11,13 +11,13 @@ const Hero = ({ triggerToast, language }) => {
     en: {
       socialProof: "Based on New Curriculum",
       title: <>Master the Curriculum.<br />Ace Your Exams.</>,
-      subtitle: "#1 EdTech platform in Ethiopia for grades 9-12 and freshman. Practice with adaptive testing, secure offline resources, and active community support.",
+      subtitle: "Ethiopia's #1 learning app for Grades 9-12. Practice with past national exams, download lessons to study offline, and get help from student study groups.",
       watchOverview: "Watch Overview"
     },
     am: {
       socialProof: "በአዲሱ ስርዓተ ትምህርት ላይ የተመሰረተ",
       title: <>ስርዓተ ትምህርቱን ይቆጣጠሩ።<br />ፈተናዎን በብቃት ይለፉ።</>,
-      subtitle: "በኢትዮጵያ ለ9-12ኛ ክፍል እና ለዩኒቨርሲቲ መግቢያ #1 የትምህርት ቴክኖሎጂ ፕላትፎርም ነው። በተለዋዋጭ የፈተና ጥያቄዎች፣ አስተማማኝ ያለ ኢንተርኔት የሚሰራ የትምህርት ግብአቶች እና በማህበረሰብ ድጋፍ ይለማመዱ።",
+      subtitle: "በኢትዮጵያ ለ9-12ኛ ክፍል ተማሪዎች #1 የመማሪያ መተግበሪያ። ያለፉ የብሔራዊ ፈተናዎችን ይለማመዱ፣ ያለ ኢንተርኔት ለማጥናት ትምህርቶችን ያውርዱ፣ እና ከተማሪዎች ጋር አብረው ይማሩ።",
       watchOverview: "ማብራሪያ ይመልከቱ"
     }
   };
