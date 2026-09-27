@@ -6,7 +6,7 @@
 
 - **Bilingual UI (EN/AM)** with instant toggle
 - **Hero video** and animated CTAs
-- **Premium feature highlights** (Offline Vault, Quiz Arena, Study Planner, Leaderboard)
+- **Premium feature highlights** (Offline Vault, Quiz Arena, Study Planner, Score Analytics)
 - **Pricing plans** for Grades 9–12
 - **Testimonials, FAQ, and Contact** sections
 - **Privacy Policy & Terms** pages

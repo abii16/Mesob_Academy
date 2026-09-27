@@ -89,32 +89,5 @@
   cursor: pointer;
 }
 .feature-link:hover{
-  color:#0fae44;
-}
-
-/* Leaderboard snippet inside card */
-.leaderboard-snippet {
-  margin-top: 2rem;
-  background: var(--color-surface-dim);
-  border-radius: var(--radius-md);
-  padding: 1rem;
-  border: 1px solid var(--border-color);
-}
-
-.leaderboard-row {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.5rem 0;
-  font-size: 12px;
-  color: var(--text-primary);
-  border-bottom: 1px solid var(--border-color);
-}
-
-.leaderboard-row:last-child {
-  border-bottom: none;
-}
-
-.header-row {
-  font-weight: 700;
   color: var(--color-primary);
 }

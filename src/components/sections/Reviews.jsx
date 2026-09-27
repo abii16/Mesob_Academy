@@ -87,7 +87,7 @@ const Reviews = ({ language }) => {
       r1Role: "Grade 12 Student",
       r2: "The Offline storage is a lifesaver in my hometown where data is weak. I can study without any interruptions.",
       r2Role: "Grade 10 Student",
-      r3: "The leaderboard keeps me motivated. I love seeing my name rise as I solve more problems daily.",
+      r3: "The Exam Simulator and timed past papers gave me the confidence I needed. Practicing with real national exam questions made the actual test feel familiar.",
       r3Role: "Grade 11 Student",
     },
     am: {
@@ -97,7 +97,7 @@ const Reviews = ({ language }) => {
       r1Role: "የ12ኛ ክፍል ተማሪ",
       r2: "የከመስመር ውጭ (Offline) ማከማቻው በከተማዬ ውስጥ የኔትወርክ ዳታ ሲዳከም ትልቅ እፎይታ ነው። ያለ ምንም መቆራረጥ ማጥናት እችላለሁ።",
       r2Role: "የ10ኛ ክፍል ተማሪ",
-      r3: "የደረጃ ሰንጠረዡ (Leaderboard) ሁል ጊዜ ተነሳሽነት ይሰጠኛል። በየቀኑ ብዙ ጥያቄዎችን በምፈታበት ጊዜ ስሜ ወደ ላይ ሲወጣ ማየት ደስ ይለኛል።",
+      r3: "የፈተና ሲሙሌተሩ እና የጊዜ ልምምዱ ከፍተኛ በራስ መተማመን ፈጥሮልኛል። ባለፉት የብሔራዊ ፈተና ጥያቄዎች ደጋግሜ መለማመዴ ፈተናውን ቀላል እንዲሆንልኝ አድርጎታል።",
       r3Role: "የ11ኛ ክፍል ተማሪ",
     },
   };
