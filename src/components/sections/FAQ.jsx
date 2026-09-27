@@ -22,7 +22,7 @@ const FAQ = ({ language }) => {
         },
         { 
           question: "How do I subscribe and pay in Ethiopia?", 
-          answer: "Subscribing is fast and simple!\n1. Download the Mesob Academy app and choose your grade package.\n2. Transfer the fee via Telebirr (0905865441), Commercial Bank of Ethiopia - CBE (1000714423669), Awash Bank, or Abay Bank.\n3. Take a screenshot of the transfer and upload it directly inside the app.\nOur verification team approves and activates your full access within 24 hours." 
+          answer: "Subscribing is fast and simple!\n1. Download the Mesob Academy app and choose your grade package.\n2. Transfer the fee using any of our official accounts:\n• Telebirr: 0905865441\n• Commercial Bank of Ethiopia (CBE): 1000714423669\n• Awash Bank: 013201468713200\n• Abay Bank: A401011070050017\n3. Take a screenshot of the transfer and upload it directly inside the app.\nOur verification team approves and activates your full access within 24 hours." 
         },
         { 
           question: "Does the app track my study scores?", 
@@ -48,7 +48,7 @@ const FAQ = ({ language }) => {
         },
         { 
           question: "በኢትዮጵያ እንዴት መክፈል እና መመዝገብ እችላለሁ?", 
-          answer: "ክፍያ መፈጸም በጣም ቀላል ነው፦\n1. የሜሶብ አካዳሚ የሞባይል መተግበሪያን ያውርዱና የክፍል ጥቅልዎን ይምረጡ።\n2. ክፍያውን በቴሌብር (0905865441)፣ በኢትዮጵያ ንግድ ባንክ (1000714423669)፣ በአዋሽ ወይም በአባይ ባንክ ይላኩ።\n3. የከፈሉበትን ደረሰኝ ስክሪንሾት በመተግበሪያው ውስጥ በቀጥታ ይጫኑ።\nየማረጋገጫ ቡድናችን ደረሰኙን በማረጋገጥ በ24 ሰዓት ውስጥ ሙሉ የፕሪሚየም አገልግሎትዎን ይከፍታል።" 
+          answer: "ክፍያ መፈጸም በጣም ቀላል ነው፦\n1. የሜሶብ አካዳሚ የሞባይል መተግበሪያን ያውርዱና የክፍል ጥቅልዎን ይምረጡ።\n2. ክፍያውን ከሚከተሉት ህጋዊ የክፍያ አማራጮች በአንዱ ይላኩ፦\n• ቴሌብር (Telebirr)፦ 0905865441\n• የኢትዮጵያ ንግድ ባንክ (CBE)፦ 1000714423669\n• አዋሽ ባንክ (Awash Bank)፦ 013201468713200\n• አባይ ባንክ (Abay Bank)፦ A401011070050017\n3. የከፈሉበትን ደረሰኝ ስክሪንሾት በመተግበሪያው ውስጥ በቀጥታ ይጫኑ።\nየማረጋገጫ ቡድናችን ደረሰኙን በማረጋገጥ በ24 ሰዓት ውስጥ ሙሉ የፕሪሚየም አገልግሎትዎን ይከፍታል።" 
         },
         { 
           question: "መተግበሪያው የጥናት ውጤቴን ይከታተላል?", 
