@@ -58,9 +58,6 @@ const Footer = ({ currentPage, setCurrentPage, language }) => {
                 <span className="brand-name-main">{language === "am" ? "መሶብ" : "Mesob"}</span>
                 <span className="brand-name-accent">{language === "am" ? "አካዳሚ" : "Academy"}</span>
               </div>
-              <span className="brand-tagline">
-                {language === "am" ? "የትምህርት ፕላትፎርም" : "LEARNING PLATFORM"}
-              </span>
             </div>
           </div>
           <p className="footer-brand-pitch">{currentT.pitch}</p>
