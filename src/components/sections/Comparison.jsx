@@ -141,10 +141,6 @@ const Comparison = ({ language }) => {
                 </div>
 
                 <div className="comparison-side-matter">
-                  <div className="comparison-tag-matter">
-                    <Sparkles size={13} />
-                    <span>{currentT.detailCol}</span>
-                  </div>
                   <p className="comparison-detail-text">{feature.detail}</p>
                 </div>
               </motion.div>

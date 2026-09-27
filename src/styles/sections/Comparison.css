@@ -133,28 +133,15 @@
   border-color: var(--color-primary);
 }
 
-/* Right Side: Why It Matters */
+/* Right Side: Explanation Detail */
 .comparison-side-matter {
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.comparison-tag-matter {
-  display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  font-size: 10.5px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-secondary);
-  width: fit-content;
 }
 
 .comparison-detail-text {
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 0.98rem;
+  line-height: 1.65;
   color: var(--text-secondary);
   margin: 0;
 }
@@ -200,8 +187,4 @@
 
 .light-theme .comparison-detail-text {
   color: rgba(45, 34, 24, 0.78);
-}
-
-.light-theme .comparison-tag-matter {
-  color: rgba(45, 34, 24, 0.6);
 }
