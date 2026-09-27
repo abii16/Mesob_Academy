@@ -7,25 +7,24 @@
   font-size: 11px;
   font-weight: 700;
   color: var(--color-primary);
-  letter-spacing: 0.15em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   display: block;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .section-title-new {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 2.75rem);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  margin-bottom: 2.75rem;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 400;
+  margin-bottom: 3rem;
   color: var(--text-primary);
 }
 
 .features-grid-new {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 @media (min-width: 768px) {
@@ -41,76 +40,54 @@
 }
 
 .feature-card-new {
-  background: var(--color-surface-container);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.005));
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg, 16px);
-  padding: 2.25rem 2rem;
+  border-radius: var(--radius-lg);
+  padding: 3rem;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: var(--card-shadow);
+  transition: var(--transition-smooth);
 }
 
 .feature-card-new:hover {
   border-color: var(--color-primary);
-  transform: translateY(-4px);
-  box-shadow: 0 14px 30px rgba(5, 150, 105, 0.12), 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.feature-card-has-bg {
+  background: linear-gradient(135deg, rgba(46, 204, 113, 0.15), rgba(20, 83, 45, 0.15));
 }
 
 .feature-icon-wrapper {
-  width: 3.25rem;
-  height: 3.25rem;
-  border-radius: 12px;
-  background: var(--color-primary-container);
   color: var(--color-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin-bottom: 1.5rem;
-  transition: all 0.3s ease;
-}
-
-.feature-card-new:hover .feature-icon-wrapper {
-  transform: scale(1.06);
-  background: var(--color-primary);
-  color: #064e3b;
 }
 
 .feature-card-title-new {
   font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: 1.75rem;
   color: var(--text-primary);
-  margin-bottom: 0.75rem;
-  letter-spacing: -0.01em;
+  margin-bottom: 1rem;
 }
 
 .feature-card-desc-new {
   color: var(--color-on-surface-variant);
-  font-size: 14.5px;
-  margin-bottom: 0;
+  font-size: 14px;
+  margin-bottom: 2rem;
   line-height: 1.6;
 }
 
-/* Light Theme Adaptations */
-.light-theme .feature-card-new {
-  background: #ffffff;
-  border: 1px solid rgba(95, 69, 46, 0.14);
-  box-shadow: 0 4px 16px rgba(95, 69, 46, 0.05);
+.feature-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
 }
-
-.light-theme .feature-card-new:hover {
-  background: #ffffff;
-  border-color: var(--color-primary);
-  box-shadow: 0 16px 36px rgba(5, 150, 105, 0.15);
-}
-
-.light-theme .feature-icon-wrapper {
-  background: #ecfdf5;
-  color: #059669;
-}
-
-.light-theme .feature-card-new:hover .feature-icon-wrapper {
-  background: #059669;
-  color: #ffffff;
+.feature-link:hover{
+  color: var(--color-primary);
 }

@@ -19,70 +19,65 @@
 }
 
 .pricing-card-new {
-  background: var(--color-surface-container);
+  background: var(--pricing-card-bg);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg, 16px);
-  padding: 2.75rem 2rem;
+  border-radius: var(--radius-lg);
+  padding: 4rem 3rem;
   display: flex;
   flex-direction: column;
   position: relative;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(20px);
+  box-shadow: var(--card-shadow);
+  transition: var(--transition-smooth);
 }
 
 .pricing-card-new:hover {
   border-color: var(--color-primary);
-  transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(5, 150, 105, 0.12), 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  box-shadow: var(--card-shadow-hover);
 }
 
 .pricing-tag {
   position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  font-size: 11px;
+  top: 2rem;
+  right: 2rem;
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.06em;
-  padding: 0.25rem 0.65rem;
+  letter-spacing: 0.1em;
+  padding: 0.25rem 0.75rem;
   border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.1);
   color: var(--text-primary);
 }
 
 .premium-tag {
-  background: var(--color-primary);
-  color: #064e3b;
-  font-weight: 700;
+  background: #abc9ed;
+  color: #001525;
 }
 
 .pricing-title-new {
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  margin-bottom: 0.4rem;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
   color: var(--text-primary);
 }
 
 .pricing-subtitle-new {
-  font-size: 13.5px;
+  font-size: 13px;
   color: var(--text-secondary);
-  margin-bottom: 1.5rem;
-  min-height: 2.2rem;
-  line-height: 1.5;
+  margin-bottom: 1.75rem;
+  min-height: 2.4rem;
 }
 
 .pricing-price-container {
-  margin-bottom: 1.75rem;
+  margin-bottom: 2rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px solid var(--border-color);
 }
 
 .pricing-price-new {
   font-family: var(--font-display);
-  font-size: 3rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  font-size: 3.5rem;
   line-height: 1;
   margin-bottom: 0.75rem;
   color: var(--text-primary);
@@ -128,9 +123,9 @@
 }
 
 .duration-pill-highlight {
-  background: rgba(16, 185, 129, 0.12);
-  color: var(--color-primary);
-  border-color: rgba(16, 185, 129, 0.3);
+  background: rgba(171, 201, 237, 0.15);
+  color: #abc9ed;
+  border-color: rgba(171, 201, 237, 0.3);
 }
 
 .billing-pill-highlight {
@@ -141,9 +136,8 @@
 
 .pricing-features-new {
   list-style: none;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
   flex-grow: 1;
-  padding: 0;
 }
 
 .pricing-features-new li {
@@ -152,8 +146,7 @@
   gap: 0.75rem;
   font-size: 14px;
   color: var(--text-secondary);
-  margin-bottom: 0.9rem;
-  line-height: 1.5;
+  margin-bottom: 1rem;
 }
 
 .pricing-features-new svg {
@@ -162,20 +155,22 @@
 }
 
 .highlight-card {
-  background: var(--color-surface-container-high, #1c1c1c);
+  background: var(--highlight-card-bg);
   border: 2px solid var(--color-primary);
-  padding: 3rem 2rem;
-  box-shadow: 0 12px 40px rgba(5, 150, 105, 0.12), 0 4px 20px rgba(0, 0, 0, 0.15);
+  padding: 4.5rem 3rem;
+  box-shadow: var(--highlight-card-shadow);
 }
 
 @media (min-width: 768px) {
   .highlight-card {
-    transform: scale(1.03);
+    transform: scale(1.05);
+    margin-top: -2rem;
+    margin-bottom: -2rem;
     z-index: 2;
   }
   .highlight-card:hover {
-    transform: scale(1.04) translateY(-4px);
-    box-shadow: 0 20px 50px rgba(5, 150, 105, 0.2);
+    transform: scale(1.07) translateY(-5px);
+    box-shadow: 0 20px 60px var(--color-primary-soft);
   }
 }
 
@@ -223,7 +218,7 @@
 }
 
 .light-theme .premium-tag {
-  background: var(--color-primary);
+  background: #0284c7;
   color: #ffffff;
   border-color: transparent;
 }
@@ -237,11 +232,11 @@
 }
 
 .light-theme .duration-pill-highlight {
-  background: #ecfdf5;
-  color: #047857;
-  border: 1px solid rgba(5, 150, 105, 0.4);
+  background: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #7dd3fc;
   font-weight: 700;
-  box-shadow: 0 2px 6px rgba(5, 150, 105, 0.1);
+  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.12);
 }
 
 .light-theme .billing-pill {

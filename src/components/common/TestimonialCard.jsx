@@ -26,26 +26,26 @@ const RatingStars = ({ rating }) => {
       {Array.from({ length: 5 }).map((_, index) => {
         if (index < fullStars) {
           return (
-            <StarIcon key={index} fill="#f59e0b" stroke="#f59e0b" />
+            <StarIcon key={index} fill="#abc9ed" stroke="#abc9ed" />
           );
         } else if (index === fullStars && decimal > 0) {
           const gradId = `star-grad-${uniqueId}-${index}`;
           return (
             <span key={index} style={{ display: 'inline-flex', position: 'relative', width: 16, height: 16 }}>
               <span style={{ position: 'absolute', top: 0, left: 0 }}>
-                <StarIcon fill="rgba(255, 255, 255, 0.05)" stroke="rgba(245, 158, 11, 0.3)" />
+                <StarIcon fill="rgba(255, 255, 255, 0.05)" stroke="rgba(171, 201, 237, 0.3)" />
               </span>
               <svg width="16" height="16" viewBox="0 0 24 24" style={{ position: 'absolute', top: 0, left: 0 }}>
                 <defs>
                   <linearGradient id={gradId} x1="0" y1="0" x2="1" y2="0">
-                    <stop offset={`${decimal * 100}%`} stopColor="#f59e0b" />
+                    <stop offset={`${decimal * 100}%`} stopColor="#abc9ed" />
                     <stop offset={`${decimal * 100}%`} stopColor="transparent" stopOpacity="0" />
                   </linearGradient>
                 </defs>
                 <path
                   d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
                   fill={`url(#${gradId})`}
-                  stroke="#f59e0b"
+                  stroke="#abc9ed"
                   strokeWidth="1.5"
                   strokeLinejoin="round"
                   strokeLinecap="round"
@@ -55,7 +55,7 @@ const RatingStars = ({ rating }) => {
           );
         } else {
           return (
-            <StarIcon key={index} fill="rgba(255, 255, 255, 0.05)" stroke="rgba(245, 158, 11, 0.3)" />
+            <StarIcon key={index} fill="rgba(255, 255, 255, 0.05)" stroke="rgba(171, 201, 237, 0.3)" />
           );
         }
       })}

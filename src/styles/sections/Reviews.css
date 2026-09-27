@@ -7,7 +7,7 @@
 .testimonials-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 @media (min-width: 768px) {
@@ -17,69 +17,64 @@
 }
 
 .testimonial-card {
-  background: var(--color-surface-container);
+  background: var(--card-bg-gradient);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg, 16px);
-  padding: 2.25rem 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  display: flex;
-  flex-direction: column;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition-smooth);
 }
 
 .testimonial-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-5px);
   border-color: var(--color-primary);
-  box-shadow: 0 14px 30px rgba(5, 150, 105, 0.12), 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--card-shadow-hover);
 }
 
 .testimonial-stars {
   display: flex;
   gap: 0.25rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .testimonial-text {
-  font-size: 14.5px;
-  color: var(--text-secondary);
-  line-height: 1.65;
-  margin-bottom: 1.75rem;
-  flex-grow: 1;
+  font-size: 14px;
+  color: var(--color-on-surface-variant);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-style: italic;
 }
 
 .testimonial-user {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
-  margin-top: auto;
+  gap: 1rem;
 }
 
 .testimonial-avatar {
-  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.testimonial-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .testimonial-name {
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-primary);
-  margin-bottom: 0.2rem;
 }
 
 .testimonial-role {
   font-size: 12px;
-  color: var(--color-primary);
-  font-weight: 500;
-}
-
-/* Light Theme Adaptations */
-.light-theme .testimonial-card {
-  background: #ffffff;
-  border: 1px solid rgba(95, 69, 46, 0.14);
-  box-shadow: 0 4px 16px rgba(95, 69, 46, 0.05);
-}
-
-.light-theme .testimonial-card:hover {
-  background: #ffffff;
-  border-color: var(--color-primary);
-  box-shadow: 0 16px 36px rgba(5, 150, 105, 0.15);
+  color: var(--text-secondary);
 }
