@@ -6,7 +6,7 @@ import {
   Calendar, 
   Globe, 
   Users, 
-  Sparkles, 
+  GraduationCap, 
   CheckCircle2 
 } from "lucide-react";
 import "../../styles/sections/Comparison.css";
@@ -17,7 +17,7 @@ const featureIcons = [
   Calendar,
   Globe,
   Users,
-  Sparkles
+  GraduationCap
 ];
 
 const Comparison = ({ language }) => {

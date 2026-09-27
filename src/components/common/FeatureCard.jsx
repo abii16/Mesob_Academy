@@ -14,7 +14,6 @@ const FeatureCard = ({ icon: Icon, title, desc, hasBg = false }) => (
     </div>
     <h3 className="feature-card-title-new">{title}</h3>
     <p className="feature-card-desc-new">{desc}</p>
-    <a href="#features" className="feature-link">Learn more →</a>
     {hasBg && <div className="feature-bg-effect"></div>}
   </motion.div>
 );

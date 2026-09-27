@@ -1,13 +1,14 @@
 /* Hero Section */
 .hero-new {
   position: relative;
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding-top: 5rem;
+  padding: 8rem 0 5rem;
   overflow: hidden;
+  background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(16, 185, 129, 0.12), transparent 75%), var(--color-background);
 }
 
 .hero-video {
@@ -18,6 +19,9 @@
   height: 100%;
   object-fit: cover;
   z-index: 0;
+  opacity: 0.15;
+  mix-blend-mode: screen;
+  pointer-events: none;
 }
 
 .hero-overlay {
@@ -26,30 +30,28 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--hero-overlay);
+  background: linear-gradient(180deg, rgba(9, 13, 22, 0.4) 0%, rgba(9, 13, 22, 0.95) 100%);
   z-index: 1;
 }
 
 .hero-container-new {
   position: relative;
   z-index: 2;
-  max-width: 800px;
+  max-width: 860px;
 }
 
 .social-proof-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--glass-bg);
-  border: 1px solid var(--border-color);
-  padding: 0.5rem 1.25rem;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  padding: 0.4rem 1.1rem;
   border-radius: var(--radius-full);
   font-size: 13px;
-  font-weight: 500;
-  color: var(--text-primary);
+  font-weight: 600;
+  color: var(--color-primary);
   margin-bottom: 2rem;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
 }
 
 .social-proof-badge svg {
@@ -58,27 +60,41 @@
 
 .hero-title-new {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 8vw, 5.5rem);
-  line-height: 1.1;
-  font-weight: 400;
-  margin-bottom: 2rem;
+  font-size: clamp(2.5rem, 6.5vw, 4.5rem);
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
   color: var(--text-primary);
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .hero-subtitle-new {
-  font-size: 16px;
+  font-size: 1.125rem;
   color: var(--text-secondary);
-  line-height: 1.6;
-  max-width: 600px;
-  margin: 0 auto 0.75rem;
-  font-weight: 300;
+  line-height: 1.65;
+  max-width: 640px;
+  margin: 0 auto 2.25rem;
+  font-weight: 400;
 }
 
 .hero-btns-new {
   display: flex;
   gap: 1.5rem;
   justify-content: center;
+}
+
+/* Light Theme Adaptations */
+.light-theme .hero-new {
+  background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(5, 150, 105, 0.1), transparent 75%), #fdfbf7;
+}
+
+.light-theme .hero-overlay {
+  background: linear-gradient(180deg, rgba(253, 251, 247, 0.4) 0%, rgba(253, 251, 247, 0.95) 100%);
+}
+
+.light-theme .hero-video {
+  opacity: 0.06;
+  mix-blend-mode: multiply;
 }
 
 /* ── Video Modal ── */

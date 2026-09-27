@@ -49,8 +49,8 @@
   --color-surface-variant: #1e293b;
 
   /* Typography */
-  --font-display: 'Instrument Serif', serif;
-  --font-body: 'Inter', sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* Rounded */
   --radius-sm: 0.25rem;

@@ -35,25 +35,10 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
-.step-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: transparent;
-  transition: background 0.3s ease;
-}
-
 .step-card:hover {
   border-color: var(--color-primary);
-  transform: translateY(-6px);
-  box-shadow: 0 16px 36px rgba(5, 150, 105, 0.16), 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.step-card:hover::before {
-  background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(5, 150, 105, 0.14), 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
 .step-card-badge-row {
