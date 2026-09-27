@@ -17,7 +17,7 @@ const Pricing = ({ triggerToast, language }) => {
       
       grade910Title: "Grades 9 & 10",
       grade910Subtitle: "General Curriculum Package (2 Years)",
-      grade910Price: "400",
+      grade910Price: "450",
       grade910F1: "All Grade 9 & 10 Core Subjects",
       grade910F2: "100% Offline Vault (Zero Data Study)",
       grade910F3: "Chapter Summaries & Practice Drills",
@@ -35,7 +35,7 @@ const Pricing = ({ triggerToast, language }) => {
 
       grade1112Title: "Grades 11 & 12",
       grade1112Subtitle: "Natural or Social Science Stream (2 Years)",
-      grade1112Price: "400",
+      grade1112Price: "450",
       grade1112F1: "All Stream Subjects (Natural or Social)",
       grade1112F2: "National Exam Simulations & Timed Drills",
       grade1112F3: "100% Offline Vault (Zero Data Study)",
@@ -58,7 +58,7 @@ const Pricing = ({ triggerToast, language }) => {
 
       grade910Title: "ከ9 - 10ኛ ክፍል",
       grade910Subtitle: "የአጠቃላይ ሥርዓተ ትምህርት ጥቅል (ለ2 ዓመት)",
-      grade910Price: "400",
+      grade910Price: "450",
       grade910F1: "ሁሉም የ9 እና 10ኛ ክፍል ዋና ዋና ትምህርቶች",
       grade910F2: "100% ከመስመር ውጭ (ያለ ሞባይል ዳታ) ማጥናት",
       grade910F3: "የምዕራፍ ማጠቃለያዎችና የሙከራ ፈተናዎች",
@@ -76,7 +76,7 @@ const Pricing = ({ triggerToast, language }) => {
 
       grade1112Title: "ከ11 - 12ኛ ክፍል",
       grade1112Subtitle: "የተፈጥሮ ወይም የማህበራዊ ሳይንስ ዘርፍ (ለ2 ዓመት)",
-      grade1112Price: "400",
+      grade1112Price: "450",
       grade1112F1: "ሁሉም የ11 እና 12ኛ ክፍል የዘርፉ ትምህርቶች",
       grade1112F2: "የብሔራዊ ፈተና አስመስሎ መስራትና የጊዜ ልምምዶች",
       grade1112F3: "100% ከመስመር ውጭ (ያለ ሞባይል ዳታ) ማጥናት",

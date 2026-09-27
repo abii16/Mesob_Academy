@@ -23,8 +23,8 @@ const getSupportResponse = (userText, language) => {
     if (isAm) {
       return {
         text: `የሜሶብ አካዳሚ የ2 ዓመት የክፍያ ጥቅሎች ዝርዝር የሚከተሉት ናቸው (ተደጋጋሚ ወርሃዊ ክፍያ የለውም)፦\n\n` +
-          `• **ከ9 - 10ኛ ክፍል ጥቅል**፦ 400 ብር ለ2 ሙሉ የትምህርት ዓመታት (ሁሉም የ9 እና 10ኛ ክፍል ትምህርቶች)\n` +
-          `• **ከ11 - 12ኛ ክፍል ጥቅል**፦ 400 ብር ለ2 ሙሉ የትምህርት ዓመታት (የተፈጥሮ ወይም ማህበራዊ ሳይንስ ከብሔራዊ ፈተና ዝግጅት ጋር)\n` +
+          `• **ከ9 - 10ኛ ክፍል ጥቅል**፦ 450 ብር ለ2 ሙሉ የትምህርት ዓመታት (ሁሉም የ9 እና 10ኛ ክፍል ትምህርቶች)\n` +
+          `• **ከ11 - 12ኛ ክፍል ጥቅል**፦ 450 ብር ለ2 ሙሉ የትምህርት ዓመታት (የተፈጥሮ ወይም ማህበራዊ ሳይንስ ከብሔራዊ ፈተና ዝግጅት ጋር)\n` +
           `• **የሙሉ ሁለተኛ ደረጃ (ከ9-12ኛ ክፍል) ጥቅል**፦ 700 ብር ለ2 ሙሉ ዓመታት (ሁሉንም 4 የክፍል ደረጃዎች ያካተተ)\n\n` +
           `ሁሉም ጥቅሎች ሙሉ ከመስመር ውጭ (ያለ ሞባይል ዳታ) ማጥናትን ያካትታሉ።`,
         action: 'pricing'
@@ -32,8 +32,8 @@ const getSupportResponse = (userText, language) => {
     }
     return {
       text: `Here is our 2-year pricing overview (no recurring monthly fees):\n\n` +
-        `• **Grades 9 & 10 Package**: 400 ETB for 2 full academic years (All core subjects)\n` +
-        `• **Grades 11 & 12 Package**: 400 ETB for 2 full academic years (Natural or Social Science stream + National Exam prep)\n` +
+        `• **Grades 9 & 10 Package**: 450 ETB for 2 full academic years (All core subjects)\n` +
+        `• **Grades 11 & 12 Package**: 450 ETB for 2 full academic years (Natural or Social Science stream + National Exam prep)\n` +
         `• **Full High School (9-12) Package**: 700 ETB for 2 full academic years (Complete access across all 4 grades)\n\n` +
         `Every package includes full offline vault access so you can study without using mobile data.`,
       action: 'pricing'
@@ -89,7 +89,7 @@ const getSupportResponse = (userText, language) => {
   if (q.includes('grade 9') || q.includes('grade 10') || q.includes('9th') || q.includes('10th') || (q.includes('9') && q.includes('10')) || q.includes('9ኛ') || q.includes('10ኛ')) {
     if (isAm) {
       return {
-        text: `**የ9 እና 10ኛ ክፍል ጥቅል (400 ብር)**፦\n\n` +
+        text: `**የ9 እና 10ኛ ክፍል ጥቅል (450 ብር)**፦\n\n` +
           `• ሁሉንም የ9ኛ እና 10ኛ ክፍል አጠቃላይ የትምህርት ዓይነቶች ያካትታል (ሒሳብ፣ ፊዚክስ፣ ኬሚስትሪ፣ ባዮሎጂ፣ እንግሊዝኛ ወዘተ)\n` +
           `• የምዕራፍ ማጠቃለያዎች እና የልምምድ ፈተናዎች\n` +
           `• 100% ከመስመር ውጭ የማውረድ ዕድል\n` +
@@ -98,7 +98,7 @@ const getSupportResponse = (userText, language) => {
       };
     }
     return {
-      text: `**Grades 9 & 10 Package (400 ETB)**:\n\n` +
+      text: `**Grades 9 & 10 Package (450 ETB)**:\n\n` +
         `• Covers all Grade 9 & 10 subjects (Mathematics, Physics, Chemistry, Biology, English, etc.)\n` +
         `• Chapter summaries & interactive practice drills\n` +
         `• Full offline downloads\n` +
@@ -115,7 +115,7 @@ const getSupportResponse = (userText, language) => {
   ) {
     if (isAm) {
       return {
-        text: `**የ11 እና 12ኛ ክፍል ጥቅል (400 ብር)**፦\n\n` +
+        text: `**የ11 እና 12ኛ ክፍል ጥቅል (450 ብር)**፦\n\n` +
           `በምዝገባ ወቅት የተፈጥሮ ወይም የማህበራዊ ሳይንስ ዘርፍዎን ይመርጣሉ፦\n` +
           `• **የተፈጥሮ ሳይንስ (Natural Science)**: ሒሳብ፣ ፊዚክስ፣ ኬሚስትሪ፣ ባዮሎጂ፣ እንግሊዝኛ ወዘተ\n` +
           `• **የማህበራዊ ሳይንስ (Social Science)**: ታሪክ፣ ጂኦግራፊ፣ ኢኮኖሚክስ፣ ሒሳብ፣ እንግሊዝኛ ወዘተ\n\n` +
@@ -124,7 +124,7 @@ const getSupportResponse = (userText, language) => {
       };
     }
     return {
-      text: `**Grades 11 & 12 Package (400 ETB)**:\n\n` +
+      text: `**Grades 11 & 12 Package (450 ETB)**:\n\n` +
         `You select your stream when registering:\n` +
         `• **Natural Science**: Mathematics, Physics, Chemistry, Biology, English, etc.\n` +
         `• **Social Science**: History, Geography, Economics, Mathematics, English, etc.\n\n` +
@@ -174,16 +174,16 @@ const getSupportResponse = (userText, language) => {
     if (isAm) {
       return {
         text: `ለእርስዎ የሚመጥነውን ጥቅል ለመምረጥ፦\n\n` +
-          `1. **የ9ኛ ወይም 10ኛ ክፍል ተማሪ ከሆኑ** ➜ የ9-10ኛ ክፍል ጥቅል (400 ብር)\n` +
-          `2. **የ11ኛ ወይም 12ኛ ክፍል ተማሪ ከሆኑ** ➜ የ11-12ኛ ክፍል ጥቅል (400 ብር)\n` +
+          `1. **የ9ኛ ወይም 10ኛ ክፍል ተማሪ ከሆኑ** ➜ የ9-10ኛ ክፍል ጥቅል (450 ብር)\n` +
+          `2. **የ11ኛ ወይም 12ኛ ክፍል ተማሪ ከሆኑ** ➜ የ11-12ኛ ክፍል ጥቅል (450 ብር)\n` +
           `3. **ሁሉንም ከ9-12ኛ ክፍል ያለውን ይዘት በአንድ ላይ ለክለሳ ከፈለጉ** ➜ የሙሉ ሁለተኛ ደረጃ ጥቅል (700 ብር)`,
         action: 'pricing'
       };
     }
     return {
       text: `Here is a quick guide to help you choose:\n\n` +
-        `1. **If you are in Grade 9 or 10** ➜ Choose the Grades 9 & 10 Package (400 ETB).\n` +
-        `2. **If you are in Grade 11 or 12** ➜ Choose the Grades 11 & 12 Package (400 ETB) with your stream.\n` +
+        `1. **If you are in Grade 9 or 10** ➜ Choose the Grades 9 & 10 Package (450 ETB).\n` +
+        `2. **If you are in Grade 11 or 12** ➜ Choose the Grades 11 & 12 Package (450 ETB) with your stream.\n` +
         `3. **If you need all 4 years in one place for national exam review** ➜ Choose the Full High School Package (700 ETB).`,
       action: 'pricing'
     };
