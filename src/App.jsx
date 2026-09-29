@@ -197,12 +197,14 @@ const App = () => {
         />
       )}
 
-      {/* Floating Interactive Mesob AI Assistant */}
-      <AIChatWidget 
-        language={language} 
-        theme={theme} 
-        triggerToast={triggerToast} 
-      />
+      {/* Floating Interactive Mesob AI Assistant (Hidden on legal documents: Privacy Policy & Terms of Service) */}
+      {currentPage !== "privacy" && currentPage !== "terms" && (
+        <AIChatWidget 
+          language={language} 
+          theme={theme} 
+          triggerToast={triggerToast} 
+        />
+      )}
 
       <AnimatePresence>
         {showToast && (
