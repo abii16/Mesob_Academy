@@ -49,7 +49,10 @@ const PrivacyPolicy = ({ language = "en" }) => {
       sec7Title: "7. Do Not Track (DNT) Signals Handling",
       sec7Intro: "Currently, because standard technology frameworks for recognizing and implementing 'Do Not Track' (DNT) signals sent automatically by users' web browsers have not been finalized either nationally or internationally, our system does not currently respond to these signals.",
       sec8Title: "8. Users' Personal Data Rights (According to Ethiopian Law)",
-      sec8Intro: "According to the Ethiopian Personal Data Protection Proclamation, the following rights are granted based on our product's utilization:Right to Know: You have the right to know which of your personal data is being collected, for what purpose it is being used, and if the data is being shared with a third party.Right to Access and Correct: You have the right to view any of your personal data stored within our system, and the right to correct or amend it.Right to Erasure: Unless restricted by legal obligations, you have the right to request that your data be completely deleted from our system.",
+      sec8Intro: "According to the Ethiopian Personal Data Protection Proclamation, the following rights are granted based on your use of our Services:",
+      sec8Bullet1: "Right to Know: You have the right to know which personal data is being collected, the specific purposes for which it is processed, and whether it is shared with authorized third parties.",
+      sec8Bullet2: "Right to Access and Correct: You have the right to inspect any personal data stored within our systems, and the right to rectify, update, or amend incomplete or inaccurate information.",
+      sec8Bullet3: "Right to Erasure: Unless restricted by legal or statutory record-keeping obligations, you have the right to request that your personal data and account records be completely deleted from our systems.",
 
       sec9Title: "9. Amendments Made to This Policy",
       sec9Intro: "We may update this privacy policy from time to time to better improve the security of our service or to comply with the country's legal frameworks. When significant changes are made to the policy, we will notify you through our system or via email for users of the service.",
@@ -105,11 +108,14 @@ const PrivacyPolicy = ({ language = "en" }) => {
       sec6Sub: "የመለያ መረጃ",
       sec6SubDesc: "በማንኛውም ጊዜ በመለያዎ ውስጥ ያለውን መረጃ ለመገምገም ወይም ለመለወጥ ወይም መለያዎን ለማቋረጥ ከፈለጉ፣ በመተግበሪያው ቅንብሮች ውስጥ ማድረግ ወይም እኛን ማግኘት ይችላሉ። መለያዎን ለማቋረጥ ለሚያቀርቡት ጥያቄ ምላሽ በመስጠት መለያዎን እና መረጃዎን ከንቁ የውሂብ ጎታዎቻችን እናጠፋለን። ነገር ግን ማጭበርበርን ለመከላከል፣ ችግሮችን ለመፍታት፣ ለማንኛውም ምርመራ ለመርዳት፣ የአገልግሎት ውሎቻችንን ተግባራዊ ለማድረግ ወይም የህግ መስፈርቶችን ለማክበር አንዳንድ መረጃዎችን በመዝገቦቻችን ውስጥ ልናቆይ እንችላለን።",
 
-      sec7Title: "የአሰሳ መከታተያ (Do Not Track - DNT) ምልክቶች አያያዝ",
+      sec7Title: "7. የአሰሳ መከታተያ (Do Not Track - DNT) ምልክቶች አያያዝ",
       sec7Intro: "በአሁኑ ጊዜ ከተጠቃሚዎች የድረ-ገጽ አሳሽ (Browser) በራስ-ሰር የሚላኩ የ«Do Not Track» (DNT) ምልክቶችን ለመለየትና ለመተግበር የሚያስችል ወጥ የሆነ የቴክኖሎጂ መስፈርት በአገር አቀፍም ሆነ በዓለም አቀፍ ደረጃ ስላልተጠናቀቀ፣ ሲስተማችን ለእነዚህ ምልክቶች በአሁኑ ጊዜ ምላሽ አይሰጥም።",
 
       sec8Title: "8. የተጠቃሚዎች የግል መረጃ መብቶች (በኢትዮጵያ ሕግ መሠረት)",
-      sec8Intro: "በኢትዮጵያ የግል መረጃ ጥበቃ አዋጅ መሠረት፣ እንደ ምርታችን ተጠቃሚነቶ የሚከተሉት መብቶች ተሰጥተውዎታል፦የማወቅ መብት፦ የትኞቹ የግል መረጃዎችዎ እየተሰበሰቡ እንደሆነ፣ ለምን ዓላማ ጥቅም ላይ እንደሚውሉ እና መረጃው ለሶስተኛ ወገን የሚጋራ ከሆነ የማወቅ መብት አለዎት። የማግኘት እና የማረም መብት፦ በእኛ ሲስተም ውስጥ የተቀመጡ ማናቸውንም የግል መረጃዎችዎን የመመልከት፣ የማረም ወይም የማስተካከል መብት አለዎት። መረጃን የማሰረዝ መብት፦ ሕጋዊ ግዴታዎች እስካልከለከሉ ድረስ፣ የእርስዎ መረጃ ከሲስተማችን ላይ ሙሉ በሙሉ እንዲሰረዝ የመጠየቅ መብት አልዎት።",
+      sec8Intro: "በኢትዮጵያ የግል መረጃ ጥበቃ አዋጅ መሠረት፣ እንደ አገልግሎታችን ተጠቃሚ የሚከተሉት መብቶች ተሰጥተውዎታል፦",
+      sec8Bullet1: "የማወቅ መብት፦ የትኞቹ የግል መረጃዎችዎ እየተሰበሰቡ እንደሆነ፣ ለምን ዓላማ ጥቅም ላይ እንደሚውሉ እና መረጃው ለሶስተኛ ወገን የሚጋራ ከሆነ የማወቅ መብት አለዎት።",
+      sec8Bullet2: "የማግኘት እና የማረም መብት፦ በእኛ ሲስተም ውስጥ የተቀመጡ ማናቸውንም የግል መረጃዎችዎን የመመልከት፣ የማረም ወይም የማስተካከል መብት አለዎት።",
+      sec8Bullet3: "መረጃን የማሰረዝ መብት፦ ሕጋዊ ግዴታዎች እስካልከለከሉ ድረስ፣ የእርስዎ መረጃ ከሲስተማችን ላይ ሙሉ በሙሉ እንዲሰረዝ የመጠየቅ መብት አልዎት።",
       sec9Title: "9. በዚህ ፖሊሲ ላይ የሚደረጉ ማሻሻያዎች",
       sec9Intro: "የአገልግሎታችንን ደህንነት ይበልጥ ለማሻሻል ወይም የአገሪቱን ሕጋዊ ማዕቀፎች ለመከተል ስንል ይህንን የግል ሚስጥር ጥበቃ ፖሊሲ በየጊዜው ልናሻሽለው እንችላለን። በፖሊሲው ላይ ጉልህ ለውጦች ሲደረጉ በሲስተማችን ወይም በኢሜይል በኩል ለአገልግሎቱ ተጠቃሚዎች የምናሳውቅ ይሆናል።",
 
@@ -258,6 +264,13 @@ const PrivacyPolicy = ({ language = "en" }) => {
           <div id="caresidents" className="privacy-doc-section">
             <h2>{curr.sec8Title}</h2>
             <p>{curr.sec8Intro}</p>
+            {curr.sec8Bullet1 && (
+              <ul className="privacy-doc-list">
+                <li>{curr.sec8Bullet1}</li>
+                <li>{curr.sec8Bullet2}</li>
+                <li>{curr.sec8Bullet3}</li>
+              </ul>
+            )}
           </div>
 
           {/* Section 9 */}
