@@ -193,12 +193,12 @@ const getSupportResponse = (userText, language) => {
   if (q.includes('download') || q.includes('app') || q.includes('apk') || q.includes('install') || q.includes('ማውረድ') || q.includes('መተግበሪያ')) {
     if (isAm) {
       return {
-        text: `የሜሶብ አካዳሚ የሞባይል መተግበሪያን በGoogle Play Store ወይም በገጻችን አናት ላይ የሚገኘውን 'Download' ቁልፍ በመጫን ማውረድ ይችላሉ።`,
+        text: `የሜሶብ አካዳሚ የሞባይል መተግበሪያን በቴሌግራም ቻናላችን (https://t.me/mesob2019/16) ወይም 'Download' ቁልፍን በመጫን በቀጥታ ማውረድ ይችላሉ።`,
         action: 'download'
       };
     }
     return {
-      text: `You can download the Mesob Academy app on Android via Google Play Store or by clicking the Download button in the top navigation bar.`,
+      text: `You can download the Mesob Academy app directly via our Telegram channel (https://t.me/mesob2019/16) or by clicking the 'Download App' button.`,
       action: 'download'
     };
   }
@@ -474,8 +474,7 @@ const AIChatWidget = ({ language = 'en', theme = 'dark' }) => {
       if (el) el.scrollIntoView({ behavior: 'smooth' });
       setIsOpen(false);
     } else if (action === 'download') {
-      const el = document.getElementById('hero');
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      window.open('https://t.me/mesob2019/16', '_blank', 'noopener,noreferrer');
       setIsOpen(false);
     }
   };
